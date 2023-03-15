@@ -46,9 +46,9 @@ console.log(order("is2 Thi1s T4est 3a"))
 console.log(order("4of Fo1r pe6ople g3ood th5e the2"))
 
 
-"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
-"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
-""  -->  ""
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
 
 function getSum(a, b) {
 let sum = 0;
@@ -79,5 +79,22 @@ console.log(periodIsLate(new Date(2016, 6, 13), new Date(2016, 7, 16), 35))
 
 
 
+//Isograms
+
+function isIsogram(str){
+    let lowerCased = str.toLowerCase();
+    for(let i = 0; i < str.length; i++) {
+        for(let j = i+1; j  < str.length; j++) {
+            if(lowerCased[i] === lowerCased[j]) {
+               
+                return false
+            }
+        }
+    }
+    return true
+}
+console.log(isIsogram("Dermatoglyphics"))
+console.log(isIsogram("moose"))
+console.log(isIsogram("isogram"))
 
 
