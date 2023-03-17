@@ -98,18 +98,33 @@
 // console.log(isIsogram("isogram"))
 
 //Categorize New Member
-function openOrSenior(data){
-    let out = [];
-    for  (let i = 0; i < data.length; i++) {
-        if(data[i][0] >= 55 && data[i][1] > 7) {
-            out.push("Senior")
-        } else {
-            out.push("Open")
-        }
+// function openOrSenior(data){
+//     let out = [];
+//     for  (let i = 0; i < data.length; i++) {
+//         if(data[i][0] >= 55 && data[i][1] > 7) {
+//             out.push("Senior")
+//         } else {
+//             out.push("Open")
+//         }
         
-    }
-    return out
-}
-console.log(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]))
+//     }
+//     return out
+// }
+// console.log(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]))
 // input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 // output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
+
+
+//Sort Numbers
+function solution(nums){
+    
+    
+    if (nums === null) {
+        return []
+    }
+    
+    return nums.sort((a, b) => a - b)
+}
+
+console.log(solution([1, 2, 10, 50, 5])); // should return [1,2,5,10,50]
+console.log(solution(null)); // should return []
