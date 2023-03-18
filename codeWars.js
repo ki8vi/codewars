@@ -116,15 +116,32 @@
 
 
 //Sort Numbers
-function solution(nums){
+// function solution(nums){
     
     
-    if (nums === null) {
-        return []
-    }
+//     if (nums === null) {
+//         return []
+//     }
     
-    return nums.sort((a, b) => a - b)
-}
+//     return nums.sort((a, b) => a - b)
+// }
 
-console.log(solution([1, 2, 10, 50, 5])); // should return [1,2,5,10,50]
-console.log(solution(null)); // should return []
+// console.log(solution([1, 2, 10, 50, 5])); 
+// console.log(solution(null)); 
+//Anagram Detection
+var isAnagram = function(test, original) {
+ 
+   let str1 = test.toLowerCase().split('').sort().join("");
+   let str2 = original.toLowerCase().split('').sort().join("");
+   
+    return str1 === str2
+};
+console.log(isAnagram("dumble", "bumble"))
+console.log(isAnagram("foefet", "toffee"))
+console.log(isAnagram("Buckethead", "DeathCubeK"))
+console.log(isAnagram("ound", "round"))
+console.log(isAnagram("AkYHDCDUFtdSeZOFj", "ZFAUjYkHStdCOeDFM"))
+console.log("ZFAUjYkHStdCOeDFM".split("").sort().join(""))
+console.log("AkYHDCDUFtdSeZOFj".split("").sort().join(""))
+
+ 
