@@ -129,19 +129,26 @@
 // console.log(solution([1, 2, 10, 50, 5])); 
 // console.log(solution(null)); 
 //Anagram Detection
-var isAnagram = function(test, original) {
+// var isAnagram = function(test, original) {
  
-   let str1 = test.toLowerCase().split('').sort().join("");
-   let str2 = original.toLowerCase().split('').sort().join("");
+//    let str1 = test.toLowerCase().split('').sort().join("");
+//    let str2 = original.toLowerCase().split('').sort().join("");
    
-    return str1 === str2
-};
-console.log(isAnagram("dumble", "bumble"))
-console.log(isAnagram("foefet", "toffee"))
-console.log(isAnagram("Buckethead", "DeathCubeK"))
-console.log(isAnagram("ound", "round"))
-console.log(isAnagram("AkYHDCDUFtdSeZOFj", "ZFAUjYkHStdCOeDFM"))
-console.log("ZFAUjYkHStdCOeDFM".split("").sort().join(""))
-console.log("AkYHDCDUFtdSeZOFj".split("").sort().join(""))
+//     return str1 === str2
+// };
+// console.log(isAnagram("dumble", "bumble"))
+// console.log(isAnagram("foefet", "toffee"))
+// console.log(isAnagram("Buckethead", "DeathCubeK"))
+// console.log(isAnagram("ound", "round"))
+// console.log(isAnagram("AkYHDCDUFtdSeZOFj", "ZFAUjYkHStdCOeDFM"))
+// console.log("ZFAUjYkHStdCOeDFM".split("").sort().join(""))
+// console.log("AkYHDCDUFtdSeZOFj".split("").sort().join(""))
 
- 
+//Regex validate PIN code
+function validatePIN (pin) {
+   
+    return /^(\d{4}|\d{6})$/.test(pin);
+}
+console.log(validatePIN("-1.234"))
+
+
