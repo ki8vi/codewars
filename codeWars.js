@@ -145,10 +145,22 @@
 // console.log("AkYHDCDUFtdSeZOFj".split("").sort().join(""))
 
 //Regex validate PIN code
-function validatePIN (pin) {
+// function validatePIN (pin) {
    
-    return /^(\d{4}|\d{6})$/.test(pin);
+//     return /^(\d{4}|\d{6})$/.test(pin);
+// }
+// console.log(validatePIN("-1.234"))
+//Double value every next call
+class Class {
+    static value = 0.5;
+    static getNumber() {
+      this.value = this.value*2
+      return this.value;
+    }
 }
-console.log(validatePIN("-1.234"))
-
-
+console.log(Class.getNumber())
+console.log(Class.getNumber())
+console.log(Class.getNumber())
+console.log(Class.getNumber())
+console.log(Class.getNumber())
+console.log(Class.getNumber())
