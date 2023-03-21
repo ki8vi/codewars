@@ -151,16 +151,45 @@
 // }
 // console.log(validatePIN("-1.234"))
 //Double value every next call
-class Class {
-    static value = 0.5;
-    static getNumber() {
-      this.value = this.value*2
-      return this.value;
-    }
-}
-console.log(Class.getNumber())
-console.log(Class.getNumber())
-console.log(Class.getNumber())
-console.log(Class.getNumber())
-console.log(Class.getNumber())
-console.log(Class.getNumber())
+// class Class {
+//     static value = 0.5;
+//     static getNumber() {
+//       this.value = this.value*2
+//       return this.value;
+//     }
+// }
+// console.log(Class.getNumber())
+// console.log(Class.getNumber())
+// console.log(Class.getNumber())
+// console.log(Class.getNumber())
+// console.log(Class.getNumber())
+// console.log(Class.getNumber())
+
+
+//Kooka-Counter
+// var kookaCounter = function(laughing) {
+//     if(laughing.length === 0) {
+//         return 0
+//     }
+//     let replaced = laughing.replace(/a/g, '')
+//     let out = 0
+    
+//     for(let i = 0; i < replaced.length; i++) {
+//       if(replaced[i] !== replaced[i+1]){
+//         out +=1 
+       
+//       }
+//     }
+//     return out
+// }
+// console.log(kookaCounter("HahaHahaHa"))
+// console.log(kookaCounter("hahahahaha"))
+// console.log(kookaCounter("HaHaHahahaHaHa"))
+
+// ha = female => 1
+// Ha = male => 1
+// Haha = male + female => 2
+// haHa = female + male => 2
+// hahahahaha = female => 1
+// hahahahahaHaHaHa = female + male => 2
+// HaHaHahahaHaHa = male + female + male => 3
