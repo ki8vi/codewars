@@ -193,3 +193,9 @@
 // hahahahaha = female => 1
 // hahahahahaHaHaHa = female + male => 2
 // HaHaHahahaHaHa = male + female + male => 3
+//Even or Odd
+function evenOrOdd(number) {
+  return number % 2 === 0 ? "Even" : "Odd"
+}
+
+console.log(evenOrOdd(5))
