@@ -194,8 +194,31 @@
 // hahahahahaHaHaHa = female + male => 2
 // HaHaHahahaHaHa = male + female + male => 3
 //Even or Odd
-function evenOrOdd(number) {
-  return number % 2 === 0 ? "Even" : "Odd"
-}
+// function evenOrOdd(number) {
+//   return number % 2 === 0 ? "Even" : "Odd"
+// }
 
-console.log(evenOrOdd(5))
+// console.log(evenOrOdd(5))
+
+
+//Unique In Order
+
+var uniqueInOrder=function(iterable){
+    let res = [];
+    for (let i = 0; i < iterable.length; i++) {
+      if(iterable[i] !== iterable[i+1]) {
+        res.push(iterable[i])
+        console.log(res)
+      }
+    }
+    return res
+  }
+
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+console.log(uniqueInOrder('ABBCcAD'))
+console.log(uniqueInOrder([1,2,2,3,3]))
+
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1,2,2,3,3])       == [1,2,3]
