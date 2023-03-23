@@ -203,22 +203,41 @@
 
 //Unique In Order
 
-var uniqueInOrder=function(iterable){
-    let res = [];
-    for (let i = 0; i < iterable.length; i++) {
-      if(iterable[i] !== iterable[i+1]) {
-        res.push(iterable[i])
-        console.log(res)
-      }
-    }
-    return res
-  }
+// var uniqueInOrder=function(iterable){
+//     let res = [];
+//     for (let i = 0; i < iterable.length; i++) {
+//       if(iterable[i] !== iterable[i+1]) {
+//         res.push(iterable[i])
+//         console.log(res)
+//       }
+//     }
+//     return res
+//   }
 
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'))
-console.log(uniqueInOrder('ABBCcAD'))
-console.log(uniqueInOrder([1,2,2,3,3]))
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+// console.log(uniqueInOrder('ABBCcAD'))
+// console.log(uniqueInOrder([1,2,2,3,3]))
 
 // uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+
+
+//Persistent Bugger
+// function persistence(num) {
+//   let i = 0;
+//   while (num.toString().length !== 1) {
+//     num = num.toString().split("").reduce((a,b)=>a*b);
+//     i++;
+//   }
+//   return i;
+
+// }
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+// console.log(persistence(39))
+// console.log(persistence(999))
+// console.log(persistence(4))
+
