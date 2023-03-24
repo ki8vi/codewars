@@ -241,26 +241,40 @@
 // console.log(persistence(999))
 // console.log(persistence(4))
 //Rock Paper Scissors
-const rps = (p1, p2) => {
-    const r = "rock";
-    const sc = "scissors";
-    const pap = "paper"
-    if(p1 === p2) {
-        return "Draw!"
-    } else {
-        if(p1 === r && p2 === sc || p1 === sc && p2 === pap || p1 === pap && p2=== r){
+// const rps = (p1, p2) => {
+//     const r = "rock";
+//     const sc = "scissors";
+//     const pap = "paper"
+//     if(p1 === p2) {
+//         return "Draw!"
+//     } else {
+//         if(p1 === r && p2 === sc || p1 === sc && p2 === pap || p1 === pap && p2=== r){
 
-            return "Player 1 won!"
-        }
-        if(p1=== sc && p2===r || p1===pap && p2===sc ||p1===r && p2 ===pap) {
-            return "Player 2 won!"
-        }
-    }
-};
-console.log(rps("scissors", "paper"))
-console.log(rps("scissors", "rock"))
-console.log(rps("paper", "paper"))
+//             return "Player 1 won!"
+//         }
+//         if(p1=== sc && p2===r || p1===pap && p2===sc ||p1===r && p2 ===pap) {
+//             return "Player 2 won!"
+//         }
+//     }
+// };
+// console.log(rps("scissors", "paper"))
+// console.log(rps("scissors", "rock"))
+// console.log(rps("paper", "paper"))
 
 // "scissors", "paper" --> "Player 1 won!"
 // "scissors", "rock" --> "Player 2 won!"
 // "paper", "paper" --> "Draw!"
+//String ends with? 
+function solution(str, ending) {
+    let index = str.length - ending.length
+    const out = str.slice(index)
+    
+    return out === ending
+}
+
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+console.log(solution('abc', 'bc'))
+console.log(solution('abc', 'd'))
+console.log(solution('abcde', 'cde'))
+console.log(solution('abcde', 'abc'))
