@@ -265,16 +265,33 @@
 // "scissors", "rock" --> "Player 2 won!"
 // "paper", "paper" --> "Draw!"
 //String ends with? 
-function solution(str, ending) {
-    let index = str.length - ending.length
-    const out = str.slice(index)
+// function solution(str, ending) {
+//     let index = str.length - ending.length
+//     const out = str.slice(index)
     
-    return out === ending
-}
+//     return out === ending
+// }
 
-// solution('abc', 'bc') // returns true
-// solution('abc', 'd') // returns false
-console.log(solution('abc', 'bc'))
-console.log(solution('abc', 'd'))
-console.log(solution('abcde', 'cde'))
-console.log(solution('abcde', 'abc'))
+// // solution('abc', 'bc') // returns true
+// // solution('abc', 'd') // returns false
+// console.log(solution('abc', 'bc'))
+// console.log(solution('abc', 'd'))
+// console.log(solution('abcde', 'cde'))
+// console.log(solution('abcde', 'abc'))
+
+//Vowel remover
+
+function shortcut (string) {
+    return string.replace(/[aeiou]/gi, "")
+    
+}
+console.log(shortcut("hello"))
+console.log(shortcut("codewars"))
+console.log(shortcut("goodbye"))
+console.log(shortcut("HELLO"))
+
+
+//   "hello"     -->  "hll"
+// "codewars"  -->  "cdwrs"
+// "goodbye"   -->  "gdby"
+// "HELLO"     -->  "HELLO"
