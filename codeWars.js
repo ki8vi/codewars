@@ -281,17 +281,43 @@
 
 //Vowel remover
 
-function shortcut (string) {
-    return string.replace(/[aeiou]/gi, "")
+// function shortcut (string) {
+//     return string.replace(/[aeiou]/g, "")
     
-}
-console.log(shortcut("hello"))
-console.log(shortcut("codewars"))
-console.log(shortcut("goodbye"))
-console.log(shortcut("HELLO"))
+// }
+// console.log(shortcut("hello"))
+// console.log(shortcut("codewars"))
+// console.log(shortcut("goodbye"))
+// console.log(shortcut("HELLO"))
 
 
 //   "hello"     -->  "hll"
 // "codewars"  -->  "cdwrs"
 // "goodbye"   -->  "gdby"
 // "HELLO"     -->  "HELLO"
+
+
+//Sum of two lowest positive integers
+// function sumTwoSmallestNumbers(numbers) {  
+//     let sorted = numbers.sort((a, b) => a-b)
+//     console.log(sorted)
+//     return sorted[0] + sorted[1]
+    
+// }
+
+// console.log((sumTwoSmallestNumbers([10, 343445353, 3453445, 3453545353453])))
+//[10, 343445353, 3453445, 3453545353453] should return 3453455
+
+//Calculate average
+function findAverage(array) {
+    if(array.length === 0) {
+        return 0
+    } else {
+        let summ = 0
+        for(let el in array) {
+            summ += array[el]
+        }
+        return summ/array.length;
+    }
+}
+  console.log(findAverage([1, 2, 3, 4]))
