@@ -364,3 +364,14 @@
 //console.log(mispelled('disappear', 'pipe'))
 //console.log(mispelled('nutty', 'grate'))
 
+//Sum of positive
+// function positiveSum(arr) {
+//   let res = 0;
+//   for(let i in arr) {
+//     if(arr[i] > 0) {
+//         res += arr[i]
+//     }
+//   }
+//   return res
+// }
+// console.log(positiveSum([-1,2,-3,4,-5]))
