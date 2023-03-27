@@ -375,3 +375,17 @@
 //   return res
 // }
 // console.log(positiveSum([-1,2,-3,4,-5]))
+//Calculate BMI
+// function bmi(weight, height) {
+//   let out = weight/(height*height);
+//   let out2 = out.toFixed(2)
+//   console.log(out2)
+//   if (out2 <= 18.5) return "Underweight";
+//   if (out2 <= 25.0) return "Normal";
+//   if (out2 <= 30.0) return "Overweight";
+//   if (out2 > 30) return "Obese";
+  
+  
+    
+//   }
+//   console.log(bmi(80, 1.80))
