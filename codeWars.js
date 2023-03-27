@@ -338,30 +338,29 @@
 // console.log(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']))
 
 //Mispelled word
-var mispelled = function(word1, word2) {
-    let counter = 0;
-    if(word1 === word2) {
-        console.log(word1, word2)
-        return true
-    } else {
-        for (let el in word1) {
-            if(!word1.includes(word2[el])) {
-                counter += 1;
-                console.log(word1[el], counter)
-            }
-          
-        }
-    }
-    if(counter === 1) {
-        return true
-    } else {
-        return counter > 1 ? false : true
-    }
-}
+// var mispelled = function(word1, word2) {
+//     let counter = 0;
+    
+//         for (let i = 0; i < word1.length; i++) {
+//             if(!word1.includes(word2[i])) {
+//                 console.log(word1, word2)
+                
+//                 counter+=1
+//             }
+//         }
+    
+//     console.log(counter)
+//    return counter === 1 || word1 === word2 ? true : false
+// }
 
-console.log(mispelled('versed', 'xersed'))
-console.log(mispelled('versed', 'v5rsed'))
-console.log(mispelled('1versed', 'versed'))
-console.log(mispelled('versed', 'versed1'))
-console.log(mispelled('aaversed', 'versed'))
-console.log(mispelled('versed', 'applb'))
+// console.log(mispelled('versed', 'xersed'))
+// console.log(mispelled('versed', 'v5rsed'))
+//console.log(mispelled('versed', 'xersed'))
+//console.log(mispelled('1versed', 'versed'))
+//console.log(mispelled('versed', 'versed1'))
+//console.log(mispelled('aaversed', 'versed'))
+//console.log(mispelled('versed', 'applb'))
+//console.log(mispelled('hulking', 'hulkiXg'))
+//console.log(mispelled('disappear', 'pipe'))
+//console.log(mispelled('nutty', 'grate'))
+
