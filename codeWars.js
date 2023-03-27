@@ -388,4 +388,4 @@ function bmi(weight, height) {
   
     
   }
-  console.log(bmi(80, 1.80))/
+  console.log(bmi(80, 1.80))
