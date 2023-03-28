@@ -391,16 +391,26 @@
 //   console.log(bmi(80, 1.80))
 
 //Find the capitals
-var capitals = function (word) {
-	let outArr = [];
-    const reg = /[A-Z]/
+// var capitals = function (word) {
+// 	let outArr = [];
+//     const reg = /[A-Z]/
     
-    for(let i in word) {
-        if(reg.test(word[i])) {
-            outArr.push(word.indexOf(word[i]))
-            console.log(outArr)
-        }
-    }
-    return outArr
-};
-console.log(capitals('CodEWaRs'))
+//     for(let i in word) {
+//         if(reg.test(word[i])) {
+//             outArr.push(word.indexOf(word[i]))
+//             console.log(outArr)
+//         }
+//     }
+//     return outArr
+// };
+// console.log(capitals('CodEWaRs'))
+//Descending Order
+function descendingOrder(n){
+   
+    const out = String(n).split("").sort((a,b) =>a - b).reverse().join("");
+    
+    return Number(out)
+}
+console.log(descendingOrder(123456789))
+console.log(descendingOrder(3564))
+console.log(descendingOrder(1021))
