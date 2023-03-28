@@ -389,3 +389,18 @@
     
 //   }
 //   console.log(bmi(80, 1.80))
+
+//Find the capitals
+var capitals = function (word) {
+	let outArr = [];
+    const reg = /[A-Z]/
+    
+    for(let i in word) {
+        if(reg.test(word[i])) {
+            outArr.push(word.indexOf(word[i]))
+            console.log(outArr)
+        }
+    }
+    return outArr
+};
+console.log(capitals('CodEWaRs'))
