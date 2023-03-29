@@ -416,24 +416,17 @@
 // console.log(descendingOrder(1021))
 
 //Sum of a sequence
-const sequenceSum = (begin, end, step) => {
-    let out = begin
-    if(begin > end) {
-        return 0
-    } else {
-        for(let i = begin; i < end; i + step) {
-            out += i
-            console.log(out)
-            
-        }
-    }
-    return out
-};
-console.log(sequenceSum(2, 2, 2))
-
-sequenceSum(2, 6, 2)
-// sequenceSum(1, 5, 1)
-// sequenceSum(1, 5, 3)
+// const sequenceSum = (begin, end, step) => {
+//     let out = 0
+//     for(let i = begin; i<=end; i+=step) {
+//         out +=i
+//     }
+//     return out
+// };
+// console.log(sequenceSum(2, 2, 2))
+// console.log(sequenceSum(2, 6, 2))
+// console.log(sequenceSum(1, 5, 1))
+// console.log(sequenceSum(1, 5, 3))
 
 //   2,2,2 --> 2
 // 2,6,2 --> 12 (2 + 4 + 6)
