@@ -405,12 +405,37 @@
 // };
 // console.log(capitals('CodEWaRs'))
 //Descending Order
-function descendingOrder(n){
+// function descendingOrder(n){
    
-    const out = String(n).split("").sort((a,b) =>a - b).reverse().join("");
+//     const out = String(n).split("").sort((a,b) =>a - b).reverse().join("");
     
-    return Number(out)
-}
-console.log(descendingOrder(123456789))
-console.log(descendingOrder(3564))
-console.log(descendingOrder(1021))
+//     return Number(out)
+// }
+// console.log(descendingOrder(123456789))
+// console.log(descendingOrder(3564))
+// console.log(descendingOrder(1021))
+
+//Sum of a sequence
+const sequenceSum = (begin, end, step) => {
+    let out = begin
+    if(begin > end) {
+        return 0
+    } else {
+        for(let i = begin; i < end; i + step) {
+            out += i
+            console.log(out)
+            
+        }
+    }
+    return out
+};
+console.log(sequenceSum(2, 2, 2))
+
+sequenceSum(2, 6, 2)
+// sequenceSum(1, 5, 1)
+// sequenceSum(1, 5, 3)
+
+//   2,2,2 --> 2
+// 2,6,2 --> 12 (2 + 4 + 6)
+// 1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
+// 1,5,3  --> 5 (1 + 4)
