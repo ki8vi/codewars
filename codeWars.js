@@ -432,3 +432,12 @@
 // 2,6,2 --> 12 (2 + 4 + 6)
 // 1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
 // 1,5,3  --> 5 (1 + 4)
+
+//Shortest Word
+// function findShort(s){
+//     let splited = s.split(" ").map(a => a.length).sort((a, b) => a - b)
+//     return splited[0]
+
+// }
+// console.log((findShort("bitcoin take over the world maybe who knows perhaps")))
+// console.log((findShort("ProofOfStake Classic Dash ProofOfWork DarkCoin Waves Mine Dogecoin Ethereum")))
