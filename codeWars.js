@@ -442,22 +442,33 @@
 // console.log((findShort("bitcoin take over the world maybe who knows perhaps")))
 // console.log((findShort("ProofOfStake Classic Dash ProofOfWork DarkCoin Waves Mine Dogecoin Ethereum")))
 //Decreasing Inputs
-function add() {
-    let args = arguments
-    let out = 0
-    for(let num in args) {
-        let index = +num+1;
-        out += args[num]/index
-        console.log(out)
-    }
+// function add() {
+//     let args = arguments
+//     let out = 0
+//     for(let num in args) {
+//         let index = +num+1;
+//         out += args[num]/index
+//         console.log(out)
+//     }
     
-    return Math.round(out)
+//     return Math.round(out)
 
-  }
-  console.log(add(3,4,6)); 
-  console.log(add(100, 200, 300)); 
-  console.log(add(4, -3, -2)); 
-  console.log(add(-1, -2, -3, -4)); 
+//   }
+//   console.log(add(3,4,6)); 
+//   console.log(add(100, 200, 300)); 
+//   console.log(add(4, -3, -2)); 
+//   console.log(add(-1, -2, -3, -4)); 
   /*
   returns ( 3 / 1 ) + ( 4 / 2 ) + ( 6 / 3 ) = 7
   */
+
+  //Remove anchor from URL
+  //const removeUrlAnchor = (url) => url.includes("#") ? url.slice(0, url.indexOf("#")) : url
+  function removeUrlAnchor(url){
+    return url.split('#')[0];
+  }
+
+//   "www.codewars.com#about" --> "www.codewars.com"
+// "www.codewars.com?page=1" -->"www.codewars.com?page=1"
+console.log(removeUrlAnchor('www.codewars.com#about'))
+console.log(removeUrlAnchor("www.codewars.com?page=1"))
