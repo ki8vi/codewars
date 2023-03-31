@@ -495,4 +495,32 @@
 // "camelCasing"  =>  "camel Casing"
 // "identifier"   =>  "identifier"
 // ""             =>  ""
+//rot13
+function rot13(message){
+  let alph = "abcdefghijklmnopqrstuvwxyz";
+  console.log(alph[21-13], alph.indexOf("v"))
+  let reg = /[A-Za-z]/
+  let out = []
+  for (let i = 0; i < message.length; i++) {
+    
+    if(reg.test(message[i])) {
+      console.log(message[i])
+      if(alph.indexOf(message[i]) < 13) {
+        console.log(alph.indexOf(message[i]), message[i])
+        message = message.replace(message[i], alph[alph.indexOf(message[i]) + 13]) 
+        
+      } 
+      else {
+        message = message.replace(message[i], alph[alph.indexOf(message[i]) - 13])
+        
+        
+        console.log(alph.indexOf(message[i]), message[i])
+      }
+    }
+    
+  }
+  return message
+}
 
+console.log(rot13("privet")) 
+//console.log(rot13("salAm!2222"))  //cevirg
