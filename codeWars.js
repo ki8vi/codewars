@@ -464,11 +464,35 @@
 
   //Remove anchor from URL
   //const removeUrlAnchor = (url) => url.includes("#") ? url.slice(0, url.indexOf("#")) : url
-  function removeUrlAnchor(url){
-    return url.split('#')[0];
-  }
+  // function removeUrlAnchor(url){
+  //   return url.split('#')[0];
+  // }
 
 //   "www.codewars.com#about" --> "www.codewars.com"
 // "www.codewars.com?page=1" -->"www.codewars.com?page=1"
-console.log(removeUrlAnchor('www.codewars.com#about'))
-console.log(removeUrlAnchor("www.codewars.com?page=1"))
+// console.log(removeUrlAnchor('www.codewars.com#about'))
+// console.log(removeUrlAnchor("www.codewars.com?page=1"))
+
+//Break camelCase
+// function solution(string) {
+//     let out = ''
+//     for(let i = 0; i < string.length; i++) {
+//      if(string[i] === string[i].toUpperCase()) {
+//       out += " ";
+//       out += string[i];
+      
+//      } else {
+//       out += string[i]
+      
+//      }
+//     }
+    
+//     return out
+// }
+//console.log(solution("camelCasing"))
+//console.log(solution("identifier"))
+//console.log(solution('camelCasingTest'))
+// "camelCasing"  =>  "camel Casing"
+// "identifier"   =>  "identifier"
+// ""             =>  ""
+
