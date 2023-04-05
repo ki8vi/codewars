@@ -505,19 +505,40 @@
   //cevirg
 
   //Who likes it?
-  function likes(names) {
-    names = names || [];
-    switch(names.length){
-      case 0: return 'no one likes this'; break;
-      case 1: return names[0] + ' likes this'; break;
-      case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
-      case 3: return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'; break;
-      default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this';
-    }
-  }
-console.log(likes(["Peter"]))
+//   function likes(names) {
+//     names = names || [];
+//     switch(names.length){
+//       case 0: return 'no one likes this'; break;
+//       case 1: return names[0] + ' likes this'; break;
+//       case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
+//       case 3: return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'; break;
+//       default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this';
+//     }
+//   }
+// console.log(likes(["Peter"]))
 //   []                                -->  "no one likes this"
 // ["Peter"]                         -->  "Peter likes this"
 // ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
 // ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+
+//Detect Pangram
+function isPangram(string){
+  const originalAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const upCased = string.toUpperCase().replace(/[^A-Z]/g, "")
+  
+  let arr = []
+  for(let el in upCased) {
+    if(!arr.includes(upCased[el])) {
+      arr.push(upCased[el])
+      
+    }
+  }
+  
+    
+    return arr.length === originalAlpha.length
+  
+}
+//console.log(isPangram("The quick brown fox jumps over the lazy dog."))
+//console.log(isPangram("This is not a pangram."))
+console.log(isPangram('ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ'))
