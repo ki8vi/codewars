@@ -523,22 +523,31 @@
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 
 //Detect Pangram
-function isPangram(string){
-  const originalAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const upCased = string.toUpperCase().replace(/[^A-Z]/g, "")
+// function isPangram(string){
+//   const originalAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   const upCased = string.toUpperCase().replace(/[^A-Z]/g, "")
   
-  let arr = []
-  for(let el in upCased) {
-    if(!arr.includes(upCased[el])) {
-      arr.push(upCased[el])
+//   let arr = []
+//   for(let el in upCased) {
+//     if(!arr.includes(upCased[el])) {
+//       arr.push(upCased[el])
       
-    }
-  }
+//     }
+//   }
   
     
-    return arr.length === originalAlpha.length
+//     return arr.length === originalAlpha.length
   
-}
+// }
 //console.log(isPangram("The quick brown fox jumps over the lazy dog."))
 //console.log(isPangram("This is not a pangram."))
-console.log(isPangram('ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ'))
+//console.log(isPangram('ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ'))
+
+//Digit*Digit
+
+function squareDigits(num){
+  let out = ''
+  String(num).split("").forEach(el => out += el*el)
+  return parseInt(out)
+}
+console.log(squareDigits(2112))
