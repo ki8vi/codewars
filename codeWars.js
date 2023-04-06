@@ -553,21 +553,36 @@
 // console.log(squareDigits(2112))
 
 //Array.diff
-function arrayDiff(a, b) {
-  let arr = []
-  for(let i = 0; i < a.length; i++) {
-    if(!b.includes(a[i])) {
+// function arrayDiff(a, b) {
+//   let arr = []
+//   for(let i = 0; i < a.length; i++) {
+//     if(!b.includes(a[i])) {
       
-      arr.push(a[i])
-    }
+//       arr.push(a[i])
+//     }
     
-  }
-  return arr
-}
+//   }
+//   return arr
+// }
 
-console.log(arrayDiff([1,2], [1]))
-console.log(arrayDiff([1,2], [2]))
-console.log(arrayDiff([1,2,2], [1]))
-console.log(arrayDiff([1,2,2], [2]))
-console.log(arrayDiff([], [1,2]))
-console.log(arrayDiff([1,2,2], []))
+// console.log(arrayDiff([1,2], [1]))
+// console.log(arrayDiff([1,2], [2]))
+// console.log(arrayDiff([1,2,2], [1]))
+// console.log(arrayDiff([1,2,2], [2]))
+// console.log(arrayDiff([], [1,2]))
+// console.log(arrayDiff([1,2,2], []))
+
+//Replace With Alphabet Position
+function alphabetPosition(text) {
+  const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const arr = []
+  let splited = text.replace(/[^a-z]/gi, "").toUpperCase().split("")
+  
+  for(let el in splited) {
+    arr.push(alpha.indexOf(splited[el]) + 1)
+  }
+  
+  return arr.join(" ");
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+//"20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
