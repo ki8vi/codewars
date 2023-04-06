@@ -545,9 +545,29 @@
 
 //Digit*Digit
 
-function squareDigits(num){
-  let out = ''
-  String(num).split("").forEach(el => out += el*el)
-  return parseInt(out)
+// function squareDigits(num){
+//   let out = ''
+//   String(num).split("").forEach(el => out += el*el)
+//   return +out
+// }
+// console.log(squareDigits(2112))
+
+//Array.diff
+function arrayDiff(a, b) {
+  let arr = []
+  for(let i = 0; i < a.length; i++) {
+    if(!b.includes(a[i])) {
+      
+      arr.push(a[i])
+    }
+    
+  }
+  return arr
 }
-console.log(squareDigits(2112))
+
+console.log(arrayDiff([1,2], [1]))
+console.log(arrayDiff([1,2], [2]))
+console.log(arrayDiff([1,2,2], [1]))
+console.log(arrayDiff([1,2,2], [2]))
+console.log(arrayDiff([], [1,2]))
+console.log(arrayDiff([1,2,2], []))
