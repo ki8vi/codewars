@@ -573,16 +573,30 @@
 // console.log(arrayDiff([1,2,2], []))
 
 //Replace With Alphabet Position
-function alphabetPosition(text) {
-  const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const arr = []
-  let splited = text.replace(/[^a-z]/gi, "").toUpperCase().split("")
+// function alphabetPosition(text) {
+//   const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   const arr = []
+//   let splited = text.replace(/[^a-z]/gi, "").toUpperCase().split("")
   
-  for(let el in splited) {
-    arr.push(alpha.indexOf(splited[el]) + 1)
-  }
+//   for(let el in splited) {
+//     arr.push(alpha.indexOf(splited[el]) + 1)
+//   }
   
-  return arr.join(" ");
-}
-console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+//   return arr.join(" ");
+// }
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."))
 //"20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+
+//Extract the domain name from a URL
+function domainName(url){
+  url = url.replace("www.", "")
+  url = url.replace("http://", "")
+  url = url.replace("https://", "")
+  return url = url.split(".")[0]
+}
+console.log(domainName("http://google.com"))
+console.log(domainName("www.xakep.ru"))
+console.log(domainName("https://youtube.com"))
+console.log(domainName("http://google.co.jp"))
+console.log(domainName("http://github.com/carbonfive/raygun"))
+console.log(domainName("http://www.zombie-bites.com" ))
