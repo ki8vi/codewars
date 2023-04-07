@@ -588,15 +588,35 @@
 //"20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
 
 //Extract the domain name from a URL
-function domainName(url){
-  url = url.replace("www.", "")
-  url = url.replace("http://", "")
-  url = url.replace("https://", "")
-  return url = url.split(".")[0]
-}
-console.log(domainName("http://google.com"))
-console.log(domainName("www.xakep.ru"))
-console.log(domainName("https://youtube.com"))
-console.log(domainName("http://google.co.jp"))
-console.log(domainName("http://github.com/carbonfive/raygun"))
-console.log(domainName("http://www.zombie-bites.com" ))
+// function domainName(url){
+//   url = url.replace("www.", "")
+//   url = url.replace("http://", "")
+//   url = url.replace("https://", "")
+//   return url = url.split(".")[0]
+// }
+// console.log(domainName("http://google.com"))
+// console.log(domainName("www.xakep.ru"))
+// console.log(domainName("https://youtube.com"))
+// console.log(domainName("http://google.co.jp"))
+// console.log(domainName("http://github.com/carbonfive/raygun"))
+// console.log(domainName("http://www.zombie-bites.com" ))
+
+//Calculating with Functions
+// const zero = (operation) => !operation ? 0 : operation(0);
+// const one = (operation) => !operation ? 1 : operation(1);
+// const two = (operation) => !operation ? 2 : operation(2);
+// const three = (operation) => !operation ? 3 : operation(3);
+// const four = (operation) => !operation ? 4 : operation(4);
+// const five = (operation) => !operation ? 5 : operation(5);
+// const six = (operation) => !operation ? 6 : operation(6);
+// const seven = (operation) => !operation ? 7 : operation(7);
+// const eight = (operation) => !operation ? 8 : operation(8);
+// const nine = (operation) => !operation ? 9 : operation(9);
+
+// const plus = (number) => (other_number) => other_number + number;
+// const minus = (number) => (other_number) => other_number - number;
+// const times = (number) => (other_number) => other_number * number;
+// const dividedBy = (number) => (other_number) => Math.floor(other_number / number);
+
+// console.log(eight(dividedBy(three())))
+
