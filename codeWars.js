@@ -620,14 +620,14 @@
 
 // console.log(eight(dividedBy(three())))
 //String incrementer
-function incrementString(str) {
-  const body = str.slice(0, -1);
-  console.log(body)
-  const lastDigit = str.slice(-1).match(/[0-9]/);
-  return lastDigit === null
-    ? str + "1"
-    : lastDigit != 9
-    ? body + (+lastDigit + 1)
-    : incrementString(body) + "0";
-}
-console.log(incrementString("00009"))
+// function incrementString(str) {
+//   const body = str.slice(0, -1);
+//   console.log(body)
+//   const lastDigit = str.slice(-1).match(/[0-9]/);
+//   return lastDigit === null
+//     ? str + "1"
+//     : lastDigit != 9
+//     ? body + (+lastDigit + 1)
+//     : incrementString(body) + "0";
+// }
+// console.log(incrementString("00009"))
