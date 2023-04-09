@@ -631,3 +631,21 @@
 //     : incrementString(body) + "0";
 // }
 // console.log(incrementString("00009"))
+
+//Count of positives / sum of negatives
+function countPositivesSumNegatives(input) {
+  let out = []
+  let count = 0
+  let sumNeg = 0
+  for(let el in input) {
+    if (input[el]>0) {
+      count++
+      console.log(count)
+    } else{
+      sumNeg += input[el]
+    }
+  }
+  return input === null || !input.length ? [] : [count, sumNeg]
+  
+}
+console.log(countPositivesSumNegatives([+0,+0]))
