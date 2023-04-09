@@ -633,19 +633,29 @@
 // console.log(incrementString("00009"))
 
 //Count of positives / sum of negatives
-function countPositivesSumNegatives(input) {
-  let out = []
-  let count = 0
-  let sumNeg = 0
-  for(let el in input) {
-    if (input[el]>0) {
-      count++
-      console.log(count)
-    } else{
-      sumNeg += input[el]
-    }
-  }
-  return input === null || !input.length ? [] : [count, sumNeg]
+// function countPositivesSumNegatives(input) {
+//   let out = []
+//   let count = 0
+//   let sumNeg = 0
+//   for(let el in input) {
+//     if (input[el]>0) {
+//       count++
+//       console.log(count)
+//     } else{
+//       sumNeg += input[el]
+//     }
+//   }
+//   return input === null || !input.length ? [] : [count, sumNeg]
   
+// }
+// console.log(countPositivesSumNegatives([+0,+0]))
+//Correct the mistakes of the character recognition software
+
+function correct(string)
+{
+	string = string.replace(/0/g, "O")
+	string = string.replace(/1/g, "I")
+	string = string.replace(/5/g, "S")
+  return string
 }
-console.log(countPositivesSumNegatives([+0,+0]))
+console.log((correct("L0ND0N")))
