@@ -662,24 +662,40 @@
 
 
 //Mexican Wave
-function wave(str){
-  let waveArr = [];
-  for(let i = 0; i < str.length; i++) {
-    let letter = str[i];
+// function wave(str){
+//   let waveArr = [];
+//   for(let i = 0; i < str.length; i++) {
+//     let letter = str[i];
     
-    if (letter === " ") {
+//     if (letter === " ") {
        
-      continue;
+//       continue;
      
-    } else {
-      waveArr.push(str.slice(0, i) + letter.toUpperCase() + str.slice(i + 1))
-      console.log(waveArr)
-    } 
-  }
-  return waveArr;
+//     } else {
+//       waveArr.push(str.slice(0, i) + letter.toUpperCase() + str.slice(i + 1))
+//       console.log(waveArr)
+//     } 
+//   }
+//   return waveArr;
+// }
+// console.log(wave("hello"))
+// console.log(wave("codewars"))
+// console.log(wave(""))
+// console.log(wave("two words"))
+// console.log(wave(" gap "))
+
+//Grasshopper - Grade book
+function getGrade (s1, s2, s3) {
+  let score = (s1 + s2 + s3) / 3
+  if (score < 60) {
+    return "F"
+  } else if(score < 70) {
+    return "D"
+  } else if(score < 80) {
+    return "C"
+  } else if(score < 90) {
+    return "B"
+  } else {return "A"}
 }
-console.log(wave("hello"))
-console.log(wave("codewars"))
-console.log(wave(""))
-console.log(wave("two words"))
-console.log(wave(" gap "))
+console.log(getGrade(95,90,93))
+console.log(getGrade(58,59,60))
