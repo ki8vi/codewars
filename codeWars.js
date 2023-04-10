@@ -651,11 +651,35 @@
 // console.log(countPositivesSumNegatives([+0,+0]))
 //Correct the mistakes of the character recognition software
 
-function correct(string)
-{
-	string = string.replace(/0/g, "O")
-	string = string.replace(/1/g, "I")
-	string = string.replace(/5/g, "S")
-  return string
+// function correct(string)
+// {
+// 	string = string.replace(/0/g, "O")
+// 	string = string.replace(/1/g, "I")
+// 	string = string.replace(/5/g, "S")
+//   return string
+// }
+// console.log((correct("L0ND0N")))
+
+
+//Mexican Wave
+function wave(str){
+  let waveArr = [];
+  for(let i = 0; i < str.length; i++) {
+    let letter = str[i];
+    
+    if (letter === " ") {
+       
+      continue;
+     
+    } else {
+      waveArr.push(str.slice(0, i) + letter.toUpperCase() + str.slice(i + 1))
+      console.log(waveArr)
+    } 
+  }
+  return waveArr;
 }
-console.log((correct("L0ND0N")))
+console.log(wave("hello"))
+console.log(wave("codewars"))
+console.log(wave(""))
+console.log(wave("two words"))
+console.log(wave(" gap "))
