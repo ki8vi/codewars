@@ -718,15 +718,22 @@
 // console.log(rentalCarCost(10))
 
 //Small enough? - Beginner
-function smallEnough(a, limit){
-  for(let el of a) {
-    if(limit < el) {
-      console.log(el)
-      return false
-    }
-  }
-  return true
-}
-console.log(smallEnough([66, 101], 200))
-console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100))
-console.log(smallEnough([101, 45, 75, 105, 99, 107], 107))
+// function smallEnough(a, limit){
+//   for(let el of a) {
+//     if(limit < el) {
+//       console.log(el)
+//       return false
+//     }
+//   }
+//   return true
+// }
+// console.log(smallEnough([66, 101], 200))
+// console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100))
+// console.log(smallEnough([101, 45, 75, 105, 99, 107], 107))
+
+//Reversing Words in a String
+// function reverse(string){
+//   return string.split(" ").reverse().join(" ")
+  
+// }
+// console.log(reverse('no one cares'))
