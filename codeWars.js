@@ -685,17 +685,34 @@
 // console.log(wave(" gap "))
 
 //Grasshopper - Grade book
-function getGrade (s1, s2, s3) {
-  let score = (s1 + s2 + s3) / 3
-  if (score < 60) {
-    return "F"
-  } else if(score < 70) {
-    return "D"
-  } else if(score < 80) {
-    return "C"
-  } else if(score < 90) {
-    return "B"
-  } else {return "A"}
+// function getGrade (s1, s2, s3) {
+//   let score = (s1 + s2 + s3) / 3
+//   if (score < 60) {
+//     return "F"
+//   } else if(score < 70) {
+//     return "D"
+//   } else if(score < 80) {
+//     return "C"
+//   } else if(score < 90) {
+//     return "B"
+//   } else {return "A"}
+// }
+// console.log(getGrade(95,90,93))
+// console.log(getGrade(58,59,60))
+
+//Transportation on vacation
+function rentalCarCost(d) {
+  let perDay = 40;
+  let out = 0
+  if(d >= 7) {
+    out = d * perDay - 50;
+    return out;
+  } else if (d >= 3) {
+    out = d * perDay - 20
+    return out
+  } else {
+    out = d * perDay
+    return out
+  }
 }
-console.log(getGrade(95,90,93))
-console.log(getGrade(58,59,60))
+console.log(rentalCarCost(10))
