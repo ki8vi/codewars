@@ -737,3 +737,16 @@
   
 // }
 // console.log(reverse('no one cares'))
+
+//Make a function that does arithmetic!
+// function arithmetic(a, b, operator){
+//  const option = {
+//   "add": function(a,b){return a+b},
+//   "subtract": function(a,b){return a-b},
+//   "multiply": function(a,b){return a*b},
+//   "divide": function(a,b){return a/b},
+//  }
+//  return option[operator](a,b)
+// }
+
+// console.log(arithmetic(1, 2, "add"))
