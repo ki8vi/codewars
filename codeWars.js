@@ -701,18 +701,32 @@
 // console.log(getGrade(58,59,60))
 
 //Transportation on vacation
-function rentalCarCost(d) {
-  let perDay = 40;
-  let out = 0
-  if(d >= 7) {
-    out = d * perDay - 50;
-    return out;
-  } else if (d >= 3) {
-    out = d * perDay - 20
-    return out
-  } else {
-    out = d * perDay
-    return out
+// function rentalCarCost(d) {
+//   let perDay = 40;
+//   let out = 0
+//   if(d >= 7) {
+//     out = d * perDay - 50;
+//     return out;
+//   } else if (d >= 3) {
+//     out = d * perDay - 20
+//     return out
+//   } else {
+//     out = d * perDay
+//     return out
+//   }
+// }
+// console.log(rentalCarCost(10))
+
+//Small enough? - Beginner
+function smallEnough(a, limit){
+  for(let el of a) {
+    if(limit < el) {
+      console.log(el)
+      return false
+    }
   }
+  return true
 }
-console.log(rentalCarCost(10))
+console.log(smallEnough([66, 101], 200))
+console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100))
+console.log(smallEnough([101, 45, 75, 105, 99, 107], 107))
