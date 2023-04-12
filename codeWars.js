@@ -738,7 +738,7 @@
 // }
 // console.log(reverse('no one cares'))
 
-//Make a function that does arithmetic!
+///Make a function that does arithmetic!
 // function arithmetic(a, b, operator){
 //  const option = {
 //   "add": function(a,b){return a+b},
@@ -750,3 +750,13 @@
 // }
 
 // console.log(arithmetic(1, 2, "add"))
+
+//Simple Fun #176: Reverse Letter
+// function reverseLetter(str) {
+//   str = str.replace(/[^a-z]/g, "");
+//   return str.split("").reverse().join("")
+  
+  
+// }
+// console.log(reverseLetter("ultr53o?n"))
+// console.log(reverseLetter("krishan"))
