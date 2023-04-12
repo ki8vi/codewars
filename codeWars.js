@@ -760,3 +760,11 @@
 // }
 // console.log(reverseLetter("ultr53o?n"))
 // console.log(reverseLetter("krishan"))
+//
+//Vowel Count
+// function getCount(str) {
+//   str = str.replace(/[^aeiou]/g, "")
+  
+//   return str.length;
+// }
+// console.log(getCount("abracadabra"))
