@@ -774,3 +774,8 @@
 //   let str = Number(a) + Number(b)
 //   return str.toString()
 // }
+//Twice as old
+// function twiceAsOld(dad, son) {
+//   return Math.abs(dad - (son+son))
+// }
+// console.log(twiceAsOld(55, 30))
