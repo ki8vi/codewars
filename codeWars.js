@@ -779,3 +779,15 @@
 //   return Math.abs(dad - (son+son))
 // }
 // console.log(twiceAsOld(55, 30))
+
+//Counting Duplicates
+function duplicateCount(text){
+  let arr = text.toUpperCase().split("")
+  let dublicates = arr.filter((el, i) => arr.indexOf(el) !== i)
+  let out = dublicates.filter((el, i) => dublicates.indexOf(el) === i)
+  
+  return out.length
+   
+}
+console.log(duplicateCount("Indivisibilities"))
+console.log(duplicateCount("aA11"))
