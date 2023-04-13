@@ -768,3 +768,9 @@
 //   return str.length;
 // }
 // console.log(getCount("abracadabra"))
+
+//Sum The Strings
+// function sumStr(a,b) {
+//   let str = Number(a) + Number(b)
+//   return str.toString()
+// }
