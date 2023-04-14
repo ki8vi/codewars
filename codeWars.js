@@ -781,13 +781,26 @@
 // console.log(twiceAsOld(55, 30))
 
 //Counting Duplicates
-function duplicateCount(text){
-  let arr = text.toUpperCase().split("")
-  let dublicates = arr.filter((el, i) => arr.indexOf(el) !== i)
-  let out = dublicates.filter((el, i) => dublicates.indexOf(el) === i)
+// function duplicateCount(text){
+//   let arr = text.toUpperCase().split("")
+//   let dublicates = arr.filter((el, i) => arr.indexOf(el) !== i)
+//   let out = dublicates.filter((el, i) => dublicates.indexOf(el) === i)
   
-  return out.length
+//   return out.length
    
-}
-console.log(duplicateCount("Indivisibilities"))
-console.log(duplicateCount("aA11"))
+// }
+// console.log(duplicateCount("Indivisibilities"))
+// console.log(duplicateCount("aA11"))
+
+//All Star Code Challenge #15
+// function rotate(str){
+// const out = []
+// for(let i = 1; i < str.length; i++) {
+//   out.push(str.slice(i)+str.slice(0, i)) 
+// }
+// out.push(str)  
+// return str.length === 0 ? [] : out
+// }
+// console.log(rotate("Hello"))
+// console.log(rotate(""))
+ // => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
