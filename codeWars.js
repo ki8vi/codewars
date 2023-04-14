@@ -804,3 +804,10 @@
 // console.log(rotate("Hello"))
 // console.log(rotate(""))
  // => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
+
+ //Friend or Foe?
+ function friend(friends){
+  return friends.filter(el => el.length === 4)
+}
+console.log(friend(["Love", "Your", "Face", "1"]))
+console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
