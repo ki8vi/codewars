@@ -806,8 +806,39 @@
  // => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
 
  //Friend or Foe?
- function friend(friends){
-  return friends.filter(el => el.length === 4)
+//  function friend(friends){
+//   return friends.filter(el => el.length === 4)
+// }
+// console.log(friend(["Love", "Your", "Face", "1"]))
+// console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
+
+// Roman Numerals Decoder
+function solution (roman) {
+  const cur = {
+  "I": 1,
+  "V": 5,
+  "X": 10,
+  "L": 50,
+  "C": 100,
+  "D": 500,
+  "M": 1000
+  }
+  let rest
+  let out = 0;
+  for(let i = 0; i < roman.length; i++) {
+  if(cur[roman[i]] < cur[roman[i+1]]) {
+    rest = cur[roman[i]] 
+    out -= rest
+  } else {
+    out += cur[roman[i]]
+    }
+    
+ }
+ 	return out;
 }
-console.log(friend(["Love", "Your", "Face", "1"]))
-console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
+console.log(solution('MDCLXVI'))
+console.log(solution('IV'))
+console.log(solution('XXI'))
+console.log(solution('IX'))
+console.log(solution("MMMCDXIII"))
+
