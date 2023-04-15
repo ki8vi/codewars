@@ -813,32 +813,51 @@
 // console.log(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]))
 
 // Roman Numerals Decoder
-function solution (roman) {
-  const cur = {
-  "I": 1,
-  "V": 5,
-  "X": 10,
-  "L": 50,
-  "C": 100,
-  "D": 500,
-  "M": 1000
-  }
-  let rest
-  let out = 0;
-  for(let i = 0; i < roman.length; i++) {
-  if(cur[roman[i]] < cur[roman[i+1]]) {
-    rest = cur[roman[i]] 
-    out -= rest
-  } else {
-    out += cur[roman[i]]
-    }
+// function solution (roman) {
+//   const cur = {
+//   "I": 1,
+//   "V": 5,
+//   "X": 10,
+//   "L": 50,
+//   "C": 100,
+//   "D": 500,
+//   "M": 1000
+//   }
+//   let rest
+//   let out = 0;
+//   for(let i = 0; i < roman.length; i++) {
+//   if(cur[roman[i]] < cur[roman[i+1]]) {
+//     rest = cur[roman[i]] 
+//     out -= rest
+//   } else {
+//     out += cur[roman[i]]
+//     }
     
- }
- 	return out;
-}
-console.log(solution('MDCLXVI'))
-console.log(solution('IV'))
-console.log(solution('XXI'))
-console.log(solution('IX'))
-console.log(solution("MMMCDXIII"))
+//  }
+//  	return out;
+// }
+// console.log(solution('MDCLXVI'))
+// console.log(solution('IV'))
+// console.log(solution('XXI'))
+// console.log(solution('IX'))
+// console.log(solution("MMMCDXIII"))
 
+//Sort the odd
+// function sortArray(arr) {
+//   let oddNum = arr.filter(el => el%2!==0).sort((a,b) => a-b)
+//   let evenNum = arr.filter(el => el%2===0)
+//   let out = []
+//   console.log(evenNum, oddNum)
+//   for(let el in arr) {
+//     if(arr[el] % 2 !== 0) {
+//       out.push(oddNum.shift())
+//       console.log(out)
+//     } else {
+//       out.push(evenNum.shift())
+//       console.log(out)
+//     }
+//   }
+//     return out
+//   }
+
+// console.log(sortArray([5, 3, 2, 8, 1, 4]))
