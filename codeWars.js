@@ -871,28 +871,36 @@
 // console.log(isPalindrome("maM"))
 
 //Switch it Up!
-function switchItUp(number){
-  switch(number) {
-    case 0:
-      return "Zero"
-    case 1:
-      return "One"
-    case 2:
-      return "Two"
-    case 3:
-      return "Three"
-    case 4:
-      return "Four"
-    case 5:
-      return "Five"
-    case 6:
-      return "Six"
-    case 7:
-      return "Seven"
-    case 8:
-      return "Eight"
-    case 9:
-      return "Nine"
-  }
-  }
-console.log(switchItUp(9))
+// function switchItUp(number){
+//   switch(number) {
+//     case 0:
+//       return "Zero"
+//     case 1:
+//       return "One"
+//     case 2:
+//       return "Two"
+//     case 3:
+//       return "Three"
+//     case 4:
+//       return "Four"
+//     case 5:
+//       return "Five"
+//     case 6:
+//       return "Six"
+//     case 7:
+//       return "Seven"
+//     case 8:
+//       return "Eight"
+//     case 9:
+//       return "Nine"
+//   }
+//   }
+// console.log(switchItUp(9))
+
+//Find the unique number
+function findUniq(arr) {
+  return arr = arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el))   
+}
+console.log(findUniq([ 3, 10, 3, 3, 3 ]))
+console.log(findUniq([1, +0, +0]))
+console.log(findUniq([ 1, 0, 0 ]))
