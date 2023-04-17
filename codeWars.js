@@ -898,9 +898,45 @@
 // console.log(switchItUp(9))
 
 //Find the unique number
-function findUniq(arr) {
-  return arr = arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el))   
-}
-console.log(findUniq([ 3, 10, 3, 3, 3 ]))
-console.log(findUniq([1, +0, +0]))
-console.log(findUniq([ 1, 0, 0 ]))
+// function findUniq(arr) {
+//   return arr = arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el))   
+// }
+// console.log(findUniq([ 3, 10, 3, 3, 3 ]))
+// console.log(findUniq([1, +0, +0]))
+// console.log(findUniq([ 1, 0, 0 ]))
+
+//
+//Compare Number
+// const compare = (a, b) => {
+//   if (a.includes(".") || b.includes(".")) { 
+//       return +a > +b ? "greater" : +a < +b ? "less" : "equal";
+//   }
+// return BigInt(a) > BigInt(b) ? "greater" : BigInt(a) < BigInt(b) ? "less" : "equal";
+// }
+// console.log(compare("2","12"))
+// console.log(compare("1000000000000000000000000000000000","1000000000000000000000000000000001"))
+// console.log(compare("999","1000"))
+// console.log(compare("999","-00000000000001000.00"))
+// console.log(compare("999","1"))
+// console.log(compare("-0123.09","123.08"))
+// console.log(compare("875","799"))
+
+//Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+// function replace(s){
+//   s = s.replace(/[aeiouAEIOU]/g, '!')
+//   return s
+// }
+// console.log(replace("ABCDE"))
+
+//Find Multiples of a Number
+// function findMultiples(integer, limit) {
+//   const out = []
+//   const len = Math.floor(limit / integer);
+  
+//   for(let i = 1; i <= len; i++) {
+//   out.push(integer*i)  
+  
+//   }
+//   return out
+// }
+// console.log(findMultiples(11, 54))
