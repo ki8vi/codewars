@@ -942,13 +942,21 @@
 // console.log(findMultiples(11, 54))
 
 //Two to One
-function longest(s1, s2) {
-  s1 = s1.split("").filter((el, i) => s1.indexOf(el) == i)
-  s2 = s2.split("").filter((el, i) => s2.indexOf(el) == i)
-  let out = s1 + s2
-  out = out.split("").filter((el, i) => out.indexOf(el) === i).sort().join("")
-  console.log(out)
-  return out.replace(",", "")
+// function longest(s1, s2) {
+//   s1 = s1.split("").filter((el, i) => s1.indexOf(el) == i)
+//   s2 = s2.split("").filter((el, i) => s2.indexOf(el) == i)
+//   let out = s1 + s2
+//   out = out.split("").filter((el, i) => out.indexOf(el) === i).sort().join("")
+//   console.log(out)
+//   return out.replace(",", "")
+// }
+// console.log(longest("aretheyhere", "yestheyarehere"))
+// console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"))
+
+//Find the odd int
+function findOdd(arr) {
+  return arr.reduce((acc, item) => acc ^ item)
 }
-console.log(longest("aretheyhere", "yestheyarehere"))
-console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"))
+console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
+console.log(findOdd([1,1,2,-2,5,2,4,4,-1,-2,5]))
+
