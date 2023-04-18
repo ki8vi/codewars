@@ -940,3 +940,15 @@
 //   return out
 // }
 // console.log(findMultiples(11, 54))
+
+//Two to One
+function longest(s1, s2) {
+  s1 = s1.split("").filter((el, i) => s1.indexOf(el) == i)
+  s2 = s2.split("").filter((el, i) => s2.indexOf(el) == i)
+  let out = s1 + s2
+  out = out.split("").filter((el, i) => out.indexOf(el) === i).sort().join("")
+  console.log(out)
+  return out.replace(",", "")
+}
+console.log(longest("aretheyhere", "yestheyarehere"))
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"))
