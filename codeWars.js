@@ -977,6 +977,25 @@
 // console.log(keepOrder([-5, -4, -2, -1, 1, 2], -2))
 // console.log(keepOrder([1, 2, 3, 4], 5))
 
-function unusualFive() {
-  return Number("5");
+// function unusualFive() {
+//   let arr = [true, true, true, true, false]
+//   return arr.length;
+// }
+// console.log(unusualFive())
+
+//Odd or Even?
+function oddOrEven(array) {
+  if(array.length > 0) {
+    const sum = array.reduce((acc, el) => acc += el)
+  if(sum % 2 === 0) {
+    return "even"
+  }
+  if (sum % 2 !== 0) {
+    return "odd"
+  } 
+  }
+  
+  return "even"
 }
+console.log(oddOrEven([1023, 1, 2]))
+console.log(oddOrEven([]))
