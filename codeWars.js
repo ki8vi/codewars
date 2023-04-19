@@ -954,9 +954,29 @@
 // console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"))
 
 //Find the odd int
-function findOdd(arr) {
-  return arr.reduce((acc, item) => acc ^ item)
-}
-console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
-console.log(findOdd([1,1,2,-2,5,2,4,4,-1,-2,5]))
+// function findOdd(arr) {
+//   return arr.reduce((acc, item) => acc ^ item)
+// }
+// console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
+// console.log(findOdd([1,1,2,-2,5,2,4,4,-1,-2,5]))
 
+//Keep the Order
+// function keepOrder(arr, val) {
+//   let i
+//   for(i = 0; i < arr.length; i++) {
+//     if(val <= arr[i]) {
+//       console.log(arr[i])
+//       break
+//     }
+//   }
+//   return i
+// }
+// console.log(keepOrder([1, 2, 3, 4, 7], 5))
+// console.log(keepOrder([1, 2, 3, 4, 7], 0))
+// console.log(keepOrder([1, 1, 2, 2, 2], 2))
+// console.log(keepOrder([-5, -4, -2, -1, 1, 2], -2))
+// console.log(keepOrder([1, 2, 3, 4], 5))
+
+function unusualFive() {
+  return Number("5");
+}
