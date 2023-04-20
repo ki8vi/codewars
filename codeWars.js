@@ -984,18 +984,29 @@
 // console.log(unusualFive())
 
 //Odd or Even?
-function oddOrEven(array) {
-  if(array.length > 0) {
-    const sum = array.reduce((acc, el) => acc += el)
-  if(sum % 2 === 0) {
-    return "even"
-  }
-  if (sum % 2 !== 0) {
-    return "odd"
-  } 
-  }
+// function oddOrEven(array) {
+//   if(array.length > 0) {
+//     const sum = array.reduce((acc, el) => acc += el)
+//   if(sum % 2 === 0) {
+//     return "even"
+//   }
+//   if (sum % 2 !== 0) {
+//     return "odd"
+//   } 
+//   }
   
-  return "even"
-}
-console.log(oddOrEven([1023, 1, 2]))
-console.log(oddOrEven([]))
+//   return "even"
+// }
+// console.log(oddOrEven([1023, 1, 2]))
+// console.log(oddOrEven([]))
+
+//Area or Perimeter
+// const areaOrPerimeter = function(l , w) {
+//   if(l === w) {
+//     return l*w
+//   }
+//   return l+l + w+w
+// };
+
+// console.log(areaOrPerimeter(3,  3))
+// console.log(areaOrPerimeter(6,  10))
