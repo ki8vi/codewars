@@ -1010,3 +1010,11 @@
 
 // console.log(areaOrPerimeter(3,  3))
 // console.log(areaOrPerimeter(6,  10))
+
+//Disemvowel Trolls
+function disemvowel(str) {
+  return str.replace(/[aeoui]/gi, "");
+}
+console.log(disemvowel("This website is for losers LOL!"))
+console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"))
+console.log(disemvowel("What are you, a communist?"))
