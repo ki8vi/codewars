@@ -1012,9 +1012,25 @@
 // console.log(areaOrPerimeter(6,  10))
 
 //Disemvowel Trolls
-function disemvowel(str) {
-  return str.replace(/[aeoui]/gi, "");
+// function disemvowel(str) {
+//   return str.replace(/[aeoui]/gi, "");
+// }
+// console.log(disemvowel("This website is for losers LOL!"))
+// console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"))
+// console.log(disemvowel("What are you, a communist?"))
+
+//Give me a Diamond
+function diamond(n){
+  if (n < 0 || !(n % 2)) return null; 
+  const middleIndex = Math.floor(n / 2);
+  
+  return Array.apply(null, {length: n})
+      .map((el, index) => {
+        const indentation = Math.abs(index - middleIndex);
+        const numberOfAsterisks = n - indentation * 2;
+        return Array(indentation + 1).join(' ') + Array(numberOfAsterisks + 1).join('*');
+      })
+      .join('\n') + '\n';
 }
-console.log(disemvowel("This website is for losers LOL!"))
-console.log(disemvowel("No offense but,\nYour writing is among the worst I've ever read"))
-console.log(disemvowel("What are you, a communist?"))
+console.log(diamond(5))
+console.log(diamond(1))
