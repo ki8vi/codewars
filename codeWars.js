@@ -1020,17 +1020,73 @@
 // console.log(disemvowel("What are you, a communist?"))
 
 //Give me a Diamond
-function diamond(n){
-  if (n < 0 || !(n % 2)) return null; 
-  const middleIndex = Math.floor(n / 2);
+// function diamond(n){
+//   if (n < 0 || !(n % 2)) return null; 
+//   const middleIndex = Math.floor(n / 2);
   
-  return Array.apply(null, {length: n})
-      .map((el, index) => {
-        const indentation = Math.abs(index - middleIndex);
-        const numberOfAsterisks = n - indentation * 2;
-        return Array(indentation + 1).join(' ') + Array(numberOfAsterisks + 1).join('*');
-      })
-      .join('\n') + '\n';
+//   return Array.apply(null, {length: n})
+//       .map((el, index) => {
+//         const indentation = Math.abs(index - middleIndex);
+//         const numberOfAsterisks = n - indentation * 2;
+//         return Array(indentation + 1).join(' ') + Array(numberOfAsterisks + 1).join('*');
+//       })
+//       .join('\n') + '\n';
+// }
+// console.log(diamond(5))
+// console.log(diamond(1))
+//Find Cracker.
+//
+//Merge two sorted arrays into one
+// function mergeArrays(arr1, arr2) {
+//   let out = []
+// out = arr1.concat(arr2).sort((a,b) => a-b)
+//   return arr1.length === 0 && arr2.length === 0 ? [] : out.filter((el , i) => out.indexOf(el) === i)
+// }
+// console.log(mergeArrays([1,3,5,7,9,11,12], [1,2,3,4,5,10,12]))
+
+//Grasshopper - Check for factor
+// function checkForFactor (base, factor) {
+//   return base % factor === 0
+//  }
+//  console.log(checkForFactor(9,2))
+//  console.log(checkForFactor(10,2))
+
+// const twoSum = function(nums, target) {
+//   const out = []
+//   for(let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if(target === nums[i] + nums[j]) {
+//         out.push(i, j)
+//       }
+//     }
+//   }
+//   return out
+// };
+// console.log(twoSum([2,7,11,15], 9))
+
+// var isPalindrome = function(x) {
+  
+//   return x.toString().split("").reverse().join() === x.toString().split("").join()
+  
+// };
+// console.log(isPalindrome(1))
+
+//
+//Mumbling
+function accum(s) {
+  s = s.toLowerCase()
+	let out = ""
+  for(let i = 0; i < s.length; i++) {
+    out += s[i].toUpperCase() + s[i].repeat(i)
+    out += "-"
+   
+  }
+  out = out.slice(0, out.length-1)
+  return out
 }
-console.log(diamond(5))
-console.log(diamond(1))
+console.log(accum("abcd"))
+console.log(accum("RqaEzty"))
+console.log(accum("cwAt"))
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
