@@ -1111,12 +1111,27 @@
 // console.log(countSmileys([':)',':(',':D',':O',':;']))
 
 //The Coupon Code
-function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
-  let today = new Date(currentDate)
-  let expDay = new Date(expirationDate)
-  const isCorrect = expDay - today
-  return enteredCode === correctCode && isCorrect >= 0 ? true : false
+// function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+//   let today = new Date(currentDate)
+//   let expDay = new Date(expirationDate)
+//   const isCorrect = expDay - today
+//   return enteredCode === correctCode && isCorrect >= 0 ? true : false
   
+// }
+// console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'))
+// console.log(checkCoupon('123ablqc0', '123ablqc0', 'July 5, 2000', 'July 5, 2000'))
+
+//Number of People in the Bus
+var number = function(busStops){
+let totalIn = 0
+let totalOut = 0
+  for(let el in busStops) {
+    totalIn += busStops[el][0]
+    totalOut += busStops[el][1]
+    }
+  
+    console.log(totalIn - totalOut)
+  return totalIn-totalOut
 }
-console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'))
-console.log(checkCoupon('123ablqc0', '123ablqc0', 'July 5, 2000', 'July 5, 2000'))
+console.log(number([[10,0],[3,5],[5,8]]))
+console.log(number([]))
