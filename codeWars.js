@@ -1073,20 +1073,39 @@
 
 //
 //Mumbling
-function accum(s) {
-  s = s.toLowerCase()
-	let out = ""
-  for(let i = 0; i < s.length; i++) {
-    out += s[i].toUpperCase() + s[i].repeat(i)
-    out += "-"
+// function accum(s) {
+//   s = s.toLowerCase()
+// 	let out = ""
+//   for(let i = 0; i < s.length; i++) {
+//     out += s[i].toUpperCase() + s[i].repeat(i)
+//     out += "-"
    
-  }
-  out = out.slice(0, out.length-1)
-  return out
-}
-console.log(accum("abcd"))
-console.log(accum("RqaEzty"))
-console.log(accum("cwAt"))
+//   }
+//   out = out.slice(0, out.length-1)
+//   return out
+// }
+// console.log(accum("abcd"))
+// console.log(accum("RqaEzty"))
+// console.log(accum("cwAt"))
 // accum("abcd") -> "A-Bb-Ccc-Dddd"
 // accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
 // accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
+//Count the smiley faces!
+// function countSmileys(arr) {
+//   const smile = [":)",";)",":D",";D",":-D",":~D",":-)",":~)",";~D",";~)",";-D",";-)"]
+//   //arr = arr.join()
+//   let count = 0
+//   for(let el in arr) {
+//     if(smile.includes(arr[el])) {
+//       console.log(arr[el])
+//       count +=1
+//     }
+//   }
+  
+    
+//   return arr.length === 0 ? 0 : count;
+// }
+// console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))
+// console.log(countSmileys([':D',':~)',';~D',':)']))
+// console.log(countSmileys([':)',':(',':D',':O',':;']))
