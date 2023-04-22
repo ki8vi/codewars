@@ -1109,3 +1109,14 @@
 // console.log(countSmileys([';]', ':[', ';*', ':$', ';-D']))
 // console.log(countSmileys([':D',':~)',';~D',':)']))
 // console.log(countSmileys([':)',':(',':D',':O',':;']))
+
+//The Coupon Code
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  let today = new Date(currentDate)
+  let expDay = new Date(expirationDate)
+  const isCorrect = expDay - today
+  return enteredCode === correctCode && isCorrect >= 0 ? true : false
+  
+}
+console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'))
+console.log(checkCoupon('123ablqc0', '123ablqc0', 'July 5, 2000', 'July 5, 2000'))
