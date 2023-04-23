@@ -1122,16 +1122,23 @@
 // console.log(checkCoupon('123ablqc0', '123ablqc0', 'July 5, 2000', 'July 5, 2000'))
 
 //Number of People in the Bus
-var number = function(busStops){
-let totalIn = 0
-let totalOut = 0
-  for(let el in busStops) {
-    totalIn += busStops[el][0]
-    totalOut += busStops[el][1]
-    }
+// var number = function(busStops){
+// let totalIn = 0
+// let totalOut = 0
+//   for(let el in busStops) {
+//     totalIn += busStops[el][0]
+//     totalOut += busStops[el][1]
+//     }
   
-    console.log(totalIn - totalOut)
-  return totalIn-totalOut
-}
-console.log(number([[10,0],[3,5],[5,8]]))
-console.log(number([]))
+//     console.log(totalIn - totalOut)
+//   return totalIn-totalOut
+// }
+// console.log(number([[10,0],[3,5],[5,8]]))
+// console.log(number([]))
+
+//Is this a triangle?
+// function isTriangle(a,b,c)
+// {
+//    return a + b > c && a + c > b && c + b > a; 
+// }
+// console.log(isTriangle(7,2,2))
