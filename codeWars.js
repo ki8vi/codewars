@@ -1142,3 +1142,18 @@
 //    return a + b > c && a + c > b && c + b > a; 
 // }
 // console.log(isTriangle(7,2,2))
+
+//Find the middle element
+function gimme (triplet) {
+  let sorted = []
+  let middle = 0
+  for(let el in triplet) {
+    sorted.push(triplet[el])
+    sorted.sort((a, b) => a - b)
+    middle = sorted[1]
+  }
+   return triplet.indexOf(middle)
+}
+
+console.log(gimme([2, 3, 1]))
+console.log(gimme([5.9, 10.4, 14.2]))
