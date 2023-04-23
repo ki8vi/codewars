@@ -1144,16 +1144,52 @@
 // console.log(isTriangle(7,2,2))
 
 //Find the middle element
-function gimme (triplet) {
-  let sorted = []
-  let middle = 0
-  for(let el in triplet) {
-    sorted.push(triplet[el])
-    sorted.sort((a, b) => a - b)
-    middle = sorted[1]
-  }
-   return triplet.indexOf(middle)
-}
+// function gimme (triplet) {
+//   let sorted = []
+//   let middle = 0
+//   for(let el in triplet) {
+//     sorted.push(triplet[el])
+//     sorted.sort((a, b) => a - b)
+//     middle = sorted[1]
+//   }
+//    return triplet.indexOf(middle)
+// }
 
-console.log(gimme([2, 3, 1]))
-console.log(gimme([5.9, 10.4, 14.2]))
+// console.log(gimme([2, 3, 1]))
+// console.log(gimme([5.9, 10.4, 14.2]))
+
+//How good are you really?
+// function betterThanAverage(classPoints, yourPoints) {
+//   classPoints.push(yourPoints)
+//   let averageScore = classPoints.reduce((acc, el) => acc + el) 
+//   averageScore = averageScore / classPoints.length
+//   console.log(averageScore)
+//   return averageScore < yourPoints ? true : false
+// }
+// //console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
+// console.log(betterThanAverage([2, 3], 5) )
+
+function greet(language) {
+	const lang = {
+    "english": 'Welcome',
+"czech": 'Vitejte',
+"danish": 'Velkomst',
+"dutch": 'Welkom',
+"estonian": 'Tere tulemast',
+"finnish": 'Tervetuloa',
+"flemish": 'Welgekomen',
+"french": 'Bienvenue',
+"german": 'Willkommen',
+"irish": 'Failte',
+"italian": 'Benvenuto',
+"latvian": 'Gaidits',
+"lithuanian": 'Laukiamas',
+"polish": 'Witamy',
+"spanish": 'Bienvenido',
+"swedish": 'Valkommen',
+"welsh": 'Croeso'
+}
+  return lang.hasOwnProperty(language) ? lang[language] : 'Welcome'
+}
+console.log(greet('dutch'))
+console.log(greet('duch'))
