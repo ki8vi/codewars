@@ -1169,27 +1169,33 @@
 // //console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
 // console.log(betterThanAverage([2, 3], 5) )
 
-function greet(language) {
-	const lang = {
-    "english": 'Welcome',
-"czech": 'Vitejte',
-"danish": 'Velkomst',
-"dutch": 'Welkom',
-"estonian": 'Tere tulemast',
-"finnish": 'Tervetuloa',
-"flemish": 'Welgekomen',
-"french": 'Bienvenue',
-"german": 'Willkommen',
-"irish": 'Failte',
-"italian": 'Benvenuto',
-"latvian": 'Gaidits',
-"lithuanian": 'Laukiamas',
-"polish": 'Witamy',
-"spanish": 'Bienvenido',
-"swedish": 'Valkommen',
-"welsh": 'Croeso'
+// function greet(language) {
+// 	const lang = {
+//     "english": 'Welcome',
+// "czech": 'Vitejte',
+// "danish": 'Velkomst',
+// "dutch": 'Welkom',
+// "estonian": 'Tere tulemast',
+// "finnish": 'Tervetuloa',
+// "flemish": 'Welgekomen',
+// "french": 'Bienvenue',
+// "german": 'Willkommen',
+// "irish": 'Failte',
+// "italian": 'Benvenuto',
+// "latvian": 'Gaidits',
+// "lithuanian": 'Laukiamas',
+// "polish": 'Witamy',
+// "spanish": 'Bienvenido',
+// "swedish": 'Valkommen',
+// "welsh": 'Croeso'
+// }
+//   return lang.hasOwnProperty(language) ? lang[language] : 'Welcome'
+// }
+// console.log(greet('dutch'))
+// console.log(greet('duch'))
+
+//Hello World - Without Strings
+const helloWorld = () => {
+ return String.fromCharCode(72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33)
 }
-  return lang.hasOwnProperty(language) ? lang[language] : 'Welcome'
-}
-console.log(greet('dutch'))
-console.log(greet('duch'))
+console.log(helloWorld())
