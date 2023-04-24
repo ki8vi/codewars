@@ -1195,7 +1195,28 @@
 // console.log(greet('duch'))
 
 //Hello World - Without Strings
-const helloWorld = () => {
- return String.fromCharCode(72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33)
+// const helloWorld = () => {
+//  return String.fromCharCode(72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33)
+// }
+// console.log(helloWorld())
+
+//Write Number in Expanded Form
+function expandedForm(num) {
+  let out = []
+  num = num.toString().split("")
+  for(let i = 0; i < num.length; i++) {
+    if(num[i] === "0") {
+      console.log(out)
+      
+    } else {
+      out.push(num[i] + "0".repeat(num.slice(i).length-1) )
+      
+    }
+    
+  }
+  
+  return out.join(" + ")
 }
-console.log(helloWorld())
+console.log(expandedForm(12))
+console.log(expandedForm(70304))
+console.log(expandedForm(55))
