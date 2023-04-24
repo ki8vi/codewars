@@ -1205,13 +1205,11 @@ function expandedForm(num) {
   let out = []
   num = num.toString().split("")
   for(let i = 0; i < num.length; i++) {
-    if(num[i] === "0") {
-      console.log(out)
+    
+    if(num[i] !== "0") {
       
-    } else {
       out.push(num[i] + "0".repeat(num.slice(i).length-1) )
-      
-    }
+    } 
     
   }
   
