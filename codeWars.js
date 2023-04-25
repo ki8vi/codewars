@@ -1201,20 +1201,43 @@
 // console.log(helloWorld())
 
 //Write Number in Expanded Form
-function expandedForm(num) {
-  let out = []
-  num = num.toString().split("")
-  for(let i = 0; i < num.length; i++) {
+// function expandedForm(num) {
+//   let out = []
+//   num = num.toString().split("")
+//   for(let i = 0; i < num.length; i++) {
     
-    if(num[i] !== "0") {
+//     if(num[i] !== "0") {
       
-      out.push(num[i] + "0".repeat(num.slice(i).length-1) )
-    } 
+//       out.push(num[i] + "0".repeat(num.slice(i).length-1) )
+//     } 
     
-  }
+//   }
   
-  return out.join(" + ")
+//   return out.join(" + ")
+// }
+// console.log(expandedForm(12))
+// console.log(expandedForm(70304))
+// console.log(expandedForm(55))
+
+//Highest Scoring Word
+function high(x) {
+  const words = x.split(' ');
+  const alphabetMap = {};
+  for (let i='a'.charCodeAt(), j = 1; i <= 'z'.charCodeAt(); i++, j++) {
+    alphabetMap[i] = j;
+  }
+  console.log(alphabetMap)
+  let highestScoringWord = { word: '', score: 0 };
+  words.forEach(w => {
+    const chars = w.split('');
+    const sumOfChars = chars.reduce((count, char) => count + alphabetMap[char.charCodeAt()], 0);
+    if (sumOfChars > highestScoringWord.score) {
+      highestScoringWord = { word: w, score: sumOfChars };
+    }
+  });
+
+  return highestScoringWord.word;
 }
-console.log(expandedForm(12))
-console.log(expandedForm(70304))
-console.log(expandedForm(55))
+console.log(high('take me to semynak'))
+console.log(high('aa b'))
+console.log(high('b aa'))
