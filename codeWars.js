@@ -1243,8 +1243,21 @@
 // console.log(high('b aa'))
 
 //Exclamation marks series #1: Remove an exclamation mark from the end of string
-function remove (string) {
-  //coding and coding....
-   return string[string.length-1] === "!" ? string = string.slice(0, string.length-1) : string
-}
-console.log(remove("Hi"))
+// function remove (string) {
+//   //coding and coding....
+//    return string[string.length-1] === "!" ? string = string.slice(0, string.length-1) : string
+// }
+// console.log(remove("Hi"))
+
+//Add Length
+// function addLength(str) {
+//   str = str.split(" ")
+//   let res = []
+//   for(let el in str) {
+//     res.push(str[el] + " " + str[el].length)
+//   }
+//   return res
+// }
+// console.log(addLength("apple ban"))
+// console.log(addLength("you will win"))
+  
