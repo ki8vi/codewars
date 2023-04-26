@@ -1260,4 +1260,33 @@
 // }
 // console.log(addLength("apple ban"))
 // console.log(addLength("you will win"))
+ //Hello, Name or World!
+//  function hello(name) {
+//   if(!name) return "Hello, World!"
+//   name = name[0].toUpperCase() + name.slice(1).toLowerCase()
+//   console.log(name)
+//   return `Hello, ${name}!` 
+// }
+// console.log(hello("eee"))
+//Remove Duplicates from Sorted Array
+// var removeDuplicates = function(nums) {
+// nums = nums.filter((el, i) => nums.indexOf(el) === i)
   
+  
+//   return nums
+// };
+// console.log(removeDuplicates([1,1,2]))
+// console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
+//
+//Sum Factorial
+function sumFactorial(arr){
+  const factorial = (n) => (n != 1) ? n * factorial(n - 1) : 1;
+  
+  // let out = 0
+  // for(let el in arr) {
+  //   out += factorial(arr[el])
+  // }
+  return arr.reduce((acc, el) => acc+=factorial(el), 0)
+}
+console.log(sumFactorial([4,6]))
+console.log(sumFactorial([5,4,1]))
