@@ -1279,14 +1279,23 @@
 // console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
 //
 //Sum Factorial
-function sumFactorial(arr){
-  const factorial = (n) => (n != 1) ? n * factorial(n - 1) : 1;
+// function sumFactorial(arr){
+//   const factorial = (n) => (n != 1) ? n * factorial(n - 1) : 1;
   
-  // let out = 0
-  // for(let el in arr) {
-  //   out += factorial(arr[el])
-  // }
-  return arr.reduce((acc, el) => acc+=factorial(el), 0)
+//   // let out = 0
+//   // for(let el in arr) {
+//   //   out += factorial(arr[el])
+//   // }
+//   return arr.reduce((acc, el) => acc+=factorial(el), 0)
+// }
+// console.log(sumFactorial([4,6]))
+// console.log(sumFactorial([5,4,1]))
+//Student's Final Grade
+function finalGrade (exam, projects) {
+  if(exam > 90 || projects > 10) return 100;
+  if(exam > 75 && projects >= 5) return 90;
+  if(exam > 50 && projects >= 2) return 75;
+  
+  return 0
 }
-console.log(sumFactorial([4,6]))
-console.log(sumFactorial([5,4,1]))
+console.log(finalGrade(55, 3))
