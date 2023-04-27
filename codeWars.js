@@ -1291,11 +1291,35 @@
 // console.log(sumFactorial([4,6]))
 // console.log(sumFactorial([5,4,1]))
 //Student's Final Grade
-function finalGrade (exam, projects) {
-  if(exam > 90 || projects > 10) return 100;
-  if(exam > 75 && projects >= 5) return 90;
-  if(exam > 50 && projects >= 2) return 75;
+// function finalGrade (exam, projects) {
+//   if(exam > 90 || projects > 10) return 100;
+//   if(exam > 75 && projects >= 5) return 90;
+//   if(exam > 50 && projects >= 2) return 75;
   
-  return 0
+//   return 0
+// }
+// console.log(finalGrade(55, 3))
+
+//Complementary DNA
+function DNAStrand(dna){
+  let out = ""
+  for(let el in dna) {
+    if (dna[el] === "A") {
+      out += "T"
+    }
+    if(dna[el] === "T") {
+      out += "A"
+    }
+    if(dna[el] === "G") {
+      out += "C"
+    }
+    if(dna[el] === "C") {
+      out += "G"
+    }
+  }
+   
+  return out
 }
-console.log(finalGrade(55, 3))
+console.log(DNAStrand("ATTGC"))
+console.log(DNAStrand("AAAA"))
+console.log(DNAStrand(""))
