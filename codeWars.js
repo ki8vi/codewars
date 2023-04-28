@@ -1301,25 +1301,63 @@
 // console.log(finalGrade(55, 3))
 
 //Complementary DNA
-function DNAStrand(dna){
-  let out = ""
-  for(let el in dna) {
-    if (dna[el] === "A") {
-      out += "T"
-    }
-    if(dna[el] === "T") {
-      out += "A"
-    }
-    if(dna[el] === "G") {
-      out += "C"
-    }
-    if(dna[el] === "C") {
-      out += "G"
-    }
-  }
+// function DNAStrand(dna){
+//   let out = ""
+//   for(let el in dna) {
+//     if (dna[el] === "A") {
+//       out += "T"
+//     }
+//     if(dna[el] === "T") {
+//       out += "A"
+//     }
+//     if(dna[el] === "G") {
+//       out += "C"
+//     }
+//     if(dna[el] === "C") {
+//       out += "G"
+//     }
+//   }
    
-  return out
-}
-console.log(DNAStrand("ATTGC"))
-console.log(DNAStrand("AAAA"))
-console.log(DNAStrand(""))
+//   return out
+// }
+// console.log(DNAStrand("ATTGC"))
+// console.log(DNAStrand("AAAA"))
+// console.log(DNAStrand(""))
+
+
+// const findX = (seq, x) => {
+//   ans = -1;
+//   for(let el in seq) {
+//     if(ans === -1 && seq[el] === x) {
+//       console.log(seq[el])
+//       ans = el
+      
+//     }
+//   }
+//   return ans
+// }
+// console.log(findX([1,2,3,10,2], 2))
+
+// const findMax = (arr) => {
+//   let ans = arr[0]
+//   for (let el in arr) {
+
+//     if(arr[el] < ans) {
+//       ans = arr[el]
+//     }
+//   }
+//   return ans
+// }
+// console.log(findMax([2, 3, 5, 6, 8]))
+
+// const findTwoMax = (arr) => {
+//   let out = 0
+//   for(let el in arr) {
+//     if(arr[el] > out) {
+//       out = arr.pop(arr[el])
+//       console.log(out)
+//     }
+//   }
+//   return arr
+// }
+// console.log(findTwoMax([1, 2, 3, 4, 3]))
