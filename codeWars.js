@@ -1361,3 +1361,21 @@
 //   return arr
 // }
 // console.log(findTwoMax([1, 2, 3, 4, 3]))
+
+
+//Two fighters, one winner.
+function Fighter(name, health, damagePerAttack) {
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
+  this.toString = function() { return this.name; }
+}
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  
+
+
+  console.log(fighter1.health)
+}
+
+console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"))
+console.log()
