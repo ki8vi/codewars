@@ -1382,15 +1382,32 @@
 
 //
 //Fix your code before the garden dies!
-function rainAmount(mm){
-  let amount = 40
-  if (mm < amount) {
-      amount -= mm
-         return `You need to give your plant   ${amount}mm of water`
-    }
+// function rainAmount(mm){
+//   let amount = 40
+//   if (mm < amount) {
+//       amount -= mm
+//          return `You need to give your plant   ${amount}mm of water`
+//     }
     
-  return "Your plant has had more than enough water for today!"
+//   return "Your plant has had more than enough water for today!"
     
+// }
+// console.log(rainAmount(39))
+// console.log(rainAmount(100))
+
+//Convert to Binary
+// function toBinary(n){
+//   return Number(n.toString(2))
+// }
+// console.log(toBinary(5))
+
+//Multiplication table for number
+function multiTable(number) {
+  let str = ""
+  for(let i = 1; i <= 10; i++) {
+    str += `${i} * ${number} = ${i*number}\n`
+    
+  }
+  return str.slice(0, str.length -1)
 }
-console.log(rainAmount(39))
-console.log(rainAmount(100))
+console.log(multiTable(2))
