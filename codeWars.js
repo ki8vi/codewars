@@ -1379,3 +1379,18 @@
 // }
 
 // console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"))
+
+//
+//Fix your code before the garden dies!
+function rainAmount(mm){
+  let amount = 40
+  if (mm < amount) {
+      amount -= mm
+         return `You need to give your plant   ${amount}mm of water`
+    }
+    
+  return "Your plant has had more than enough water for today!"
+    
+}
+console.log(rainAmount(39))
+console.log(rainAmount(100))
