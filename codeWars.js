@@ -1364,18 +1364,18 @@
 
 
 //Two fighters, one winner.
-function Fighter(name, health, damagePerAttack) {
-  this.name = name;
-  this.health = health;
-  this.damagePerAttack = damagePerAttack;
-  this.toString = function() { return this.name; }
-}
-function declareWinner(fighter1, fighter2, firstAttacker) {
+// function Fighter(name, health, damagePerAttack) {
+//   this.name = name;
+//   this.health = health;
+//   this.damagePerAttack = damagePerAttack;
+//   this.toString = function() { return this.name; }
+// }
+// function declareWinner(fighter1, fighter2, firstAttacker) {
   
+//   const f1 = Math.ceil(fighter1.health / fighter2.damagePerAttack)
+//   const f2 = Math.ceil(fighter2.health / fighter1.damagePerAttack)
+//   console.log(f1, f2)
+//   return f1 > f2 ? fighter1.name : f1 < f2 ? fighter2.name : firstAttacker
+// }
 
-
-  console.log(fighter1.health)
-}
-
-console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"))
-console.log()
+// console.log(declareWinner(new Fighter("Harald", 20, 5), new Fighter("Harry", 5, 4), "Harry"))
