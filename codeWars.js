@@ -1402,12 +1402,31 @@
 // console.log(toBinary(5))
 
 //Multiplication table for number
-function multiTable(number) {
-  let str = ""
-  for(let i = 1; i <= 10; i++) {
-    str += `${i} * ${number} = ${i*number}\n`
+// function multiTable(number) {
+//   let str = ""
+//   for(let i = 1; i <= 10; i++) {
+//     str += `${i} * ${number} = ${i*number}\n`
     
+//   }
+//   return str.slice(0, str.length -1)
+// }
+// console.log(multiTable(2))
+//
+//altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+String.prototype.toAlternatingCase = function () {
+  let out = ""
+  let str = this.toString()
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] === str[i].toLowerCase()) {
+      out += str[i].toUpperCase()
+    } else {
+      out += str[i].toLowerCase()
+    }
   }
-  return str.slice(0, str.length -1)
+  return out
+  
 }
-console.log(multiTable(2))
+console.log("1A2B3C4D5E".toAlternatingCase())
+console.log("Hello World".toAlternatingCase().toAlternatingCase())
+
+
