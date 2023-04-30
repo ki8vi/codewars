@@ -1413,20 +1413,29 @@
 // console.log(multiTable(2))
 //
 //altERnaTIng cAsE <=> ALTerNAtiNG CaSe
-String.prototype.toAlternatingCase = function () {
-  let out = ""
-  let str = this.toString()
-  for(let i = 0; i < str.length; i++) {
-    if(str[i] === str[i].toLowerCase()) {
-      out += str[i].toUpperCase()
-    } else {
-      out += str[i].toLowerCase()
-    }
-  }
-  return out
+// String.prototype.toAlternatingCase = function () {
+//   let out = ""
+//   let str = this.toString()
+//   for(let i = 0; i < str.length; i++) {
+//     if(str[i] === str[i].toLowerCase()) {
+//       out += str[i].toUpperCase()
+//     } else {
+//       out += str[i].toLowerCase()
+//     }
+//   }
+//   return out
   
+// }
+// console.log("1A2B3C4D5E".toAlternatingCase())
+// console.log("Hello World".toAlternatingCase().toAlternatingCase())
+
+//Remove duplicates from list
+// function distinct(a) {
+//   return a.filter((el, i) => a.indexOf(el) === i);
+// }
+// console.log(distinct([1, 1, 1, 2, 6, 5, 1]))
+//String cleaning
+function stringClean(s){
+  return s.replace(/[0-9]/g, "")
 }
-console.log("1A2B3C4D5E".toAlternatingCase())
-console.log("Hello World".toAlternatingCase().toAlternatingCase())
-
-
+console.log(stringClean('This looks5 grea8t!'))
