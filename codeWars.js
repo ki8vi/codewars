@@ -1435,7 +1435,27 @@
 // }
 // console.log(distinct([1, 1, 1, 2, 6, 5, 1]))
 //String cleaning
-function stringClean(s){
-  return s.replace(/[0-9]/g, "")
-}
-console.log(stringClean('This looks5 grea8t!'))
+// function stringClean(s){
+//   return s.replace(/[0-9]/g, "")
+// }
+// console.log(stringClean('This looks5 grea8t!'))
+
+//Check the exam
+function checkExam(array1, array2) {
+  let out = 0
+  for(let el in array1) {
+    if(array1[el] === array2[el]) {
+      out += 4
+    } if (array1[el] !== array2[el]) {
+      out -= 1
+    } 
+     if (array2[el] === "") {
+      out += +1
+    }
+  }
+  
+  return out < 0 ? 0 : out
+ }
+ console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
+ console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]))
+ console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
