@@ -1461,18 +1461,22 @@
 //  console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
 
 //Delete occurrences of an element if it occurs more than n times
-// function deleteNth(arr,n){
-//   let out = []
-//   let count = 0
-//   let dubl = arr.filter((el, i) => arr.indexOf(el) !== i)
-//   console.log(dubl)
-//   for(let i = 0; i < arr.length; i++) {
-//     console.log(arr[i])
-//   }
-//   return out
-// }
-// //console.log(deleteNth([20,37,20,21], 1))
-// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+function deleteNth(arr,n){
+  const result = []
+  
+  for (const key of arr) {
+    const exist = result.filter(item => item === key).length
+    console.log(exist)
+    if (exist !== n) {
+       result.push(key)
+       
+    } 
+  }
+  console.log(result)
+  return result
+}
+console.log(deleteNth([20,37,20,21], 1))
+console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
 
 //binary search
 // function binarySearch(arr, item) {
