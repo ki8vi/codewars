@@ -1441,21 +1441,63 @@
 // console.log(stringClean('This looks5 grea8t!'))
 
 //Check the exam
-function checkExam(array1, array2) {
-  let out = 0
-  for(let el in array1) {
-    if(array1[el] === array2[el]) {
-      out += 4
-    } if (array1[el] !== array2[el]) {
-      out -= 1
-    } 
-     if (array2[el] === "") {
-      out += +1
+// function checkExam(array1, array2) {
+//   let out = 0
+//   for(let el in array1) {
+//     if(array1[el] === array2[el]) {
+//       out += 4
+//     } if (array1[el] !== array2[el]) {
+//       out -= 1
+//     } 
+//      if (array2[el] === "") {
+//       out += +1
+//     }
+//   }
+  
+//   return out < 0 ? 0 : out
+//  }
+//  console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
+//  console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]))
+//  console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
+
+//Delete occurrences of an element if it occurs more than n times
+function deleteNth(arr,n){
+  let out = []
+  let temp = arr[0]
+  let count = 0
+  arr = arr.join(" ")
+  
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === arr[i+1]) {
+      console.log(arr[i])
     }
   }
-  
-  return out < 0 ? 0 : out
- }
- console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
- console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]))
- console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
+  return out
+}
+console.log(deleteNth([20,37,20,21], 1))
+console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+
+//binary search
+// function binarySearch(arr, item) {
+//   let low = 0
+//   let high = arr.length-1
+//   let mid
+//   while(low <= high) {
+//     mid = (low+high)
+//     let guess = arr[mid]
+//     if(guess === item) {
+//       return mid
+//     } 
+//     if (guess > item) {
+//       high = mid -1
+      
+//     } else {
+//       low = mid + 1
+      
+//     }
+//   }
+//   return null
+//   console.log()
+// }
+// console.log(binarySearch([1, 3, 5, 7, 9], 5))
+
