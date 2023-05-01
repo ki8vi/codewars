@@ -1461,21 +1461,18 @@
 //  console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
 
 //Delete occurrences of an element if it occurs more than n times
-function deleteNth(arr,n){
-  let out = []
-  let temp = arr[0]
-  let count = 0
-  arr = arr.join(" ")
-  
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] === arr[i+1]) {
-      console.log(arr[i])
-    }
-  }
-  return out
-}
-console.log(deleteNth([20,37,20,21], 1))
-console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+// function deleteNth(arr,n){
+//   let out = []
+//   let count = 0
+//   let dubl = arr.filter((el, i) => arr.indexOf(el) !== i)
+//   console.log(dubl)
+//   for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i])
+//   }
+//   return out
+// }
+// //console.log(deleteNth([20,37,20,21], 1))
+// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
 
 //binary search
 // function binarySearch(arr, item) {
@@ -1501,3 +1498,15 @@ console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
 // }
 // console.log(binarySearch([1, 3, 5, 7, 9], 5))
 
+
+//Is the string uppercase?
+// String.prototype.isUpperCase = function() {
+//   let str = this.toString().split()
+//   for(let el in str) {
+//     if(str[el] === str[el].toUpperCase()) {
+//       return true
+//     }
+//   }
+//   return false
+// }
+// console.log('HELLO WOrLD'.isUpperCase())
