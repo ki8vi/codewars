@@ -1544,3 +1544,10 @@
 
 //   return n;
 // }
+
+//Invert values
+function invert(array) {
+  let out = array.map(el => ~el+1)
+  return out
+}
+console.log(invert([1,-2,3,-4,5]))
