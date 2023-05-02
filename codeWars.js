@@ -1461,22 +1461,22 @@
 //  console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
 
 //Delete occurrences of an element if it occurs more than n times
-function deleteNth(arr,n){
-  const result = []
+// function deleteNth(arr,n){
+//   const result = []
   
-  for (const key of arr) {
-    const exist = result.filter(item => item === key).length
-    console.log(exist)
-    if (exist !== n) {
-       result.push(key)
+//   for (const key in arr) {
+//     const exist = result.filter(item => item === arr[key]).length
+//     console.log(exist)
+//     if (exist < n) {
+//        result.push(arr[key])
        
-    } 
-  }
-  console.log(result)
-  return result
-}
-console.log(deleteNth([20,37,20,21], 1))
-console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+//     } 
+//   }
+//   console.log(result)
+//   return result
+// }
+// console.log(deleteNth([20,37,20,21], 1))
+// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
 
 //binary search
 // function binarySearch(arr, item) {
@@ -1514,3 +1514,33 @@ console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
 //   return false
 // }
 // console.log('HELLO WOrLD'.isUpperCase())
+
+//No zeros for heros
+// function noBoringZeros(n) {
+  
+//   let str = n.toString().split("")
+  
+//   for(let i=0;i<=str.length;i++) {
+//     if(str[str.length-1] === "0"){
+//       str.pop()
+//       console.log(str)
+//     } else {
+//        return +str.join("")
+//     }
+//   }
+ 
+// }
+// const noBoringZeros = (n) => {
+// return +String(n).replace(/0+$/g, "")
+// }
+// console.log(noBoringZeros(9600000000000%10 ===0))
+// console.log(noBoringZeros(1450))
+// console.log(noBoringZeros(-14050000))
+// function noBoringZeros(n) {
+
+//   while ( n % 10 == 0 && n != 0 ){
+//     n = n / 10;
+//     }
+
+//   return n;
+// }
