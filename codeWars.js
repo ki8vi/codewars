@@ -1546,8 +1546,45 @@
 // }
 
 //Invert values
-function invert(array) {
-  let out = array.map(el => ~el+1)
-  return out
+// function invert(array) {
+//   let out = array.map(el => ~el+1)
+//   return out
+// }
+// console.log(invert([1,-2,3,-4,5]))
+//Fix string case
+// function solve(s){
+//   let lowCased = 0
+//   for(let el in s) {
+//     if(s[el] === s[el].toLowerCase()) {
+//       lowCased++
+//     }
+//   }
+//   let upCased = s.length - lowCased
+//   if(upCased > lowCased) {
+//     return s.toUpperCase()
+//   } 
+//   return s.toLowerCase()
+// }
+// console.log(solve("COde"))
+//Binary Addition
+// function addBinary(a,b) {
+//   return (a+b).toString(2)
+// }
+// console.log(addBinary(5, 9))
+
+//Filter out the geese
+// function gooseFilter (birds) {
+//   var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+//   return birds.filter((el, i) => !geese.includes(el))
+//   console.log(out)
+  
+// };
+// console.log(gooseFilter( ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+
+//
+//Alan Partridge II - Apple Turnover
+function apple(x){
+  
+  return +x*+x > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
 }
-console.log(invert([1,-2,3,-4,5]))
+console.log(apple(4))
