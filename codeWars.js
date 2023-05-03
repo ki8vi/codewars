@@ -1608,15 +1608,42 @@
 //   return name[0] === "r" || name[0] === "R" ? name + " plays banjo" : name + " does not play banjo";
 // }
 //Regular Ball Super Ball
-var Ball = function(ballType) {
-    if(ballType) {
-      this.ballType = ballType
-    } else {
-      this.ballType = "regular"
-    }
-}
+// var Ball = function(ballType) {
+//     if(ballType) {
+//       this.ballType = ballType
+//     } else {
+//       this.ballType = "regular"
+//     }
+// }
   
   
 
-const ball1 = new Ball("sdss");
-console.log(ball1.ballType)
+// const ball1 = new Ball("sdss");
+// console.log(ball1.ballType)
+
+//
+//aximum Length Difference
+// function mxdiflg(a1, a2) {
+//   let summA = a1.reduce((acc, el) => acc+el.length, 0)
+//   let summB = a2.reduce((acc, el) => acc+el.length, 0)
+//   console.log(Math.max(Math.abs(a1.length, a2.length)))
+  
+
+// }
+// console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]))
+
+//
+//Data Reverse
+function dataReverse(data) {
+  let copy = [...data]
+
+  let arr = []
+  for(let i = 0; i < copy.length; i+=8) {
+    
+    arr.unshift(...copy.slice(i, i+8))
+  }
+  return arr
+}
+console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]))
+//console.log(dataReverse([+0, +0, 1, 1, +0, 1, 1, +0, 1, +0, +0, +0, +0, 1, +0, +0, +0, 1, +0, 1, 1, 1, +0, +0, 1, +0, 1, +0, +0, 1, +0, 1, 1, +0, 1, +0, 1, 1, 1, +0, 1, +0, 1, 1, +0, 1, 1, +0, 1, +0, 1, 1, 1, 1, 1, +0, 1, 1, +0, +0, 1, +0, 1, 1, 1, +0, +0, 1, 1, +0, +0, 1, 1, 1, +0, 1, 1, +0, +0, 1, +0, 1, +0, 1, 1, +0, 1, 1, +0, +0, 1, +0, 1, +0, +0, +0, +0, 1, 1, +0, +0, 1, +0, +0, +0, 1, +0, 1, +0, +0, 1, 1, +0, 1, +0, 1, +0, 1, 1, 1, +0, 1, +0, +0, 1, +0, 1, 1, +0, 1, +0, 1, +0, 1, 1, +0, 1, 1, 1, 1, +0, +0, 1, 1, 1, +0, 1, 1, 1, +0, +0, +0]))
+//[1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
