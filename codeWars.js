@@ -1603,7 +1603,20 @@
 
 // const c = a()
 // console.log(c())
-function areYouPlayingBanjo(name) {
+// function areYouPlayingBanjo(name) {
   
-  return name[0] === "r" || name[0] === "R" ? name + " plays banjo" : name + " does not play banjo";
+//   return name[0] === "r" || name[0] === "R" ? name + " plays banjo" : name + " does not play banjo";
+// }
+//Regular Ball Super Ball
+var Ball = function(ballType) {
+    if(ballType) {
+      this.ballType = ballType
+    } else {
+      this.ballType = "regular"
+    }
 }
+  
+  
+
+const ball1 = new Ball("sdss");
+console.log(ball1.ballType)
