@@ -1583,8 +1583,27 @@
 
 //
 //Alan Partridge II - Apple Turnover
-function apple(x){
+// function apple(x){
   
-  return +x*+x > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
+//   return +x*+x > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
+// }
+// console.log(apple(4))
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// let b = "hello"
+
+// function a(b){
+//   var b = "kuku"
+//   return function(b){
+//     return b
+//   }
+//   }
+  
+
+
+// const c = a()
+// console.log(c())
+function areYouPlayingBanjo(name) {
+  
+  return name[0] === "r" || name[0] === "R" ? name + " plays banjo" : name + " does not play banjo";
 }
-console.log(apple(4))
