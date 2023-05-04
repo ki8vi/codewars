@@ -1634,16 +1634,41 @@
 
 //
 //Data Reverse
-function dataReverse(data) {
-  let copy = [...data]
+// function dataReverse(data) {
+//   let copy = [...data]
 
-  let arr = []
-  for(let i = 0; i < copy.length; i+=8) {
+//   let arr = []
+//   for(let i = 0; i < copy.length; i+=8) {
     
-    arr.unshift(...copy.slice(i, i+8))
-  }
-  return arr
-}
-console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]))
+//     arr.unshift(...copy.slice(i, i+8))
+//   }
+//   return arr
+// }
+// console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]))
 //console.log(dataReverse([+0, +0, 1, 1, +0, 1, 1, +0, 1, +0, +0, +0, +0, 1, +0, +0, +0, 1, +0, 1, 1, 1, +0, +0, 1, +0, 1, +0, +0, 1, +0, 1, 1, +0, 1, +0, 1, 1, 1, +0, 1, +0, 1, 1, +0, 1, 1, +0, 1, +0, 1, 1, 1, 1, 1, +0, 1, 1, +0, +0, 1, +0, 1, 1, 1, +0, +0, 1, 1, +0, +0, 1, 1, 1, +0, 1, 1, +0, +0, 1, +0, 1, +0, 1, 1, +0, 1, 1, +0, +0, 1, +0, 1, +0, +0, +0, +0, 1, 1, +0, +0, 1, +0, +0, +0, 1, +0, 1, +0, +0, 1, 1, +0, 1, +0, 1, +0, 1, 1, 1, +0, 1, +0, +0, 1, +0, 1, 1, +0, 1, +0, 1, +0, 1, 1, +0, 1, 1, 1, 1, +0, +0, 1, 1, 1, +0, 1, 1, 1, +0, +0, +0]))
 //[1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+
+//Count strings in objects
+// function strCount(obj){
+//   let count = 0
+//   let arr = []
+//   for(let i in obj) {
+//     if(typeof obj[i] === "string") {
+//       count++
+//     } 
+//     if(typeof obj[i] === "object") {
+//      count += strCount(obj[i])
+//     }
+//   }
+  
+//  return count
+
+// }
+// console.log(strCount({
+//   first: "1",
+//   second: "2",
+//   third: false,
+//   fourth: ["anytime",2,3,4],
+//   fifth:  null
+//   }))
+//16+18=214
