@@ -1672,23 +1672,54 @@
 //   fifth:  null
 //   }))
 //16+18=214
-function add(num1, num2) {
-  let str = ""
-  num1 = String(num1).split("")
-  num2 = String(num2).split("")
-  while(num1.length !== num2.length) {
-    if(num1.length > num2.length) {
-      str+= num1.shift()
-    } else {
-      str+=num2.shift()
-    }
-  }
-  for(let i = 0; i < num1.length; i++) {
-    str+=Number(num1[i]) + Number(num2[i])
-  }
+// function add(num1, num2) {
+//   let str = ""
+//   num1 = String(num1).split("")
+//   num2 = String(num2).split("")
+//   while(num1.length !== num2.length) {
+//     if(num1.length > num2.length) {
+//       str+= num1.shift()
+//     } else {
+//       str+=num2.shift()
+//     }
+//   }
+//   for(let i = 0; i < num1.length; i++) {
+//     str+=Number(num1[i]) + Number(num2[i])
+//   }
      
-  return +str
-}
-console.log(add(248, 208))
+//   return +str
+// }
+// console.log(add(248, 208))
 
 //Add property to every object in array
+// const addProp = (questions) => {
+//   for(let el in questions) {
+//     questions[el].usersAnswer = null
+//   }
+//   return questions
+// }
+// console.log(addProp([{
+//   name: "logan",
+//   last: "hord"
+// },
+// {
+//   name: "lem",
+//   last: "kor"
+// }]))
+//Colour Association
+// function colourAssociation(array){
+//     // let out = array.map(([key, value]) => ({[key]: value}))
+//     let out = []
+//     for(let el in array) {
+//       out[el] = {[array[el][0]]: array[el][1]}
+//     }
+//     return out
+//   }
+// console.log(colourAssociation([["white", "goodness"], ["blue", "tranquility"]]))
+//Combine objects
+function combine(obj1, obj2) {
+  
+}
+console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }))
+
+
