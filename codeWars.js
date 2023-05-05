@@ -1672,3 +1672,23 @@
 //   fifth:  null
 //   }))
 //16+18=214
+function add(num1, num2) {
+  let str = ""
+  num1 = String(num1).split("")
+  num2 = String(num2).split("")
+  while(num1.length !== num2.length) {
+    if(num1.length > num2.length) {
+      str+= num1.shift()
+    } else {
+      str+=num2.shift()
+    }
+  }
+  for(let i = 0; i < num1.length; i++) {
+    str+=Number(num1[i]) + Number(num2[i])
+  }
+     
+  return +str
+}
+console.log(add(248, 208))
+
+//Add property to every object in array
