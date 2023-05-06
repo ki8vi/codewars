@@ -1733,18 +1733,28 @@
 // let acc2 = new Accumulator(10)
 // console.log(acc1.read())
 //Combine objects
-function combine(...objects) {
-  const result = {};
-  for (const obj of objects) {
-      for (const [key, value] of Object.entries(obj)) {
-      if (result[key] === undefined) {
-        result[key] = value;
-      } else {
-        result[key] += value;
-        console.log(result)
-      }
-    }
+// function combine(...objects) {
+//   const result = {};
+//   for (const obj of objects) {
+//       for (const [key, value] of Object.entries(obj)) {
+//       if (result[key] === undefined) {
+//         result[key] = value;
+//       } else {
+//         result[key] += value;
+//         console.log(result)
+//       }
+//     }
+//   }
+//   return result;
+// }
+// console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }, {a:50, c: 100}))
+//Summing a number's digits
+function sumDigits(number) {
+  let str = number.toString()
+  let out = 0
+  for(let el in str) {
+    out += ~~str[el]
   }
-  return result;
+  return out
 }
-console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }, {a:50, c: 100}))
+console.log(sumDigits(33))
