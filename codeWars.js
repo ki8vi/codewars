@@ -1717,9 +1717,34 @@
 //   }
 // console.log(colourAssociation([["white", "goodness"], ["blue", "tranquility"]]))
 //Combine objects
-function combine(obj1, obj2) {
+// function combine(obj1, obj2) {
   
+// }
+// console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }))
+
+// function Accumulator(startVal) {
+//   this.value = startVal;
+//   this.read = function(){
+//       return this.value+=startVal
+    
+//   }
+// }
+// let acc1 = new Accumulator(3)
+// let acc2 = new Accumulator(10)
+// console.log(acc1.read())
+//Combine objects
+function combine(...objects) {
+  const result = {};
+  for (const obj of objects) {
+      for (const [key, value] of Object.entries(obj)) {
+      if (result[key] === undefined) {
+        result[key] = value;
+      } else {
+        result[key] += value;
+        console.log(result)
+      }
+    }
+  }
+  return result;
 }
-console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }))
-
-
+console.log(combine({ a: 10, b: 20, c: 30 }, { a: 3, c: 6, d: 3 }, {a:50, c: 100}))
