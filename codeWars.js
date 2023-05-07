@@ -1760,25 +1760,12 @@
 // console.log(sumDigits(33))
 //Find the missing element between two arrays
 function findMissing(arr1, arr2) {
-  arr1Unq = arr1.sort((a, b) => a-b).filter((el, i) => arr1.indexOf(el) === i)
-  arr2Unq = arr2.sort((a, b) => a-b).filter((el, i) => arr2.indexOf(el) === i)
-  console.log(arr1, arr2)
-  arr1Dubl = arr1.sort((a, b) => a-b).filter((el, i) => arr1.indexOf(el) !== i)
-  arr2Dubl = arr2.sort((a, b) => a-b).filter((el, i) => arr2.indexOf(el) !== i)
+  let sum1 = arr1.reduce((acc, el) => acc+=el, 0)
+  let sum2 = arr2.reduce((acc, el) => acc+=el, 0)
   
-  for(let i in arr1Unq) {
-    
-    if(arr2Unq[i] === undefined) {
-      return arr1Unq[i]
-    } 
-  }
-  for(let i in arr1Dubl) {
-    if(arr2Dubl[i]) {
-      return arr1Dubl[i]
-    }
-  }
+  return sum1 -sum2
 }
-//console.log(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]))
-//console.log(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]))
-//console.log(findMissing([7], []))
+console.log(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]))
+console.log(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]))
+console.log(findMissing([7], []))
 console.log(findMissing([1, 2, 3], [1, 3]))
