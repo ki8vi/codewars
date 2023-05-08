@@ -1759,13 +1759,54 @@
 // }
 // console.log(sumDigits(33))
 //Find the missing element between two arrays
-function findMissing(arr1, arr2) {
-  let sum1 = arr1.reduce((acc, el) => acc+=el, 0)
-  let sum2 = arr2.reduce((acc, el) => acc+=el, 0)
+// function findMissing(arr1, arr2) {
+//   return arr1.reduce((acc, el) => acc+=el, 0)-arr2.reduce((acc, el) => acc+=el, 0)
+// }
+// console.log(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]))
+// console.log(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]))
+// console.log(findMissing([7], []))
+// console.log(findMissing([1, 2, 3], [1, 3]))
+
+//Get decimal part of the given number
+// function getDecimal(n){
   
-  return sum1 -sum2
+//   return Math.abs(n%1)
+// }
+// console.log(getDecimal(2.4))
+// console.log(getDecimal(-0.2))
+//Maximum Triplet Sum (Array Series #7)
+// function maxTriSum(numbers){
+//   let unq = numbers.filter((el, i) => numbers.indexOf(el) === i).sort((a, b) => a-b)
+//   console.log(unq)
+//   let sum = 0
+//   for(let i = unq.length - 3; i < unq.length; i++) {
+//       sum+=unq[i]
+//   }
+//   return sum
+// }
+// console.log(maxTriSum([3,2,6,8,2,3]))
+// console.log(maxTriSum([-13,-50,57,13,67,-13,57,108,67]))
+//Hex to Decimal
+// function hexToDec(hexString){
+//   return parseInt(hexString, 16)
+// }
+// console.log(hexToDec("10"))
+// console.log(hexToDec("a"))
+//Whose bicycle?
+// 
+//Nickname Generator
+function nicknameGenerator(name){
+  if(name.length < 4) {
+    return "Error: Name too short"
+  }
+  let vowel = /[aeiou"]/gi
+  if(vowel.test(name[2])) {
+    return name.slice(0, 4)
+  } else {
+    return name.slice(0, 3)
+  }
+  
 }
-console.log(findMissing([4, 3, 3, 61, 8, 8], [8, 61, 8, 3, 4]))
-console.log(findMissing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]))
-console.log(findMissing([7], []))
-console.log(findMissing([1, 2, 3], [1, 3]))
+console.log(nicknameGenerator("Jeannie"))
+console.log(nicknameGenerator("Samantha"))
+console.log(nicknameGenerator("Sa"))
