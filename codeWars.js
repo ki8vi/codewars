@@ -1795,18 +1795,44 @@
 //Whose bicycle?
 // 
 //Nickname Generator
-function nicknameGenerator(name){
-  if(name.length < 4) {
-    return "Error: Name too short"
-  }
-  let vowel = /[aeiou"]/gi
-  if(vowel.test(name[2])) {
-    return name.slice(0, 4)
-  } else {
-    return name.slice(0, 3)
-  }
+// function nicknameGenerator(name){
+//   if(name.length < 4) {
+//     return "Error: Name too short"
+//   }
+//   let vowel = /[aeiou"]/gi
+//   if(vowel.test(name[2])) {
+//     return name.slice(0, 4)
+//   } else {
+//     return name.slice(0, 3)
+//   }
   
+// }
+// console.log(nicknameGenerator("Jeannie"))
+// console.log(nicknameGenerator("Samantha"))
+// console.log(nicknameGenerator("Sa"))
+//Count characters in your string
+// function count(string) {
+//   let obj = {}
+//   for (let i = 0; i < string.length; i++) {
+//     obj[string[i]] = obj[string[i]] ? obj[string[i]]+=1 : 1
+//   }
+//   return obj
+ 
+// }
+// console.log(count("aaaabcszx"))
+
+//Odd-Even String Sort
+function sortMyString(S) {
+  let out = ""
+  let out2 = ""
+  for(let el in S) {
+    if(el % 2 === 0) {
+      out += S[el]
+    } else {
+      out2 += S[el]
+    }
+  }
+
+  return out + " " + out2;
 }
-console.log(nicknameGenerator("Jeannie"))
-console.log(nicknameGenerator("Samantha"))
-console.log(nicknameGenerator("Sa"))
+console.log(sortMyString("CodeWars"))
