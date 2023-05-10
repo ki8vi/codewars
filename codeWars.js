@@ -1822,17 +1822,38 @@
 // console.log(count("aaaabcszx"))
 
 //Odd-Even String Sort
-function sortMyString(S) {
-  let out = ""
-  let out2 = ""
-  for(let el in S) {
-    if(el % 2 === 0) {
-      out += S[el]
-    } else {
-      out2 += S[el]
-    }
-  }
+// function sortMyString(S) {
+//   let out = ""
+//   let out2 = ""
+//   for(let el in S) {
+//     if(el % 2 === 0) {
+//       out += S[el]
+//     } else {
+//       out2 += S[el]
+//     }
+//   }
 
-  return out + " " + out2;
+//   return out + " " + out2;
+// }
+// console.log(sortMyString("CodeWars"))
+// function isPowerOfTwo(n){
+//   return Math.log2(n) % 1 === 0;
+// }
+// console.log(isPowerOfTwo(0))
+
+//String Reordering
+function sentence(List) {
+  let out = []
+  let sorted = List.sort((a, b) => Object.keys(a) - Object.keys(b)) 
+  for(let el in sorted) {
+    out.push(Object.values(sorted[el]))
+  }
+  return out.join(" ")
 }
-console.log(sortMyString("CodeWars"))
+console.log(sentence([
+  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
+  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
+ ]))
+
+ 
+ 
