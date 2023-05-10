@@ -1856,16 +1856,58 @@
 //  ]))
 
  //Minimize Sum Of Array (Array Series #1)
- function minSum(arr) {
-  let sorted = arr.sort((a, b) => a - b)
-  let out = 0
-  for(let i = 0; i < sorted.length / 2; i++) {
-    let sum = sorted[i] * sorted[sorted.length - 1 - i]
-    out += sum
-  }
-  return out
-}
-console.log(minSum([5,4,2,3]))
-console.log(minSum([12,6,10,26,3,24]))
-console.log(minSum([9,2,8,7,5,4,0,6]))
+//  function minSum(arr) {
+//   let sorted = arr.sort((a, b) => a - b)
+//   let out = 0
+//   for(let i = 0; i < sorted.length / 2; i++) {
+//     let sum = sorted[i] * sorted[sorted.length - 1 - i]
+//     out += sum
+//   }
+//   return out
+// }
+// console.log(minSum([5,4,2,3]))
+// console.log(minSum([12,6,10,26,3,24]))
+// console.log(minSum([9,2,8,7,5,4,0,6]))
  
+//Unpacking Arguments
+// function spread(func, args) {
+   
+//   return func(...args)
+// }
+// console.log(spread(function(x,y){return x+y}, [1,2]))
+
+//Vowel one
+// function vowelOne(s){
+//   let out = ''
+//   let vowels = /[aeiou]/i
+//   for (let i = 0; i < s.length; i++) {
+//     if(vowels.test(s[i])) {
+//       out += "1"
+      
+//     } else {
+//       out += "0"
+//     }
+//   }
+//   return out
+// }
+// console.log(vowelOne("123, arou"))
+
+//
+//Who is the killer?
+function killer(suspectInfo, dead) {
+  let out = []
+  for(let el in suspectInfo) {
+    for(let j = 0; j < dead.length; j++) 
+    if(suspectInfo[el].indexOf(dead[j]) !== -1) {
+      out.push(el)
+      
+    }
+  }
+  
+  return out[0]
+}
+console.log(killer({'James': ['Jacob', 'Bill', 'Lucas'],
+'Johnny': ['David', 'Kyle', 'Lucas'],
+'Peter': ['Lucy', 'Kyle']}, ['Lucas', 'Bill']))
+console.log(killer({'Brad': [], 'Megan': ['Ben', 'Kevin'], 'Finn': []}, ['Ben']))
+
