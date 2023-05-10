@@ -1842,18 +1842,30 @@
 // console.log(isPowerOfTwo(0))
 
 //String Reordering
-function sentence(List) {
-  let out = []
-  let sorted = List.sort((a, b) => Object.keys(a) - Object.keys(b)) 
-  for(let el in sorted) {
-    out.push(Object.values(sorted[el]))
-  }
-  return out.join(" ")
-}
-console.log(sentence([
-  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
-  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
- ]))
+// function sentence(List) {
+//   let out = []
+//   let sorted = List.sort((a, b) => Object.keys(a) - Object.keys(b)) 
+//   for(let el in sorted) {
+//     out.push(Object.values(sorted[el]))
+//   }
+//   return out.join(" ")
+// }
+// console.log(sentence([
+//   {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
+//   {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
+//  ]))
 
- 
+ //Minimize Sum Of Array (Array Series #1)
+ function minSum(arr) {
+  let sorted = arr.sort((a, b) => a - b)
+  let out = 0
+  for(let i = 0; i < sorted.length / 2; i++) {
+    let sum = sorted[i] * sorted[sorted.length - 1 - i]
+    out += sum
+  }
+  return out
+}
+console.log(minSum([5,4,2,3]))
+console.log(minSum([12,6,10,26,3,24]))
+console.log(minSum([9,2,8,7,5,4,0,6]))
  
