@@ -1894,20 +1894,76 @@
 
 //
 //Who is the killer?
-function killer(suspectInfo, dead) {
-  let out = []
-  for(let el in suspectInfo) {
-    for(let j = 0; j < dead.length; j++) 
-    if(suspectInfo[el].indexOf(dead[j]) !== -1) {
-      out.push(el)
+// function killer(suspectInfo, dead) {
+//   let out = []
+//   for(let el in suspectInfo) {
+//     for(let j = 0; j < dead.length; j++) 
+//     if(suspectInfo[el].indexOf(dead[j]) !== -1) {
+//       out.push(el)
       
-    }
-  }
+//     }
+//   }
   
-  return out[0]
-}
-console.log(killer({'James': ['Jacob', 'Bill', 'Lucas'],
-'Johnny': ['David', 'Kyle', 'Lucas'],
-'Peter': ['Lucy', 'Kyle']}, ['Lucas', 'Bill']))
-console.log(killer({'Brad': [], 'Megan': ['Ben', 'Kevin'], 'Finn': []}, ['Ben']))
+//   return out[0]
+// }
+// console.log(killer({'James': ['Jacob', 'Bill', 'Lucas'],
+// 'Johnny': ['David', 'Kyle', 'Lucas'],
+// 'Peter': ['Lucy', 'Kyle']}, ['Lucas', 'Bill']))
+// console.log(killer({'Brad': [], 'Megan': ['Ben', 'Kevin'], 'Finn': []}, ['Ben']))
 
+//Simple Encryption #1 - Alternating Split
+function encrypt(text, n) {
+  if(n <= 0 || text === null) {
+    return text
+  }
+  let out = ""
+  let odd = ""
+  let even = ""
+ for(let i = 0; i < text.length; i++) {
+  if(i % 2 !== 0) {
+    odd += text[i]
+  } else {
+    even += text[i]
+  }
+ }
+  out = odd + even
+  n--
+  return encrypt(out, n)
+}
+
+function decrypt(encryptedText, n) {
+  
+  if(n <= 0 || encryptedText === null) {
+    return encryptedText
+  }
+  let out = ""
+  let first = encryptedText.slice(0, encryptedText.length/2)
+  let second = encryptedText.slice(encryptedText.length/2, encryptedText.length)
+  
+  for(let i = 0; i < Math.max(first.length, second.length); i++) {
+    out += second[i] + first[i]
+    console.log(out)
+  } 
+  
+  if(encryptedText.length % 2 !== 0) {
+    out = out.slice(0, out.length - 9)
+    console.log(out)
+  }
+  n--
+  return decrypt(out, n)
+}
+
+
+// console.log(encrypt("012345", 3))
+// console.log(encrypt("01234", 3))
+
+console.log(decrypt("135024", 1))
+console.log(decrypt("hsi  etTi sats!", 1))
+console.log(decrypt("s eT ashi tist!", 2))
+console.log(decrypt(" Tah itse sits!", 3))
+console.log(decrypt("This is a test!", 4))
+console.log(decrypt("hskt svr neetn!Ti aai eyitrsig", 1))
+console.log(decrypt("hsi  etTi sats!", 1))
+console.log(decrypt("13024", 1))
+console.log(decrypt(null, 0))
+console.log(decrypt("", 0))
