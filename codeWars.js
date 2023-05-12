@@ -1912,58 +1912,81 @@
 // console.log(killer({'Brad': [], 'Megan': ['Ben', 'Kevin'], 'Finn': []}, ['Ben']))
 
 //Simple Encryption #1 - Alternating Split
-function encrypt(text, n) {
-  if(n <= 0 || text === null) {
-    return text
+// function encrypt(text, n) {
+//   if(n <= 0 || text === null) {
+//     return text
+//   }
+//   let out = ""
+//   let odd = ""
+//   let even = ""
+//  for(let i = 0; i < text.length; i++) {
+//   if(i % 2 !== 0) {
+//     odd += text[i]
+//   } else {
+//     even += text[i]
+//   }
+//  }
+//   out = odd + even
+//   n--
+//   return encrypt(out, n)
+// }
+
+// function decrypt(encryptedText, n) {
+  
+//   if(n <= 0 || encryptedText === null) {
+//     return encryptedText
+//   }
+//   let out = ""
+//   let first = encryptedText.slice(0, encryptedText.length/2)
+//   let second = encryptedText.slice(encryptedText.length/2, encryptedText.length)
+  
+//   for(let i = 0; i < Math.max(first.length, second.length); i++) {
+//     out += second[i] + first[i]
+//     console.log(out)
+//   } 
+  
+//   if(encryptedText.length % 2 !== 0) {
+//     out = out.slice(0, out.length - 9)
+//     console.log(out)
+//   }
+//   n--
+//   return decrypt(out, n)
+// }
+
+
+// // console.log(encrypt("012345", 3))
+// // console.log(encrypt("01234", 3))
+
+// console.log(decrypt("135024", 1))
+// console.log(decrypt("hsi  etTi sats!", 1))
+// console.log(decrypt("s eT ashi tist!", 2))
+// console.log(decrypt(" Tah itse sits!", 3))
+// console.log(decrypt("This is a test!", 4))
+// console.log(decrypt("hskt svr neetn!Ti aai eyitrsig", 1))
+// console.log(decrypt("hsi  etTi sats!", 1))
+// console.log(decrypt("13024", 1))
+// console.log(decrypt(null, 0))
+// console.log(decrypt("", 0))
+
+//Which color is the brightest?
+function brightest(colors){
+  let index = 0
+  let v = 0;
+  let max = 0
+  for(let i = 0; i < colors.length; i++) {
+    let color = colors[i]
+    let r = parseInt(color.slice(1, 3), 16);
+    let g = parseInt(color.slice(3, 5), 16);
+    let b = parseInt(color.slice(5), 16);
+    v = Math.max(r, g, b)
+    if(v > max) {
+      max = v
+      index = i
+    }
   }
-  let out = ""
-  let odd = ""
-  let even = ""
- for(let i = 0; i < text.length; i++) {
-  if(i % 2 !== 0) {
-    odd += text[i]
-  } else {
-    even += text[i]
-  }
+  return colors[index]
  }
-  out = odd + even
-  n--
-  return encrypt(out, n)
-}
-
-function decrypt(encryptedText, n) {
-  
-  if(n <= 0 || encryptedText === null) {
-    return encryptedText
-  }
-  let out = ""
-  let first = encryptedText.slice(0, encryptedText.length/2)
-  let second = encryptedText.slice(encryptedText.length/2, encryptedText.length)
-  
-  for(let i = 0; i < Math.max(first.length, second.length); i++) {
-    out += second[i] + first[i]
-    console.log(out)
-  } 
-  
-  if(encryptedText.length % 2 !== 0) {
-    out = out.slice(0, out.length - 9)
-    console.log(out)
-  }
-  n--
-  return decrypt(out, n)
-}
-
-
-// console.log(encrypt("012345", 3))
-// console.log(encrypt("01234", 3))
-
-console.log(decrypt("135024", 1))
-console.log(decrypt("hsi  etTi sats!", 1))
-console.log(decrypt("s eT ashi tist!", 2))
-console.log(decrypt(" Tah itse sits!", 3))
-console.log(decrypt("This is a test!", 4))
-console.log(decrypt("hskt svr neetn!Ti aai eyitrsig", 1))
-console.log(decrypt("hsi  etTi sats!", 1))
-console.log(decrypt("13024", 1))
-console.log(decrypt(null, 0))
-console.log(decrypt("", 0))
+//console.log(brightest(["#001000", "#000000"]))
+//console.log(brightest(["#FFFFFF", "#123456", "#000000"]))
+//console.log(brightest(['#7F2B33', '#ABB267', '#D7A33F', '#61C2FA', '#43DF2D']))
+console.log(brightest(["#00FF00", "#FFFF00"]))
