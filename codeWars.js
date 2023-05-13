@@ -1969,24 +1969,43 @@
 // console.log(decrypt("", 0))
 
 //Which color is the brightest?
-function brightest(colors){
-  let index = 0
-  let v = 0;
-  let max = 0
-  for(let i = 0; i < colors.length; i++) {
-    let color = colors[i]
-    let r = parseInt(color.slice(1, 3), 16);
-    let g = parseInt(color.slice(3, 5), 16);
-    let b = parseInt(color.slice(5), 16);
-    v = Math.max(r, g, b)
-    if(v > max) {
-      max = v
-      index = i
-    }
+// function brightest(colors){
+//   let index = 0
+//   let v = 0;
+//   let max = 0
+//   for(let i = 0; i < colors.length; i++) {
+//     let color = colors[i]
+//     let r = parseInt(color.slice(1, 3), 16);
+//     let g = parseInt(color.slice(3, 5), 16);
+//     let b = parseInt(color.slice(5), 16);
+//     v = Math.max(r, g, b)
+//     if(v > max) {
+//       max = v
+//       index = i
+//     }
+//   }
+//   return colors[index]
+//  }
+// //console.log(brightest(["#001000", "#000000"]))
+// //console.log(brightest(["#FFFFFF", "#123456", "#000000"]))
+// //console.log(brightest(['#7F2B33', '#ABB267', '#D7A33F', '#61C2FA', '#43DF2D']))
+// console.log(brightest(["#00FF00", "#FFFF00"]))
+
+//Digits explosion
+// function explode(s) {
+//   let out = "";
+//   for(let el in s) {
+//     out += s[el].repeat(s[el])
+//   }
+//   return out;
+// }
+// console.log(explode("123"))
+//Handshake problem
+function getParticipants(handshakes){
+  let farmers = 0
+  while(handshakes > farmers * (farmers - 1) / 2){
+    farmers++
   }
-  return colors[index]
- }
-//console.log(brightest(["#001000", "#000000"]))
-//console.log(brightest(["#FFFFFF", "#123456", "#000000"]))
-//console.log(brightest(['#7F2B33', '#ABB267', '#D7A33F', '#61C2FA', '#43DF2D']))
-console.log(brightest(["#00FF00", "#FFFF00"]))
+  return farmers
+}
+console.log(getParticipants(0))
