@@ -2050,19 +2050,52 @@
 // }
 // console.log(last([1,2,3,4,5]))
 //Array Deep Count
-function deepCount(a,){
+// function deepCount(a){
   
-  let count = 0
-  for(let i = 0; i < a.length; i++) {
-      count++
-     if(Array.isArray(a[i])) {
-       count += deepCount(a[i])
-     } 
+//   let count = 0
+//   for(let i = 0; i < a.length; i++) {
+//       count++
+//      if(Array.isArray(a[i])) {
+//        count += deepCount(a[i])
+//      } 
+//   }
+//   return count
+// }
+// console.log(deepCount([1, 2, [3, 4, [5]]]))
+// console.log(deepCount([]))
+// console.log(deepCount(["x", "y", ["z"]]))
+// console.log(deepCount([[[[[[[[[]]]]]]]]]))
+// console.log(deepCount([[[]],[[]],[[]]]))
+//Array Deep Count
+function getLengthOfMissingArray(arrayOfArrays) {
+  if(!arrayOfArrays || !arrayOfArrays.length) {
+    return 0
   }
-  return count
+  
+  let arrLength = []
+  for(let i = 0 ; i < arrayOfArrays.length; i++) {
+    if(arrayOfArrays[i] === null) {
+      return 0
+    } else {
+      arrLength.push(arrayOfArrays[i].length)
+    }
+    
+  }
+  arrLength.sort((a, b) => a-b)
+  console.log(arrLength)
+  for(let i = arrLength[0]; i <= arrLength[arrLength.length-1]; i++) {
+    if(arrLength.includes(0)) {
+      return 0
+    } 
+    if(!arrLength.includes(i)) {
+      return i
+    }
+    
+  }
 }
-console.log(deepCount([1, 2, [3, 4, [5]]]))
-console.log(deepCount([]))
-console.log(deepCount(["x", "y", ["z"]]))
-console.log(deepCount([[[[[[[[[]]]]]]]]]))
-console.log(deepCount([[[]],[[]],[[]]]))
+console.log(getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]))
+console.log(getLengthOfMissingArray([]))
+console.log(getLengthOfMissingArray([ [ null ], [ null, null, null ] ]))
+console.log(getLengthOfMissingArray([[ 3, 3, 1 ],[ 4, 4, 4, 1, 1, 1 ], [1, 0, 0, 3, 1, 1, 0], [ 4, 0, 1, 1 ]]))
+console.log(getLengthOfMissingArray([ [ 1 ], [ 5, 2, 9 ], [ 4, 0, 1, 1 ], [ 5, 6, 7, 8, 9 ], [] ]))
+console.log(getLengthOfMissingArray([[1, 2, 3], null]))
