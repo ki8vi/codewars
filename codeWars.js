@@ -2001,11 +2001,51 @@
 // }
 // console.log(explode("123"))
 //Handshake problem
-function getParticipants(handshakes){
-  let farmers = 0
-  while(handshakes > farmers * (farmers - 1) / 2){
-    farmers++
-  }
-  return farmers
-}
-console.log(getParticipants(0))
+// function getParticipants(handshakes){
+//   let farmers = 0
+//   while(handshakes > farmers * (farmers - 1) / 2){
+//     farmers++
+//   }
+//   return farmers
+// }
+// console.log(getParticipants(0))
+//Duplicate Encoder
+// function duplicateEncode(word){
+//   let out = "";
+//   word = word.toLowerCase()
+//   let dubl = word.split("").filter((el, i) => word.indexOf(el) !== i)
+//   for(let i = 0; i < word.length; i++) {
+//     if(dubl.includes(word[i])) {
+//       out += ")"
+//     } else {
+//       out += "("
+//     }
+//   }
+//   return out;
+// }
+// console.log(duplicateEncode("din"))
+// console.log(duplicateEncode("Success"))
+// console.log(duplicateEncode("(( @"))
+
+//N-th Fibonacci
+// function nthFibo(n) {
+//   if (n === 1) return 0;
+//   if (n === 2) return 1;
+
+//   return nthFibo(n - 1) + nthFibo(n - 2);
+// }
+// console.log(nthFibo(8))
+//Head, Tail, Init and Last
+// const head = (x) => {
+//   return x[0]
+// }
+// const tail = (x) => {
+//   return x.slice(1)
+// }
+// const init = (x) => {
+//   return x.slice(0, x.length - 1)
+// }
+// const last = (x) => {
+//   return x[x.length -1]
+// }
+// console.log(last([1,2,3,4,5]))
