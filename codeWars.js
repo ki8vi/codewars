@@ -2049,3 +2049,20 @@
 //   return x[x.length -1]
 // }
 // console.log(last([1,2,3,4,5]))
+//Array Deep Count
+function deepCount(a,){
+  
+  let count = 0
+  for(let i = 0; i < a.length; i++) {
+      count++
+     if(Array.isArray(a[i])) {
+       count += deepCount(a[i])
+     } 
+  }
+  return count
+}
+console.log(deepCount([1, 2, [3, 4, [5]]]))
+console.log(deepCount([]))
+console.log(deepCount(["x", "y", ["z"]]))
+console.log(deepCount([[[[[[[[[]]]]]]]]]))
+console.log(deepCount([[[]],[[]],[[]]]))
