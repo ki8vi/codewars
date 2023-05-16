@@ -2066,36 +2066,91 @@
 // console.log(deepCount(["x", "y", ["z"]]))
 // console.log(deepCount([[[[[[[[[]]]]]]]]]))
 // console.log(deepCount([[[]],[[]],[[]]]))
-//Array Deep Count
-function getLengthOfMissingArray(arrayOfArrays) {
-  if(!arrayOfArrays || !arrayOfArrays.length) {
-    return 0
+//length-of-missing-array
+// function getLengthOfMissingArray(arrayOfArrays) {
+//   if(!arrayOfArrays || !arrayOfArrays.length) {
+//     return 0
+//   }
+  
+//   let arrLength = []
+//   for(let i = 0 ; i < arrayOfArrays.length; i++) {
+//     if(arrayOfArrays[i] === null) {
+//       return 0
+//     } else {
+//       arrLength.push(arrayOfArrays[i].length)
+//     }
+    
+//   }
+//   arrLength.sort((a, b) => a-b)
+//   console.log(arrLength)
+//   for(let i = arrLength[0]; i <= arrLength[arrLength.length-1]; i++) {
+//     if(arrLength.includes(0)) {
+//       return 0
+//     } 
+//     if(!arrLength.includes(i)) {
+//       return i
+//     }
+//   }
+// }
+// console.log(getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]))
+// console.log(getLengthOfMissingArray([]))
+// console.log(getLengthOfMissingArray([ [ null ], [ null, null, null ] ]))
+// console.log(getLengthOfMissingArray([[ 3, 3, 1 ],[ 4, 4, 4, 1, 1, 1 ], [1, 0, 0, 3, 1, 1, 0], [ 4, 0, 1, 1 ]]))
+// console.log(getLengthOfMissingArray([ [ 1 ], [ 5, 2, 9 ], [ 4, 0, 1, 1 ], [ 5, 6, 7, 8, 9 ], [] ]))
+// console.log(getLengthOfMissingArray([[1, 2, 3], null]))
+//Pair of gloves
+function numberOfPairs(gloves) {
+  
+  let pairs = {};
+  for(let i = 0; i < gloves.length; i++) {
+    if(!pairs[gloves[i]]) {
+      pairs[gloves[i]] = 1
+    } else {
+      pairs[gloves[i]] +=1
+    }
   }
   
-  let arrLength = []
-  for(let i = 0 ; i < arrayOfArrays.length; i++) {
-    if(arrayOfArrays[i] === null) {
-      return 0
-    } else {
-      arrLength.push(arrayOfArrays[i].length)
-    }
-    
+  let count = 0
+  for(let key in pairs) {
+    count += Math.floor(pairs[key]/2)
   }
-  arrLength.sort((a, b) => a-b)
-  console.log(arrLength)
-  for(let i = arrLength[0]; i <= arrLength[arrLength.length-1]; i++) {
-    if(arrLength.includes(0)) {
-      return 0
-    } 
-    if(!arrLength.includes(i)) {
-      return i
-    }
-    
-  }
+  
+  return count
 }
-console.log(getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]]))
-console.log(getLengthOfMissingArray([]))
-console.log(getLengthOfMissingArray([ [ null ], [ null, null, null ] ]))
-console.log(getLengthOfMissingArray([[ 3, 3, 1 ],[ 4, 4, 4, 1, 1, 1 ], [1, 0, 0, 3, 1, 1, 0], [ 4, 0, 1, 1 ]]))
-console.log(getLengthOfMissingArray([ [ 1 ], [ 5, 2, 9 ], [ 4, 0, 1, 1 ], [ 5, 6, 7, 8, 9 ], [] ]))
-console.log(getLengthOfMissingArray([[1, 2, 3], null]))
+
+// console.log(numberOfPairs(["red", "green", "red", "blue", "blue"]))
+// console.log(numberOfPairs(["red", "red", "red", "red", "red", "red"]))
+//  console.log(numberOfPairs(['gray','black','purple','purple','gray','black']))
+//console.log(numberOfPairs([ 'Green', 'Silver', 'Gray', 'Lime', 'White', 'Yellow' ]))
+
+console.log(numberOfPairs([
+  'Silver', 'Yellow',  'Black',  'Gray',
+  'Teal',   'Silver',  'Teal',   'Lime',
+  'Black',  'Blue',    'White',  'Olive',
+  'Lime',   'Fuchsia', 'Teal',   'Purple',
+  'Black',  'Aqua',    'Red',    'Maroon',
+  'Gray',   'Red',     'Navy',   'Aqua',
+  'Navy',   'Olive',   'Aqua',   'Purple',
+  'Olive',  'Red',     'Purple', 'Yellow',
+  'Maroon', 'Teal',    'Teal'
+]))
+//13
+console.log(numberOfPairs([
+  'Purple', 'Black',  'Green',   'Black',  'Silver', 'Purple',
+  'Green',  'Maroon', 'Fuchsia', 'Black',  'Silver', 'Navy',
+  'Olive',  'Olive',  'Gray',    'Olive',  'Purple', 'Purple',
+  'Aqua',   'Purple', 'Fuchsia', 'Maroon', 'Navy',   'Maroon',
+  'White',  'Yellow', 'Blue',    'Red',    'Purple', 'Purple',
+  'Teal',   'Green',  'Red',     'Gray',   'Navy',   'Blue',
+  'Navy',   'Red',    'Gray',    'Teal',   'Teal',   'Maroon',
+  'Gray',   'Yellow', 'Aqua',    'Gray',   'Aqua',   'Lime',
+  'Blue',   'Lime',   'Lime',    'White',  'Red',    'Black',
+  'Teal',   'Silver', 'Teal',    'Gray',   'Navy',   'Fuchsia',
+  'Silver', 'Purple', 'White',   'Red',    'White',  'Purple',
+  'Yellow', 'Purple', 'White',   'Blue',   'White',  'Maroon',
+  'Teal',   'Gray',   'Fuchsia', 'Black',  'Purple', 'Red',
+  'White',  'Lime',   'Gray',    'Red',    'Teal',   'Blue',
+  'Silver', 'Teal',   'Teal',    'Yellow', 'Silver', 'Gray',
+  'Olive',  'Gray',   'Navy'
+]))
+//42
