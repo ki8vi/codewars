@@ -2099,58 +2099,95 @@
 // console.log(getLengthOfMissingArray([ [ 1 ], [ 5, 2, 9 ], [ 4, 0, 1, 1 ], [ 5, 6, 7, 8, 9 ], [] ]))
 // console.log(getLengthOfMissingArray([[1, 2, 3], null]))
 //Pair of gloves
-function numberOfPairs(gloves) {
+// function numberOfPairs(gloves) {
   
-  let pairs = {};
-  for(let i = 0; i < gloves.length; i++) {
-    if(!pairs[gloves[i]]) {
-      pairs[gloves[i]] = 1
-    } else {
-      pairs[gloves[i]] +=1
-    }
-  }
+//   let pairs = {};
+//   for(let i = 0; i < gloves.length; i++) {
+//     if(!pairs[gloves[i]]) {
+//       pairs[gloves[i]] = 1
+//     } else {
+//       pairs[gloves[i]] +=1
+//     }
+//   }
   
-  let count = 0
-  for(let key in pairs) {
-    count += Math.floor(pairs[key]/2)
-  }
+//   let count = 0
+//   for(let key in pairs) {
+//     count += Math.floor(pairs[key]/2)
+//   }
   
-  return count
-}
+//   return count
+// }
 
 // console.log(numberOfPairs(["red", "green", "red", "blue", "blue"]))
 // console.log(numberOfPairs(["red", "red", "red", "red", "red", "red"]))
 //  console.log(numberOfPairs(['gray','black','purple','purple','gray','black']))
 //console.log(numberOfPairs([ 'Green', 'Silver', 'Gray', 'Lime', 'White', 'Yellow' ]))
 
-console.log(numberOfPairs([
-  'Silver', 'Yellow',  'Black',  'Gray',
-  'Teal',   'Silver',  'Teal',   'Lime',
-  'Black',  'Blue',    'White',  'Olive',
-  'Lime',   'Fuchsia', 'Teal',   'Purple',
-  'Black',  'Aqua',    'Red',    'Maroon',
-  'Gray',   'Red',     'Navy',   'Aqua',
-  'Navy',   'Olive',   'Aqua',   'Purple',
-  'Olive',  'Red',     'Purple', 'Yellow',
-  'Maroon', 'Teal',    'Teal'
-]))
+// console.log(numberOfPairs([
+//   'Silver', 'Yellow',  'Black',  'Gray',
+//   'Teal',   'Silver',  'Teal',   'Lime',
+//   'Black',  'Blue',    'White',  'Olive',
+//   'Lime',   'Fuchsia', 'Teal',   'Purple',
+//   'Black',  'Aqua',    'Red',    'Maroon',
+//   'Gray',   'Red',     'Navy',   'Aqua',
+//   'Navy',   'Olive',   'Aqua',   'Purple',
+//   'Olive',  'Red',     'Purple', 'Yellow',
+//   'Maroon', 'Teal',    'Teal'
+// ]))
 //13
-console.log(numberOfPairs([
-  'Purple', 'Black',  'Green',   'Black',  'Silver', 'Purple',
-  'Green',  'Maroon', 'Fuchsia', 'Black',  'Silver', 'Navy',
-  'Olive',  'Olive',  'Gray',    'Olive',  'Purple', 'Purple',
-  'Aqua',   'Purple', 'Fuchsia', 'Maroon', 'Navy',   'Maroon',
-  'White',  'Yellow', 'Blue',    'Red',    'Purple', 'Purple',
-  'Teal',   'Green',  'Red',     'Gray',   'Navy',   'Blue',
-  'Navy',   'Red',    'Gray',    'Teal',   'Teal',   'Maroon',
-  'Gray',   'Yellow', 'Aqua',    'Gray',   'Aqua',   'Lime',
-  'Blue',   'Lime',   'Lime',    'White',  'Red',    'Black',
-  'Teal',   'Silver', 'Teal',    'Gray',   'Navy',   'Fuchsia',
-  'Silver', 'Purple', 'White',   'Red',    'White',  'Purple',
-  'Yellow', 'Purple', 'White',   'Blue',   'White',  'Maroon',
-  'Teal',   'Gray',   'Fuchsia', 'Black',  'Purple', 'Red',
-  'White',  'Lime',   'Gray',    'Red',    'Teal',   'Blue',
-  'Silver', 'Teal',   'Teal',    'Yellow', 'Silver', 'Gray',
-  'Olive',  'Gray',   'Navy'
-]))
+// console.log(numberOfPairs([
+//   'Purple', 'Black',  'Green',   'Black',  'Silver', 'Purple',
+//   'Green',  'Maroon', 'Fuchsia', 'Black',  'Silver', 'Navy',
+//   'Olive',  'Olive',  'Gray',    'Olive',  'Purple', 'Purple',
+//   'Aqua',   'Purple', 'Fuchsia', 'Maroon', 'Navy',   'Maroon',
+//   'White',  'Yellow', 'Blue',    'Red',    'Purple', 'Purple',
+//   'Teal',   'Green',  'Red',     'Gray',   'Navy',   'Blue',
+//   'Navy',   'Red',    'Gray',    'Teal',   'Teal',   'Maroon',
+//   'Gray',   'Yellow', 'Aqua',    'Gray',   'Aqua',   'Lime',
+//   'Blue',   'Lime',   'Lime',    'White',  'Red',    'Black',
+//   'Teal',   'Silver', 'Teal',    'Gray',   'Navy',   'Fuchsia',
+//   'Silver', 'Purple', 'White',   'Red',    'White',  'Purple',
+//   'Yellow', 'Purple', 'White',   'Blue',   'White',  'Maroon',
+//   'Teal',   'Gray',   'Fuchsia', 'Black',  'Purple', 'Red',
+//   'White',  'Lime',   'Gray',    'Red',    'Teal',   'Blue',
+//   'Silver', 'Teal',   'Teal',    'Yellow', 'Silver', 'Gray',
+//   'Olive',  'Gray',   'Navy'
+// ]))
 //42
+//Sorting by bits
+// function sortByBit(arr) {
+//   const countBits=(num)=>{
+//       return [...(num).toString(2)].reduce((acc,el)=> el==='1' ? acc+1 : acc, 0)
+//   }
+// return arr.sort((a,b)=> countBits(a)-countBits(b) ||  a-b);
+// }
+// //console.log(sortByBit([7, 6, 15, 8]))
+// console.log(sortByBit([3, 8, 3, 6, 5, 7, 9, 1]))
+//Let's Recycle!
+function recycle(array) {
+  
+  let bin1 = [], bin2 = [], bin3 = [], bin4 = []
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].material === "paper" || array[i].secondMaterial === "paper") {
+      bin1.push(array[i].type)
+    }
+    if(array[i].material === "glass" || array[i].secondMaterial === "glass") {
+      bin2.push(array[i].type)
+    }
+    if(array[i].material === "organic" || array[i].secondMaterial === "organic") {
+      bin3.push(array[i].type)
+    }
+    if(array[i].material === "plastic" || array[i].secondMaterial === "plastic") {
+      bin4.push(array[i].type)
+    }
+  }  
+
+  return [bin1, bin2, bin3, bin4]
+}
+console.log(recycle([
+  {"type": "rotten apples", "material": "organic"},
+  {"type": "out of date yogurt", "material": "organic", "secondMaterial": "plastic"},
+  {"type": "wine bottle", "material": "glass", "secondMaterial": "paper"},
+  {"type": "amazon box", "material": "paper"},
+  {"type": "beer bottle", "material": "glass", "secondMaterial": "paper"}
+]))
