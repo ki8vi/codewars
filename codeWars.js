@@ -2164,30 +2164,41 @@
 // //console.log(sortByBit([7, 6, 15, 8]))
 // console.log(sortByBit([3, 8, 3, 6, 5, 7, 9, 1]))
 //Let's Recycle!
-function recycle(array) {
+// function recycle(array) {
   
-  let bin1 = [], bin2 = [], bin3 = [], bin4 = []
-  for(let i = 0; i < array.length; i++) {
-    if(array[i].material === "paper" || array[i].secondMaterial === "paper") {
-      bin1.push(array[i].type)
-    }
-    if(array[i].material === "glass" || array[i].secondMaterial === "glass") {
-      bin2.push(array[i].type)
-    }
-    if(array[i].material === "organic" || array[i].secondMaterial === "organic") {
-      bin3.push(array[i].type)
-    }
-    if(array[i].material === "plastic" || array[i].secondMaterial === "plastic") {
-      bin4.push(array[i].type)
-    }
-  }  
+//   let bin1 = [], bin2 = [], bin3 = [], bin4 = []
+//   for(let i = 0; i < array.length; i++) {
+//     if(array[i].material === "paper" || array[i].secondMaterial === "paper") {
+//       bin1.push(array[i].type)
+//     }
+//     if(array[i].material === "glass" || array[i].secondMaterial === "glass") {
+//       bin2.push(array[i].type)
+//     }
+//     if(array[i].material === "organic" || array[i].secondMaterial === "organic") {
+//       bin3.push(array[i].type)
+//     }
+//     if(array[i].material === "plastic" || array[i].secondMaterial === "plastic") {
+//       bin4.push(array[i].type)
+//     }
+//   }  
 
-  return [bin1, bin2, bin3, bin4]
+//   return [bin1, bin2, bin3, bin4]
+// }
+// console.log(recycle([
+//   {"type": "rotten apples", "material": "organic"},
+//   {"type": "out of date yogurt", "material": "organic", "secondMaterial": "plastic"},
+//   {"type": "wine bottle", "material": "glass", "secondMaterial": "paper"},
+//   {"type": "amazon box", "material": "paper"},
+//   {"type": "beer bottle", "material": "glass", "secondMaterial": "paper"}
+// ]))
+//Javascript Mathematician
+function calculate(...arg) {
+let set = 0
+arg.forEach(el => set+=el)
+let out = set
+return function(...set2) {
+  set2.forEach(el => out+=el)
+  return out
 }
-console.log(recycle([
-  {"type": "rotten apples", "material": "organic"},
-  {"type": "out of date yogurt", "material": "organic", "secondMaterial": "plastic"},
-  {"type": "wine bottle", "material": "glass", "secondMaterial": "paper"},
-  {"type": "amazon box", "material": "paper"},
-  {"type": "beer bottle", "material": "glass", "secondMaterial": "paper"}
-]))
+}
+console.log(calculate(2,4)(3,7,1))
