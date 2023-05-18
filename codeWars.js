@@ -2207,4 +2207,22 @@
 //  return n ** 3
 // }
 // console.log(rowSumOddNumbers(3))
-//
+
+
+//Javascript from the Inside #1 : Map - need to solve!!!
+
+
+//My Language Skills
+function myLanguages(results) {
+  let out = [];
+  let arr = Object.entries(results).sort((a, b) => b[1] - a[1])
+  console.log(arr)
+  for(let el in arr) {
+    if(arr[el][1] >= 60) {
+      out.push(arr[el][0])
+    }
+  }
+
+  return out.filter((el,i) => out.indexOf(el) === i)
+}
+console.log(myLanguages({"Hindi": 60, "Dutch" : 93, "Greek": 71}))
