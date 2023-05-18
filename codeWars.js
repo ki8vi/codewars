@@ -2192,13 +2192,19 @@
 //   {"type": "beer bottle", "material": "glass", "secondMaterial": "paper"}
 // ]))
 //Javascript Mathematician
-function calculate(...arg) {
-let set = 0
-arg.forEach(el => set+=el)
-let out = set
-return function(...set2) {
-  set2.forEach(el => out+=el)
-  return out
-}
-}
-console.log(calculate(2,4)(3,7,1))
+// function calculate(...arg) {
+// let set = 0
+// arg.forEach(el => set+=el)
+// let out = set
+// return function(...set2) {
+//   set2.forEach(el => out+=el)
+//   return out
+// }
+// }
+// console.log(calculate(2,4)(3,7,1))
+//Sum of odd numbers
+// function rowSumOddNumbers(n) {
+//  return n ** 3
+// }
+// console.log(rowSumOddNumbers(3))
+//
