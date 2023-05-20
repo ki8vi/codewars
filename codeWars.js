@@ -2213,16 +2213,31 @@
 
 
 //My Language Skills
-function myLanguages(results) {
-  let out = [];
-  let arr = Object.entries(results).sort((a, b) => b[1] - a[1])
-  console.log(arr)
-  for(let el in arr) {
-    if(arr[el][1] >= 60) {
-      out.push(arr[el][0])
-    }
-  }
+// function myLanguages(results) {
+//   let out = [];
+//   let arr = Object.entries(results).sort((a, b) => b[1] - a[1])
+//   console.log(arr)
+//   for(let el in arr) {
+//     if(arr[el][1] >= 60) {
+//       out.push(arr[el][0])
+//     }
+//   }
 
-  return out.filter((el,i) => out.indexOf(el) === i)
+//   return out.filter((el,i) => out.indexOf(el) === i)
+// }
+// console.log(myLanguages({"Hindi": 60, "Dutch" : 93, "Greek": 71}))
+//Run-length encoding
+var runLengthEncoding = function(str){
+  let out = [];
+  let count = 0
+  for(let i = 0; i < str.length; i++) {
+    count++
+   if(str[i] !== str[i+1]) {
+    out.push([count, str[i]])
+    count = 0
+   } 
+  }
+  return out
 }
-console.log(myLanguages({"Hindi": 60, "Dutch" : 93, "Greek": 71}))
+console.log(runLengthEncoding("hello world!"))
+console.log(runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb"))
