@@ -2242,25 +2242,32 @@
 // console.log(runLengthEncoding("hello world!"))
 // console.log(runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb"))
 //Walk the Object Path
-function find(object, path) {
+// function find(object, path) {
   
-  let purePath = path.split(".")
-  console.log(purePath)
-  for (let i = 0; i < purePath.length; i++) {
-    if(object.hasOwnProperty(purePath[i])) {
-      object = object[purePath[i]]
+//   let purePath = path.split(".")
+//   console.log(purePath)
+//   for (let i = 0; i < purePath.length; i++) {
+//     if(object.hasOwnProperty(purePath[i])) {
+//       object = object[purePath[i]]
       
-    } else {
-      return undefined
+//     } else {
+//       return undefined
+//     }
+//   }
+  
+//   return object
+// }
+// console.log(find({ people: ['John', 'Dave', 'Lisa'] }, 'people.1'))
+// console.log(find({ "user": { "name": { "first": '"John"', "last": "Snow" } } }, "user.name.first"))
+//Javascript from the Inside #2: Filter
+Array.prototype.filter = function(fn, nThis) {
+  
+  let out = []
+  for(let i = 0; i < this.length; i++) {
+    if(fn(this[i])) {
+      out.push(this[i])
     }
   }
-  
-  return object
+  return out;
 }
-console.log(find({ people: ['John', 'Dave', 'Lisa'] }, 'people.1'))
-console.log(find({ "user": { "name": { "first": '"John"', "last": "Snow" } } }, "user.name.first"))
-console.log(find({
-  "user": {
-    "name": { "first": 'John', "last": 'Snow' }
-  }
-}, "user.name.first.initial.capitalized"))
+console.log([1, 2, 3, 4, 5].filter((el, i) => el===1))
