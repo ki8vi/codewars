@@ -2296,13 +2296,21 @@
 // }
 // console.log(formatDuration(1333333))
 //Power .bind()
-Function.prototype.bind = function (ctx) {
-  let func = this;
-  return function(...args) {
-    let correctCtx = this === global ? ctx : this
-    return func.apply(correctCtx, args)
+// Function.prototype.bind = function (ctx) {
+//   let func = this;
+//   return function(...args) {
+//     let correctCtx = this === global ? ctx : this
+//     return func.apply(correctCtx, args)
+//   }
+// };
+//Reverse a number in any base
+function reverseNumber(n, b) {
+  if (b === 1n) return n;
+  let res = 0n;
+  while (n > 0n) {
+    res = res * b + n % b;
+    n /= b;
   }
-};
-
-
-
+  return res;
+}
+console.log(reverseNumber(12n ,2n))
