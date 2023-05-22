@@ -2272,30 +2272,37 @@
 // }
 // console.log([1, 2, 3, 4, 5].filter((el, i) => el===1))
 //Human readable duration format
-function formatDuration (seconds) {
-  
-  if(!seconds) {
-    return "now"
+// function formatDuration (seconds) {
+//   if(!seconds) {
+//     return "now"
+//   }
+//   let unit = [
+//     ["31536000", "year"],
+//     ["86400", "day"],
+//     ["3600", "hour"],
+//     ["60", "minute"],
+//     ["1", "second"]
+//   ]
+//    let arr = []
+//   for(let i = 0; i < unit.length; i++) {
+//     if(seconds >= unit[i][0]) {
+//       arr.push(Math.floor(seconds / unit[i][0]) + " " + unit[i][1] + (Math.floor(seconds/unit[i][0]) > 1 ? "s" : ""))
+//       seconds%=unit[i][0]
+//     }
+//   }
+//   let last = " and " + arr[arr.length-1]
+//   let out = arr.slice(0, arr.length-1).join(", ") + last
+//   return arr.length > 1 ? out : arr.join()
+// }
+// console.log(formatDuration(1333333))
+//Power .bind()
+Function.prototype.bind = function (ctx) {
+  let func = this;
+  return function(...args) {
+    let correctCtx = this === global ? ctx : this
+    return func.apply(correctCtx, args)
   }
-  let unit = [
-    ["31536000", "year"],
-    ["86400", "day"],
-    ["3600", "hour"],
-    ["60", "minute"],
-    ["1", "second"]
-  ]
-   let arr = []
-   
-  for(let i = 0; i < unit.length; i++) {
-    
-    if(seconds >= unit[i][0]) {
-      
-      arr.push(Math.floor(seconds / unit[i][0]) + " " + unit[i][1] + (Math.floor(seconds/unit[i][0]) > 1 ? "s" : ""))
-      seconds%=unit[i][0]
-    }
-  }
-  let last = " and " + arr[arr.length-1]
-  let out = arr.slice(0, arr.length-1).join(", ") + last
-  return arr.length > 1 ? out : arr.join()
-}
-console.log(formatDuration(1333333))
+};
+
+
+
