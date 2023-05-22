@@ -2285,11 +2285,11 @@ function formatDuration (seconds) {
     ["1", "second"]
   ]
    let arr = []
-   let count = 0
+   
   for(let i = 0; i < unit.length; i++) {
     
     if(seconds >= unit[i][0]) {
-      count++
+      
       arr.push(Math.floor(seconds / unit[i][0]) + " " + unit[i][1] + (Math.floor(seconds/unit[i][0]) > 1 ? "s" : ""))
       seconds%=unit[i][0]
     }
