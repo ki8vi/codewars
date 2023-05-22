@@ -2260,14 +2260,42 @@
 // console.log(find({ people: ['John', 'Dave', 'Lisa'] }, 'people.1'))
 // console.log(find({ "user": { "name": { "first": '"John"', "last": "Snow" } } }, "user.name.first"))
 //Javascript from the Inside #2: Filter
-Array.prototype.filter = function(fn, nThis) {
+// Array.prototype.filter = function(fn, nThis) {
   
-  let out = []
-  for(let i = 0; i < this.length; i++) {
-    if(fn(this[i])) {
-      out.push(this[i])
+//   let out = []
+//   for(let i = 0; i < this.length; i++) {
+//     if(fn(this[i])) {
+//       out.push(this[i])
+//     }
+//   }
+//   return out;
+// }
+// console.log([1, 2, 3, 4, 5].filter((el, i) => el===1))
+//Human readable duration format
+function formatDuration (seconds) {
+  
+  if(!seconds) {
+    return "now"
+  }
+  let unit = [
+    ["31536000", "year"],
+    ["86400", "day"],
+    ["3600", "hour"],
+    ["60", "minute"],
+    ["1", "second"]
+  ]
+   let arr = []
+   let count = 0
+  for(let i = 0; i < unit.length; i++) {
+    
+    if(seconds >= unit[i][0]) {
+      count++
+      arr.push(Math.floor(seconds / unit[i][0]) + " " + unit[i][1] + (Math.floor(seconds/unit[i][0]) > 1 ? "s" : ""))
+      seconds%=unit[i][0]
     }
   }
-  return out;
+  let last = " and " + arr[arr.length-1]
+  let out = arr.slice(0, arr.length-1).join(", ") + last
+  return arr.length > 1 ? out : arr.join()
 }
-console.log([1, 2, 3, 4, 5].filter((el, i) => el===1))
+console.log(formatDuration(1333333))
