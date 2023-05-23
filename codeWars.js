@@ -2315,17 +2315,28 @@
 // }
 // console.log(reverseNumber(12n ,2n))
 //Can you keep a secret?
-function createSecretHolder(secret) {
-  let val = secret
-  return {
-      getSecret: function() {
-      return val
-    },
-      setSecret: function(value) {
-      val = value
+// function createSecretHolder(secret) {
+//   let val = secret
+//   return {
+//       getSecret: function() {
+//       return val
+//     },
+//       setSecret: function(value) {
+//       val = value
+//     }
+//   }
+// }
+// let obj = createSecretHolder(5)
+// obj.setSecret(2)
+// console.log(obj.getSecret())
+//Unlucky Days
+function unluckyDays(year){
+  let fridays = 0
+  for(let m = 0; m < 12; m++) {
+    if(new Date(year, m, 13).getDay() === 5) {
+      fridays++ 
     }
   }
+  return fridays
 }
-let obj = createSecretHolder(5)
-obj.setSecret(2)
-console.log(obj.getSecret())
+console.log(unluckyDays(1001))
