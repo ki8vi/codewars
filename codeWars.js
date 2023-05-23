@@ -2304,13 +2304,28 @@
 //   }
 // };
 //Reverse a number in any base
-function reverseNumber(n, b) {
-  if (b === 1n) return n;
-  let res = 0n;
-  while (n > 0n) {
-    res = res * b + n % b;
-    n /= b;
+// function reverseNumber(n, b) {
+//   if (b === 1n) return n;
+//   let res = 0n;
+//   while (n > 0n) {
+//     res = res * b + n % b;
+//     n /= b;
+//   }
+//   return res;
+// }
+// console.log(reverseNumber(12n ,2n))
+//Can you keep a secret?
+function createSecretHolder(secret) {
+  let val = secret
+  return {
+      getSecret: function() {
+      return val
+    },
+      setSecret: function(value) {
+      val = value
+    }
   }
-  return res;
 }
-console.log(reverseNumber(12n ,2n))
+let obj = createSecretHolder(5)
+obj.setSecret(2)
+console.log(obj.getSecret())
