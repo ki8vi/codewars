@@ -2330,13 +2330,23 @@
 // obj.setSecret(2)
 // console.log(obj.getSecret())
 //Unlucky Days
-function unluckyDays(year){
-  let fridays = 0
-  for(let m = 0; m < 12; m++) {
-    if(new Date(year, m, 13).getDay() === 5) {
-      fridays++ 
-    }
+// function unluckyDays(year){
+//   let fridays = 0
+//   for(let m = 0; m < 12; m++) {
+//     if(new Date(year, m, 13).getDay() === 5) {
+//       fridays++ 
+//     }
+//   }
+//   return fridays
+// }
+// console.log(unluckyDays(1001))
+//Running out of space
+function spacey(array){
+  let out = []
+  for(let i = 1; i <= array.length; i++) {
+    out.push(array.slice(0, i).join(""))
   }
-  return fridays
+  return out
 }
-console.log(unluckyDays(1001))
+console.log(spacey(['i', 'have','no','space']))
+//['i','ihave','ihaveno','ihavenospace']
