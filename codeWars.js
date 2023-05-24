@@ -2341,12 +2341,25 @@
 // }
 // console.log(unluckyDays(1001))
 //Running out of space
-function spacey(array){
-  let out = []
-  for(let i = 1; i <= array.length; i++) {
-    out.push(array.slice(0, i).join(""))
-  }
-  return out
-}
-console.log(spacey(['i', 'have','no','space']))
+// function spacey(array){
+//   let out = []
+//   for(let i = 1; i <= array.length; i++) {
+//     out.push(array.slice(0, i).join(""))
+//   }
+//   return out
+// }
+// console.log(spacey(['i', 'have','no','space']))
 //['i','ihave','ihaveno','ihavenospace']
+// function xor(a, b) {
+//   return Boolean(a ^ b)
+// }
+// console.log(xor(true, true))
+//Sum of Minimums!
+function sumOfMinimums(arr) {
+  let out = 0;
+  for(let el in arr) {
+    out += arr[el].sort((a, b) => a-b)[0]
+  }
+    return out;
+}
+console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
