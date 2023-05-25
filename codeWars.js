@@ -2355,11 +2355,20 @@
 // }
 // console.log(xor(true, true))
 //Sum of Minimums!
-function sumOfMinimums(arr) {
-  let out = 0;
-  for(let el in arr) {
-    out += arr[el].sort((a, b) => a-b)[0]
+// function sumOfMinimums(arr) {
+//   let out = 0;
+//   for(let el in arr) {
+//     out += arr[el].sort((a, b) => a-b)[0]
+//   }
+//     return out;
+// }
+// console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
+
+//SantaClausable Interface
+function isSantaClausable(obj) {
+  if(typeof obj.sayHoHoHo === "function" && typeof obj.distributeGifts === "function" && typeof obj.goDownTheChimney === "function") {
+    return true
   }
-    return out;
+  return false
 }
-console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
+console.log(isSantaClausable({sayHoHoHo: function() { console.log('Oink Oink!') }}))
