@@ -2365,10 +2365,24 @@
 // console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]))
 
 //SantaClausable Interface
-function isSantaClausable(obj) {
-  if(typeof obj.sayHoHoHo === "function" && typeof obj.distributeGifts === "function" && typeof obj.goDownTheChimney === "function") {
-    return true
+// function isSantaClausable(obj) {
+//   if(typeof obj.sayHoHoHo === "function" && typeof obj.distributeGifts === "function" && typeof obj.goDownTheChimney === "function") {
+//     return true
+//   }
+//   return false
+// }
+// console.log(isSantaClausable({sayHoHoHo: function() { console.log('Oink Oink!') }}))
+//JavaScript class-like objects
+class Animal {
+  constructor(name, type) {
+    this.name = name,
+    this.type = type
+  
+    this.toString = function () {
+      return `${this.name} is a ${this.type}`
+    }
   }
-  return false
 }
-console.log(isSantaClausable({sayHoHoHo: function() { console.log('Oink Oink!') }}))
+
+const dog = new Animal("max", "dog")
+console.log(dog.toString())
