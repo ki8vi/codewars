@@ -2373,16 +2373,70 @@
 // }
 // console.log(isSantaClausable({sayHoHoHo: function() { console.log('Oink Oink!') }}))
 //JavaScript class-like objects
-class Animal {
-  constructor(name, type) {
-    this.name = name,
-    this.type = type
+// class Animal {
+//   constructor(name, type) {
+//     this.name = name,
+//     this.type = type
   
-    this.toString = function () {
-      return `${this.name} is a ${this.type}`
-    }
+//     this.toString = function () {
+//       return `${this.name} is a ${this.type}`
+//     }
+//   }
+// }
+
+// const dog = new Animal("max", "dog")
+// console.log(dog.toString())
+//
+//Fun with ES6 Classes #2 - Animals and Inheritance
+class Animal {
+  constructor(name, age, legs, species, status) {
+    this.name = name;
+    this.age = age;
+    this.legs = legs;
+    this.species = species;
+    this.status = status;
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+  }
+}
+class Shark extends Animal {
+  constructor(name, age, status) {
+    super(name, age);
+    this.legs  = 0,
+    this.species = "shark",
+    this.status = status
   }
 }
 
-const dog = new Animal("max", "dog")
-console.log(dog.toString())
+class Cat extends Animal {
+    constructor(name, age, status) {
+    super(name, age, status);
+    this.legs  = 4,
+    this.species = "cat",
+    this.status = status
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.  Meow meow!`;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, age, status, master){
+    super(name, age, status);
+    this.legs  = 4,
+    this.species = "dog",
+    this.master = master,
+    this.status = status
+  }
+  introduce() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+  }
+  greetMaster() {
+    return `Hello ${this.master}`;
+  }
+}
+const spitsy = new Cat("Spitsy", 6, "sleeping");
+const billy = new Shark("Billy", 3, "Alive and well");
+const doug = new Dog("Doug", 12, "Serving his master", "Eliza");
+console.log(doug.greetMaster())
