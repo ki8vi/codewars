@@ -2441,27 +2441,76 @@
 // const doug = new Dog("Doug", 12, "Serving his master", "Eliza");
 // console.log(doug.greetMaster())
 //Fun with ES6 Classes #4 - Cubes and Setters
-class Cube {
-  constructor(length) {
-    this.length = length
+// class Cube {
+//   constructor(length) {
+//     this.length = length
+//   }
+//   set volume(val) {
+//     this.length = Math.cbrt(val)
+//   }
+//   set surfaceArea(valS) {
+//     this.length = Math.sqrt(valS/6)
+//   }
+//   get volume() {
+//     return Math.pow(this.length, 3)
+//   }
+//   get surfaceArea() {
+//     return Math.pow(this.length, 2) * 6
+//   }
+// }
+// const cube = new Cube(5)
+// console.log(cube.length)
+// console.log(cube.volume)
+// console.log(cube.surfaceArea)
+//Product of Largest Pair
+
+  function maxProduct(a) {
+    let max1 = Number.NEGATIVE_INFINITY;
+    let max2 = Number.NEGATIVE_INFINITY;
+  
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] > max1) {
+        max2 = max1;
+        max1 = a[i];
+      } else if (a[i] > max2) {
+        max2 = a[i];
+      }
+    }
+  
+    return max1 * max2;
   }
   
-  set volume(val) {
-    this.length = Math.cbrt(val)
-  }
-  set surfaceArea(valS) {
-    this.length = Math.sqrt(valS/6)
-  }
-  get volume() {
-    return Math.pow(this.length, 3)
-  }
-  get surfaceArea() {
-    return Math.pow(this.length, 2) * 6
-  }
-  
-  
-}
-const cube = new Cube(5)
-console.log(cube.length)
-console.log(cube.volume)
-console.log(cube.surfaceArea)
+
+console.log(maxProduct([2, 1, 5, 0, 4, 3]))
+
+
+
+//Fun with ES6 Classes #6 - Fake Files (Basic)
+// class File {
+//   constructor(fullName, content) {
+//     this._fullName = fullName;
+//     this._content = content;
+//     this._filename = fullName.match(/([^]+)(?=\.\w+$)/)[0];
+//     this._extension = fullName.match(/\.\w+/gi).join();
+//   }
+//     get fullName() {
+//       return this._fullName
+//     }
+//     get filename() {
+//       return this._filename
+//     }
+//     get extension() {
+//       return this._extension
+//     }
+//     get getContents() {
+//       return this._content
+//     }
+    
+    
+// }
+// const a = new File("abc.txt", "content")
+// a.fullName = "tt"
+// console.log(a.fullName)
+// console.log(a.filename)
+// console.log(a.extension)
+// console.log(a.getContents)
