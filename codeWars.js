@@ -2464,26 +2464,34 @@
 // console.log(cube.surfaceArea)
 //Product of Largest Pair
 
-  function maxProduct(a) {
-    let max1 = Number.NEGATIVE_INFINITY;
-    let max2 = Number.NEGATIVE_INFINITY;
-  
-    for (let i = 0; i < a.length; i++) {
-      if (a[i] > max1) {
-        max2 = max1;
-        max1 = a[i];
-      } else if (a[i] > max2) {
-        max2 = a[i];
-      }
+// function maxProduct(a) {
+//     let max1 = Number.NEGATIVE_INFINITY;
+//     let max2 = Number.NEGATIVE_INFINITY;
+//     for (let i = 0; i < a.length; i++) {
+//       if (a[i] > max1) {
+//         max2 = max1;
+//         max1 = a[i];
+//       } else if (a[i] > max2) {
+//         max2 = a[i];
+//       }
+//     }
+//     return max1 * max2;
+//   }
+// console.log(maxProduct([2, 1, 5, 0, 4, 3]))
+//Playing Cards Draw Order – Part 1
+const draw = (deck) => {
+	const drawnCards = [];
+      while(deck.length>1) {
+      drawnCards.push(deck.shift())
+      deck.push(deck.shift())
     }
-  
-    return max1 * max2;
-  }
-  
-
-console.log(maxProduct([2, 1, 5, 0, 4, 3]))
-
-
+   drawnCards.push(deck)
+	return drawnCards.flat()
+};
+console.log(draw(["KC", "KH", "QC", "KS", "KD", "QH", "QD", "QS"]))
+console.log(draw([ '9H', '7H', '5C', '6C', '6D' ]))
+//["KC", "QC", "KD", "QD", "KH", "QH", "KS", "QS"];
+//[ '9H', '5C', '6D', '6C', '7H' ]
 
 //Fun with ES6 Classes #6 - Fake Files (Basic)
 // class File {
