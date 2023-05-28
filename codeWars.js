@@ -2479,43 +2479,68 @@
 //   }
 // console.log(maxProduct([2, 1, 5, 0, 4, 3]))
 //Playing Cards Draw Order – Part 1
-const draw = (deck) => {
-	const drawnCards = [];
-      while(deck.length>1) {
-      drawnCards.push(deck.shift())
-      deck.push(deck.shift())
-    }
-   drawnCards.push(deck)
-	return drawnCards.flat()
-};
-console.log(draw(["KC", "KH", "QC", "KS", "KD", "QH", "QD", "QS"]))
-console.log(draw([ '9H', '7H', '5C', '6C', '6D' ]))
+// const draw = (deck) => {
+// 	const drawnCards = [];
+//       while(deck.length>1) {
+//       drawnCards.push(deck.shift())
+//       deck.push(deck.shift())
+//     }
+//    drawnCards.push(deck)
+// 	return drawnCards.flat()
+// };
+// console.log(draw(["KC", "KH", "QC", "KS", "KD", "QH", "QD", "QS"]))
+// console.log(draw([ '9H', '7H', '5C', '6C', '6D' ]))
 //["KC", "QC", "KD", "QD", "KH", "QH", "KS", "QS"];
 //[ '9H', '5C', '6D', '6C', '7H' ]
 
 //Fun with ES6 Classes #6 - Fake Files (Basic)
-// class File {
-//   constructor(fullName, content) {
-//     this._fullName = fullName;
-//     this._content = content;
-//     this._filename = fullName.match(/([^]+)(?=\.\w+$)/)[0];
-//     this._extension = fullName.match(/\.\w+/gi).join();
-//   }
-//     get fullName() {
-//       return this._fullName
-//     }
-//     get filename() {
-//       return this._filename
-//     }
-//     get extension() {
-//       return this._extension
-//     }
-//     get getContents() {
-//       return this._content
-//     }
-    
-    
-// }
+class File {
+  constructor(fullName, contents) {
+    this._fullName = fullName;
+    this._contents = contents || "";
+    this._currentLine = 0;
+    this._currentChar = 0;
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  get filename() {
+    return this._fullName.split('.').slice(0, -1).join('.');
+  }
+
+  get extension() {
+    return this._fullName.split('.').pop();
+  }
+
+  getContents() {
+    return this._contents;
+  }
+
+  write(str) {
+    if (this._contents.length === 0) {
+      this._contents += str;
+    } else {
+      this._contents += '\n' + str;
+    }
+  }
+
+  gets() {
+    const lines = this._contents.split('\n');
+    if (this._currentLine < lines.length) {
+      return lines[this._currentLine++];
+    }
+    return undefined;
+  }
+
+  getc() {
+    if (this._currentChar < this._contents.length) {
+      return this._contents[this._currentChar++];
+    }
+    return undefined;
+  }
+}
 // const a = new File("abc.txt", "content")
 // a.fullName = "tt"
 // console.log(a.fullName)
