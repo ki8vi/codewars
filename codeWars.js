@@ -2548,24 +2548,78 @@
 // console.log(a.extension)
 // console.log(a.getContents)
 //Defining getters and setters on an existing class
-class Person {
-  constructor(firstName, lastName) {
-    this._firstName = firstName;
-    this._lastName = lastName;
-  }
+// class Person {
+//   constructor(firstName, lastName) {
+//     this._firstName = firstName;
+//     this._lastName = lastName;
+//   }
 
-  getName() {
-    return `${this.firstName} ${this.lastName}`
+//   getName() {
+//     return `${this.firstName} ${this.lastName}`
+//   }
+// }
+
+// Object.defineProperty(Person.prototype, 'name', {
+//   get() {
+//     return this.firstName + ' ' + this.lastName;
+//   },
+//   set(fullName) {
+//     const [firstName, lastName] = fullName.split(' ');
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+// });
+//Array Helpers
+Array.prototype.square = function () {
+  let out = []
+  
+  for(let i = 0; i < this.length; i++) {
+    out.push(this[i] * this[i])
   }
+  return out
 }
-
-Object.defineProperty(Person.prototype, 'name', {
-  get() {
-    return this.firstName + ' ' + this.lastName;
-  },
-  set(fullName) {
-    const [firstName, lastName] = fullName.split(' ');
-    this.firstName = firstName;
-    this.lastName = lastName;
+Array.prototype.cube = function () {
+  let out = []
+  
+  for(let i = 0; i < this.length; i++) {
+    out.push(Math.pow(this[i], 3))
   }
-});
+  return out
+}
+Array.prototype.average = function () {
+  let out = 0
+  
+  for(let i = 0; i < this.length; i++) {
+    out+=this[i]
+  }
+  return out/this.length
+}
+Array.prototype.sum = function () {
+  let out = 0
+  
+  for(let i = 0; i < this.length; i++) {
+    out+=this[i]
+  }
+  return out
+}
+Array.prototype.even = function () {
+  let out = []
+  
+  for(let i = 0; i < this.length; i++) {
+    if(this[i] % 2 === 0) {
+      out.push(this[i])
+    }
+  }
+  return out
+}
+Array.prototype.odd = function () {
+  let out = []
+  
+  for(let i = 0; i < this.length; i++) {
+    if(this[i] % 2 !== 0) {
+      out.push(this[i])
+    }
+  }
+  return out
+}
+console.log([1, 2, 3, 4, 5].odd())
