@@ -2494,56 +2494,78 @@
 //[ '9H', '5C', '6D', '6C', '7H' ]
 
 //Fun with ES6 Classes #6 - Fake Files (Basic)
-class File {
-  constructor(fullName, contents) {
-    this._fullName = fullName;
-    this._contents = contents || "";
-    this._currentLine = 0;
-    this._currentChar = 0;
-  }
+// class File {
+//   constructor(fullName, contents) {
+//     this._fullName = fullName;
+//     this._contents = contents || "";
+//     this._currentLine = 0;
+//     this._currentChar = 0;
+//   }
 
-  get fullName() {
-    return this._fullName;
-  }
+//   get fullName() {
+//     return this._fullName;
+//   }
 
-  get filename() {
-    return this._fullName.split('.').slice(0, -1).join('.');
-  }
+//   get filename() {
+//     return this._fullName.split('.').slice(0, -1).join('.');
+//   }
 
-  get extension() {
-    return this._fullName.split('.').pop();
-  }
+//   get extension() {
+//     return this._fullName.split('.').pop();
+//   }
 
-  getContents() {
-    return this._contents;
-  }
+//   getContents() {
+//     return this._contents;
+//   }
 
-  write(str) {
-    if (this._contents.length === 0) {
-      this._contents += str;
-    } else {
-      this._contents += '\n' + str;
-    }
-  }
+//   write(str) {
+//     if (this._contents.length === 0) {
+//       this._contents += str;
+//     } else {
+//       this._contents += '\n' + str;
+//     }
+//   }
 
-  gets() {
-    const lines = this._contents.split('\n');
-    if (this._currentLine < lines.length) {
-      return lines[this._currentLine++];
-    }
-    return undefined;
-  }
+//   gets() {
+//     const lines = this._contents.split('\n');
+//     if (this._currentLine < lines.length) {
+//       return lines[this._currentLine++];
+//     }
+//     return undefined;
+//   }
 
-  getc() {
-    if (this._currentChar < this._contents.length) {
-      return this._contents[this._currentChar++];
-    }
-    return undefined;
-  }
-}
+//   getc() {
+//     if (this._currentChar < this._contents.length) {
+//       return this._contents[this._currentChar++];
+//     }
+//     return undefined;
+//   }
+// }
 // const a = new File("abc.txt", "content")
 // a.fullName = "tt"
 // console.log(a.fullName)
 // console.log(a.filename)
 // console.log(a.extension)
 // console.log(a.getContents)
+//Defining getters and setters on an existing class
+class Person {
+  constructor(firstName, lastName) {
+    this._firstName = firstName;
+    this._lastName = lastName;
+  }
+
+  getName() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+Object.defineProperty(Person.prototype, 'name', {
+  get() {
+    return this.firstName + ' ' + this.lastName;
+  },
+  set(fullName) {
+    const [firstName, lastName] = fullName.split(' ');
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+});
