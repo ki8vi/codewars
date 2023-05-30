@@ -2570,56 +2570,112 @@
 //   }
 // });
 //Array Helpers
-Array.prototype.square = function () {
-  let out = []
+// Array.prototype.square = function () {
+//   let out = []
   
-  for(let i = 0; i < this.length; i++) {
-    out.push(this[i] * this[i])
-  }
-  return out
-}
-Array.prototype.cube = function () {
-  let out = []
+//   for(let i = 0; i < this.length; i++) {
+//     out.push(this[i] * this[i])
+//   }
+//   return out
+// }
+// Array.prototype.cube = function () {
+//   let out = []
   
-  for(let i = 0; i < this.length; i++) {
-    out.push(Math.pow(this[i], 3))
-  }
-  return out
-}
-Array.prototype.average = function () {
-  let out = 0
+//   for(let i = 0; i < this.length; i++) {
+//     out.push(Math.pow(this[i], 3))
+//   }
+//   return out
+// }
+// Array.prototype.average = function () {
+//   let out = 0
   
-  for(let i = 0; i < this.length; i++) {
-    out+=this[i]
-  }
-  return out/this.length
-}
-Array.prototype.sum = function () {
-  let out = 0
+//   for(let i = 0; i < this.length; i++) {
+//     out+=this[i]
+//   }
+//   return out/this.length
+// }
+// Array.prototype.sum = function () {
+//   let out = 0
   
-  for(let i = 0; i < this.length; i++) {
-    out+=this[i]
-  }
-  return out
-}
-Array.prototype.even = function () {
-  let out = []
+//   for(let i = 0; i < this.length; i++) {
+//     out+=this[i]
+//   }
+//   return out
+// }
+// Array.prototype.even = function () {
+//   let out = []
   
-  for(let i = 0; i < this.length; i++) {
-    if(this[i] % 2 === 0) {
-      out.push(this[i])
-    }
-  }
-  return out
-}
-Array.prototype.odd = function () {
-  let out = []
+//   for(let i = 0; i < this.length; i++) {
+//     if(this[i] % 2 === 0) {
+//       out.push(this[i])
+//     }
+//   }
+//   return out
+// }
+// Array.prototype.odd = function () {
+//   let out = []
   
-  for(let i = 0; i < this.length; i++) {
-    if(this[i] % 2 !== 0) {
-      out.push(this[i])
-    }
+//   for(let i = 0; i < this.length; i++) {
+//     if(this[i] % 2 !== 0) {
+//       out.push(this[i])
+//     }
+//   }
+//   return out
+// }
+// console.log([1, 2, 3, 4, 5].odd())
+
+// const binary = (arr, target) => {
+//   let start = 0;
+//   let end = arr.length - 1;
+  
+//   for(let el in arr) {
+//     let mid = (start+end);
+//     let guess = arr[mid]
+//     if(guess === target) {
+//       return mid
+//     }
+//     if(guess > target) {
+//       end = mid - 1
+//     } else {
+//       start = mid + 1
+//     }
+//   }
+//   return null
+// }
+// console.log(binary([1, 3, 5, 7, 8, 15, 22], 22))
+//Array#reduce
+// Array.prototype.reduce = function(callback, initialValue) {
+//   if (typeof callback !== 'function') {
+//     throw new TypeError('Первый аргумент должен быть функцией');
+//   }
+
+//   const array = this;
+//   const length = array.length;
+
+//   // Проверка на пустой массив и отсутствие начального значения аккумулятора
+//   if (length === 0 && initialValue === undefined) {
+//     throw new TypeError('Массив пуст и отсутствует начальное значение аккумулятора');
+//   }
+
+//   let accumulator = initialValue !== undefined ? initialValue : array[0];
+//   let startIndex = initialValue !== undefined ? 0 : 1;
+
+//   for (let i = startIndex; i < length; i++) {
+//     accumulator = callback(accumulator, array[i], i, array);
+//   }
+  
+//   return accumulator;
+// };
+// console.log([1, 2, 3, 4, 5].reduce((acc, el) => acc+=el, 0))
+//Reverse words
+function reverseWords(str) {
+  let out = ""
+  let arr = str.split(" ")
+  for(let el in arr) {
+    out += arr[el].split("").reverse().join("") + " "
   }
-  return out
+  
+
+  return out.slice(0, out.length-1)
 }
-console.log([1, 2, 3, 4, 5].odd())
+console.log(reverseWords("This is an example!"))
