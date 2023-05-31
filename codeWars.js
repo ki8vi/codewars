@@ -2668,14 +2668,41 @@
 // };
 // console.log([1, 2, 3, 4, 5].reduce((acc, el) => acc+=el, 0))
 //Reverse words
-function reverseWords(str) {
-  let out = ""
-  let arr = str.split(" ")
-  for(let el in arr) {
-    out += arr[el].split("").reverse().join("") + " "
-  }
+// function reverseWords(str) {
+//   let out = ""
+//   let arr = str.split(" ")
+//   for(let el in arr) {
+//     out += arr[el].split("").reverse().join("") + " "
+//   }
   
 
-  return out.slice(0, out.length-1)
-}
-console.log(reverseWords("This is an example!"))
+//   return out.slice(0, out.length-1)
+// }
+// console.log(reverseWords("This is an example!"))
+//
+//Extract Nested Object Reference
+Object.prototype.hash = function (path) {
+  const properties = path.split('.');
+  let value = this;
+
+  for (let prop of properties) {
+    if (value && value.hasOwnProperty(prop)) {
+      value = value[prop];
+    } else {
+      return undefined;
+    }
+  }
+
+  return value;
+};
+console.log({
+  person: {
+    name: 'joe',
+    history: {
+      hometown: 'bratislava',
+      bio: {
+        funFact: 'I like fishing.'
+      }
+    }
+  }
+}.hash('person.name'))
