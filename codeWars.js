@@ -2681,28 +2681,29 @@
 // console.log(reverseWords("This is an example!"))
 //
 //Extract Nested Object Reference
-Object.prototype.hash = function (path) {
-  const properties = path.split('.');
-  let value = this;
+// Object.prototype.hash = function (path) {
+//   const properties = path.split('.');
+//   let value = this;
 
-  for (let prop of properties) {
-    if (value && value.hasOwnProperty(prop)) {
-      value = value[prop];
-    } else {
-      return undefined;
-    }
-  }
+//   for (let prop of properties) {
+//     if (value && value.hasOwnProperty(prop)) {
+//       value = value[prop];
+//     } else {
+//       return undefined;
+//     }
+//   }
 
-  return value;
-};
-console.log({
-  person: {
-    name: 'joe',
-    history: {
-      hometown: 'bratislava',
-      bio: {
-        funFact: 'I like fishing.'
-      }
-    }
-  }
-}.hash('person.name'))
+//   return value;
+// };
+// console.log({
+//   person: {
+//     name: 'joe',
+//     history: {
+//       hometown: 'bratislava',
+//       bio: {
+//         funFact: 'I like fishing.'
+//       }
+//     }
+//   }
+// }.hash('person.name'))
+//Image host filename generator
