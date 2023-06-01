@@ -2707,3 +2707,18 @@
 //   }
 // }.hash('person.name'))
 //Image host filename generator
+function generateName(){
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  
+  let out = "";
+  for(let i = 0; i < 6; i++) {
+    out += alphabet[Math.floor(Math.random() * 2600/100)]
+  }
+  return out
+}
+console.log(generateName())
+console.log(generateName())
+console.log(generateName())
+console.log(generateName())
+console.log(generateName())
+
