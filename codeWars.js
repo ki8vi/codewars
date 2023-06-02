@@ -2707,18 +2707,29 @@
 //   }
 // }.hash('person.name'))
 //Image host filename generator
-function generateName(){
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+// function generateName(){
+//   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   
-  let out = "";
-  for(let i = 0; i < 6; i++) {
-    out += alphabet[Math.floor(Math.random() * 2600/100)]
-  }
-  return out
+//   let out = "";
+//   for(let i = 0; i < 6; i++) {
+//     out += alphabet[Math.floor(Math.random() * 2600/100)]
+//   }
+//   return out
+// }
+// console.log(generateName())
+// console.log(generateName())
+// console.log(generateName())
+// console.log(generateName())
+// console.log(generateName())
+//Permute a Palindrome
+function permuteAPalindrome (input) { 
+  const out = input.split("").sort().join("").replace(/(.)\1/g, "")
+  return out.length < 2
 }
-console.log(generateName())
-console.log(generateName())
-console.log(generateName())
-console.log(generateName())
-console.log(generateName())
+console.log(permuteAPalindrome("baa"))
+console.log(permuteAPalindrome("adamm"))
+console.log(permuteAPalindrome("junk"))
+console.log(permuteAPalindrome("racecars"))
+console.log(permuteAPalindrome("mhhewypispawktelqluftyawzswklzkqlfibtujrzbimrnilzbnlkubwctjcuesf"))
+console.log(permuteAPalindrome("ndlplowlpwsvcnlrrspusejqaqvjpnyencdrauryonsolas"))
 
