@@ -2745,9 +2745,23 @@
 // console.log(printerError("aaabbbbhaijjjm"))
 // console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"))
 //Flatten and sort an array
-"use strict";
-function flattenAndSort(array) {
+// "use strict";
+// function flattenAndSort(array) {
   
-  return array.flat().sort((a, b) => a-b);
+//   return array.flat().sort((a, b) => a-b);
+// }
+// console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]))
+//Find the first non-consecutive number
+function firstNonConsecutive (arr) {
+let out = 0
+arr = arr.sort((a, b) => a-b)
+for(let i = 0; i < arr.length; i++) {
+  if(arr[i] + 1 !== arr[i+1]) {
+    out = arr[i+1]
+    break
+  }
 }
-console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]))
+return out ?? null
+}
+console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
+console.log(firstNonConsecutive([1,2,3,4]))
