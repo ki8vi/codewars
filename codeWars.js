@@ -2733,14 +2733,21 @@
 // console.log(permuteAPalindrome("mhhewypispawktelqluftyawzswklzkqlfibtujrzbimrnilzbnlkubwctjcuesf"))
 // console.log(permuteAPalindrome("ndlplowlpwsvcnlrrspusejqaqvjpnyencdrauryonsolas"))
 //Printer Errors
-function printerError(s) {
-  let err = 0
- for(let el in s) {
-  if(/[n-z]/gi.test(s[el])) {
-    err++
-  }
- }
-  return `${err}/${s.length}`
+// function printerError(s) {
+//   let err = 0
+//  for(let el in s) {
+//   if(/[n-z]/gi.test(s[el])) {
+//     err++
+//   }
+//  }
+//   return `${err}/${s.length}`
+// }
+// console.log(printerError("aaabbbbhaijjjm"))
+// console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"))
+//Flatten and sort an array
+"use strict";
+function flattenAndSort(array) {
+  
+  return array.flat().sort((a, b) => a-b);
 }
-console.log(printerError("aaabbbbhaijjjm"))
-console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"))
+console.log(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]))
