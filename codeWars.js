@@ -2722,14 +2722,25 @@
 // console.log(generateName())
 // console.log(generateName())
 //Permute a Palindrome
-function permuteAPalindrome (input) { 
-  const out = input.split("").sort().join("").replace(/(.)\1/g, "")
-  return out.length < 2
+// function permuteAPalindrome (input) { 
+//   const out = input.split("").sort().join("").replace(/(.)\1/g, "")
+//   return out.length < 2
+// }
+// console.log(permuteAPalindrome("baa"))
+// console.log(permuteAPalindrome("adamm"))
+// console.log(permuteAPalindrome("junk"))
+// console.log(permuteAPalindrome("racecars"))
+// console.log(permuteAPalindrome("mhhewypispawktelqluftyawzswklzkqlfibtujrzbimrnilzbnlkubwctjcuesf"))
+// console.log(permuteAPalindrome("ndlplowlpwsvcnlrrspusejqaqvjpnyencdrauryonsolas"))
+//Printer Errors
+function printerError(s) {
+  let err = 0
+ for(let el in s) {
+  if(/[n-z]/gi.test(s[el])) {
+    err++
+  }
+ }
+  return `${err}/${s.length}`
 }
-console.log(permuteAPalindrome("baa"))
-console.log(permuteAPalindrome("adamm"))
-console.log(permuteAPalindrome("junk"))
-console.log(permuteAPalindrome("racecars"))
-console.log(permuteAPalindrome("mhhewypispawktelqluftyawzswklzkqlfibtujrzbimrnilzbnlkubwctjcuesf"))
-console.log(permuteAPalindrome("ndlplowlpwsvcnlrrspusejqaqvjpnyencdrauryonsolas"))
-
+console.log(printerError("aaabbbbhaijjjm"))
+console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"))
