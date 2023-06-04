@@ -2766,21 +2766,58 @@
 // console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
 // console.log(firstNonConsecutive([1,2,3,4]))
 //Are they the "same"?
-function comp(array1, array2){
-  if(!array1 || !array2) {
-    return false
-  }
-  array1 = array1.sort((a, b) => a-b)
-  array2 = array2.sort((a, b) => a-b)
-  let count = 0;
-  for(let el in array1) {
-    if(array1[el] ** 2 === array2[el]) {
-      count++
-    }
-  }
+// function comp(array1, array2){
+//   if(!array1 || !array2) {
+//     return false
+//   }
+//   array1 = array1.sort((a, b) => a-b)
+//   array2 = array2.sort((a, b) => a-b)
+//   let count = 0;
+//   for(let el in array1) {
+//     if(array1[el] ** 2 === array2[el]) {
+//       count++
+//     }
+//   }
   
-  return array1.length === count
+//   return array1.length === count
+// }
+// console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
+// console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],  [121, 14641, 20736, 36100, 25921, 361, 20736, 361]))
+// console.log(comp([121, 144, 19, 161, 19, 144, 19, 11]  ,  [121, 14641, 20736, 36100, 25921, 361, 20736, 361]))
+//L1: Bartender, drinks!
+// function getDrinkByProfession(param){
+// const obj = {
+//   "Jabroni":"Patron Tequila",
+//   "School Counselor":"Anything with Alcohol",
+//   "Programmer":"Hipster Craft Beer",
+//   "Bike Gang Member":"Moonshine",
+//   "Politician":"Your tax dollars",
+//   "Rapper":"Cristal"
+// } 
+//   param = param.split(" ").map(el => el[0].toUpperCase() + el.slice(1).toLowerCase()).join(" ")
+//   console.log(param)
+//   return obj[param] || "Beer"
+// }
+// console.log(getDrinkByProfession("Bike Gang member"))
+//Collatz
+function collatz(n){
+  let out = "";
+  if(n === 1) {
+    return out + n
+  }
+  if(n % 2  === 0) {
+    out += n + "->" + collatz(n / 2) 
+    
+    
+  } else {
+    out += n + "->" + collatz(3 * n + 1)
+    
+  }
+  return out 
 }
-console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361]))
-console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],  [121, 14641, 20736, 36100, 25921, 361, 20736, 361]))
-console.log(comp([121, 144, 19, 161, 19, 144, 19, 11]  ,  [121, 14641, 20736, 36100, 25921, 361, 20736, 361]))
+console.log(collatz(4))
+console.log(collatz(3))
+
+// n/2, if n is even
+// 3n+1, if n is odd
+
