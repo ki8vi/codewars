@@ -2800,24 +2800,29 @@
 // }
 // console.log(getDrinkByProfession("Bike Gang member"))
 //Collatz
-function collatz(n){
-  let out = "";
-  if(n === 1) {
-    return out + n
-  }
-  if(n % 2  === 0) {
-    out += n + "->" + collatz(n / 2) 
+// function collatz(n){
+//   let out = "";
+//   if(n === 1) {
+//     return out + n
+//   }
+//   if(n % 2  === 0) {
+//     out += n + "->" + collatz(n / 2) 
     
     
-  } else {
-    out += n + "->" + collatz(3 * n + 1)
+//   } else {
+//     out += n + "->" + collatz(3 * n + 1)
     
-  }
-  return out 
-}
-console.log(collatz(4))
-console.log(collatz(3))
+//   }
+//   return out 
+// }
+// console.log(collatz(4))
+// console.log(collatz(3))
 
 // n/2, if n is even
 // 3n+1, if n is odd
 
+//Predict your age!
+function predictAge(...arg){
+  return Math.floor(Math.sqrt(arg.reduce((acc, el) => acc += el**2, 0))/2)
+}
+console.log(predictAge(65, 60, 75, 55, 60, 63, 64, 45))
