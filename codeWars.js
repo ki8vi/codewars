@@ -2822,7 +2822,25 @@
 // 3n+1, if n is odd
 
 //Predict your age!
-function predictAge(...arg){
-  return Math.floor(Math.sqrt(arg.reduce((acc, el) => acc += el**2, 0))/2)
+// function predictAge(...arg){
+//   return Math.floor(Math.sqrt(arg.reduce((acc, el) => acc += el**2, 0))/2)
+// }
+// console.log(predictAge(65, 60, 75, 55, 60, 63, 64, 45))
+
+//Unknown amount of duplicates. One missing number.
+function findDupsMiss(arr) {
+  let dupl = arr.filter((el, i) => arr.indexOf(el) !== i)
+  console.log(dupl)
+  let miss
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  for(let i = min; i <= max; i++) {
+    if(!arr.includes(i)) {
+      miss = i
+    }
+  }
+  return [miss, dupl.sort((a, b) => a-b)]
 }
-console.log(predictAge(65, 60, 75, 55, 60, 63, 64, 45))
+
+console.log(findDupsMiss([10,9,8,9,6,1,2,4,3,2,5,5,3]))
+console.log(findDupsMiss([24,25,34,40,38,26,33,29,50,31,33,56,35,36,53,49,57,27,37,40,48,44,32,35,45,52,43,47,26,51,55,28,41,42,46,51,25,30,44,54]))
