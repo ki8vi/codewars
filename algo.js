@@ -57,14 +57,37 @@
 
 // console.log(sortArr([33, 55, 3, 2, 293, 900, -2, -23, -333]))
 //разделяй и властвуй 
-function sum(arr) {
-    let out = 0
-    if (!arr.length) {
-      return 0; 
-    } else {
-      out = arr.shift() + sum(arr);
-    }
+// function sum(arr) {
+//     let out = 0
+//     if (!arr.length) {
+//       return 0; 
+//     } else {
+//       out = arr.shift() + sum(arr);
+//     }
     
-    return out
-  }
-console.log(sum([1, 2, 3, 4, 5]))
+//     return out
+//   }
+// console.log(sum([1, 2, 3, 4, 5]))
+//quick sort --- O(log 2 n * n)
+function qSort(arr) {
+    if(arr.length <= 1) {
+    return arr
+    }
+    let middle = Math.floor(arr.length / 2)
+    let low = []
+    let high = []
+    let pivot = arr[middle]
+    for(let el in arr) {
+        if(middle === el) {
+            continue
+        }
+        if(arr[el] < pivot) {
+            low.push(arr[el])
+        }
+        if(arr[el] > pivot) {
+            high.push(arr[el])
+        }
+    }
+    return [qSort(low), pivot, qSort(high)].flat()
+}
+console.log(qSort([34, 54, 67, 4, 42, 7, 79, 654, 55, 9, 3]))
