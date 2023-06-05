@@ -37,23 +37,34 @@
 //     return arr
 // }
 // console.log(findSmallest([115, 33, 67,-3, 43, 2, 1, 444, 1500, -23]))
-const sortArr = (array) => {
-    let arr = [];
-    for(let i = 0; i < array.length; i++) {
-       min = i
-        for(let j = i + 1; j < array.length; j++) {
-            if(array[j] < array[min]) {
-                min = j
-            }
-        }
+// const sortArr = (array) => {
+//     let arr = [];
+//     for(let i = 0; i < array.length; i++) {
+//        min = i
+//         for(let j = i + 1; j < array.length; j++) {
+//             if(array[j] < array[min]) {
+//                 min = j
+//             }
+//         }
         
-        let first = array[i];
-        array[i] = array[min]
-        array[min] = first
+//         let first = array[i];
+//         array[i] = array[min]
+//         array[min] = first
+//     }
+    
+//     return array
+// }
+
+// console.log(sortArr([33, 55, 3, 2, 293, 900, -2, -23, -333]))
+//разделяй и властвуй 
+function sum(arr) {
+    let out = 0
+    if (!arr.length) {
+      return 0; 
+    } else {
+      out = arr.shift() + sum(arr);
     }
     
-    return array
-}
-
-console.log(sortArr([33, 55, 3, 2, 293, 900, -2, -23, -333]))
-
+    return out
+  }
+console.log(sum([1, 2, 3, 4, 5]))
