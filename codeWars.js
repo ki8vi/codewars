@@ -2905,12 +2905,32 @@
 // console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 // console.log(maxSequence([-2, -1, -3, -4, -1, -2, -1, -5, -4]))
 //Remove the minimum
-function removeSmallest(arr) {
-  let out = [...arr]
-  const min = Math.min(...arr)
-  const index = arr.indexOf(min)
-  out.splice(index, 1)
+// function removeSmallest(arr) {
+//   let out = [...arr]
+//   const min = Math.min(...arr)
+//   const index = arr.indexOf(min)
+//   out.splice(index, 1)
   
-  return out
+//   return out
+// }
+// console.log(removeSmallest([2,2,1,2,1]))
+//Love vs friendship
+// function wordsToMarks(string){
+//   const alph = "abcdefghijklmnopqrstuvwxyz"
+//   return string.split("").reduce((acc, el) => acc+=alph.indexOf(el) + 1, 0)
+// }
+// console.log(wordsToMarks("attitude"))
+
+//Meeting
+function meeting(s) {
+  let out = []
+  s = s.split(";")
+  console.log(s.reverse())
+  for(let i = 0; i < s.length; i++) {
+    out.push(`(${s[i].toUpperCase().split(":").reverse().join(", ")})` )
+    
+
+  }
+  return out.sort().join("")
 }
-console.log(removeSmallest([2,2,1,2,1]))
+console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
