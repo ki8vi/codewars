@@ -2846,14 +2846,45 @@
 //console.log(findDupsMiss([24,25,34,40,38,26,33,29,50,31,33,56,35,36,53,49,57,27,37,40,48,44,32,35,45,52,43,47,26,51,55,28,41,42,46,51,25,30,44,54]))
 
 //Casino chips
-function solve(chips) {
-  const [one, two, three]  = chips.sort((a, b) => b-a)
-  if(one > (two + three)) {
-    return two + three
-  } else {
-    return Math.floor((one + two + three)/2)
-  }
+// function solve(chips) {
+//   const [one, two, three]  = chips.sort((a, b) => b-a)
+//   if(one > (two + three)) {
+//     return two + three
+//   } else {
+//     return Math.floor((one + two + three)/2)
+//   }
+// }
+// console.log(solve([12,12,12]))
+// console.log(solve([1,23,2]))
+// console.log(solve([1, 1, 1]))
+//Sort and Star
+// function twoSort(s) {
+//   let out = ""
+//   s = s.sort()[0]
+//   return s.split("").join("***")
+// }
+// console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]))
+//The dropWhile Function
+
+
+function pred(num) {
+  return num % 2 === 0;
 }
-console.log(solve([12,12,12]))
-console.log(solve([1,23,2]))
-console.log(solve([1, 1, 1]))
+function dropWhile(arr) {
+  
+  let ind = 0
+  let out = [...arr]
+  
+  for(let el in arr) {
+    if (!pred(arr[el])) {
+      ind = el
+      break
+      
+    }
+  }
+  
+  return !ind ? [] : out.slice(ind)
+}
+console.log(dropWhile([2,4,6,8,1,2,5,4,3,2]))
+console.log(dropWhile([2,4,10,100,64,78,92]))
+console.log(dropWhile([2,100,1000,10000,5,3,4,6]))
