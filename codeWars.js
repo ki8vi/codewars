@@ -2865,26 +2865,52 @@
 // }
 // console.log(twoSort(["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"]))
 //The dropWhile Function
-
-
-function pred(num) {
-  return num % 2 === 0;
-}
-function dropWhile(arr) {
+// function pred(num) {
+//   return num % 2 === 0;
+// }
+// function dropWhile(arr) {
   
-  let ind = 0
-  let out = [...arr]
+//   let ind = 0
+//   let out = [...arr]
   
-  for(let el in arr) {
-    if (!pred(arr[el])) {
-      ind = el
-      break
+//   for(let el in arr) {
+//     if (!pred(arr[el])) {
+//       ind = el
+//       break
       
-    }
-  }
+//     }
+//   }
   
-  return !ind ? [] : out.slice(ind)
+//   return !ind ? [] : out.slice(ind)
+// }
+// console.log(dropWhile([2,4,6,8,1,2,5,4,3,2]))
+// console.log(dropWhile([2,4,10,100,64,78,92]))
+// console.log(dropWhile([2,100,1000,10000,5,3,4,6]))
+
+//Maximum subarray sum
+// var maxSequence = function(arr){
+//   let max = 0
+//   let cur = 0
+//   for(let el in arr) {
+//     cur += arr[el]
+//     if(cur > max) {
+//       max = cur
+//     }
+//     if (cur < 0) {
+//       cur = 0
+//     }
+//   }
+//   return max
+// }
+// console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+// console.log(maxSequence([-2, -1, -3, -4, -1, -2, -1, -5, -4]))
+//Remove the minimum
+function removeSmallest(arr) {
+  let out = [...arr]
+  const min = Math.min(...arr)
+  const index = arr.indexOf(min)
+  out.splice(index, 1)
+  
+  return out
 }
-console.log(dropWhile([2,4,6,8,1,2,5,4,3,2]))
-console.log(dropWhile([2,4,10,100,64,78,92]))
-console.log(dropWhile([2,100,1000,10000,5,3,4,6]))
+console.log(removeSmallest([2,2,1,2,1]))
