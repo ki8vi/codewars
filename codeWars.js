@@ -2945,15 +2945,40 @@
 // console.log(minValue([4, 7, 5, 7]))
 
 //Multiplication table
-multiplicationTable = function(size) {
-  let out = []
-  for(let i = 1; i <= size; i++) {
-    let temp = []
-    for(let j = 1; j <= size; j++) {
-      temp.push(i*j)
+// multiplicationTable = function(size) {
+//   let out = []
+//   for(let i = 1; i <= size; i++) {
+//     let temp = []
+//     for(let j = 1; j <= size; j++) {
+//       temp.push(i*j)
+//     }
+//     out.push(temp)
+//   }
+//   return out
+// }
+// console.log(multiplicationTable(3))
+
+//Round up to the next multiple of 5
+// function roundToNext5(n){
+//   if(n % 5 === 0) {
+//     return n
+//   } else {
+//     n = roundToNext5(n+1)
+//   }
+//   return n
+// }
+// console.log(roundToNext5(13))
+
+//Even numbers in an array
+function evenNumbers(array, number) {
+  const out = []
+  array = array.reverse()
+  for(let el in array) {
+    
+    if(out.length !== number && array[el] % 2 === 0) {
+      out.push(array[el])
     }
-    out.push(temp)
   }
-  return out
+  return out.reverse()
 }
-console.log(multiplicationTable(3))
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))
