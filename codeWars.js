@@ -2922,15 +2922,37 @@
 // console.log(wordsToMarks("attitude"))
 
 //Meeting
-function meeting(s) {
-  let out = []
-  s = s.split(";")
-  console.log(s.reverse())
-  for(let i = 0; i < s.length; i++) {
-    out.push(`(${s[i].toUpperCase().split(":").reverse().join(", ")})` )
+// function meeting(s) {
+//   let out = []
+//   s = s.split(";")
+//   console.log(s.reverse())
+//   for(let i = 0; i < s.length; i++) {
+//     out.push(`(${s[i].toUpperCase().split(":").reverse().join(", ")})` )
     
 
+//   }
+//   return out.sort().join("")
+// }
+// console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+
+//Form The Minimum
+// function minValue(values){
+//   let out = values.filter((el, i) => values.indexOf(el) === i).sort((a, b) => a-b)
+//   return +out.reduce((acc, el) => acc + el, "")
+// }
+// console.log(minValue([1, 3, 1]))
+// console.log(minValue([4, 7, 5, 7]))
+
+//Multiplication table
+multiplicationTable = function(size) {
+  
+  let out = []
+  for(let i = 1; i <= size; i++) {
+    for(let j = 1; j <= size; j++) {
+      console.log(i*j)
+    }
+    
   }
-  return out.sort().join("")
+  return out
 }
-console.log(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+console.log(multiplicationTable(3))

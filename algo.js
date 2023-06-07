@@ -69,25 +69,56 @@
 //   }
 // console.log(sum([1, 2, 3, 4, 5]))
 //quick sort --- O(log 2 n * n)
-function qSort(arr) {
-    if(arr.length <= 1) {
-    return arr
+// function qSort(arr) {
+//     if(arr.length <= 1) {
+//     return arr
+//     }
+//     let middle = Math.floor(arr.length / 2)
+//     let low = []
+//     let high = []
+//     let pivot = arr[middle]
+//     for(let el in arr) {
+//         if(middle === el) {
+//             continue
+//         }
+//         if(arr[el] < pivot) {
+//             low.push(arr[el])
+//         }
+//         if(arr[el] > pivot) {
+//             high.push(arr[el])
+//         }
+//     }
+//     return [qSort(low), pivot, qSort(high)].flat()
+// }
+// console.log(qSort([34, 54, 67, 4, 42, 7, 79, 654, 55, 9, 3]))
+
+//graph --поиск в ширину
+const graph = {}
+graph.a = ["b", "c"]
+graph.b = ["f"]
+graph.c = ["d", "e"]
+graph.d = ["f"]
+graph.e = ["f"]
+graph.f = ["g"]
+
+const breadthSearch = (graph, from, to) => {
+    let out = {}
+    let queue = []
+    queue.push(from)
+    let count = 0
+    while(queue.length > 0) {
+        let current = queue.shift()
+        if(!graph[current]) {
+            graph[current] = []
+        }
+        if(graph[current].includes(to)) {
+            return true
+        } else {
+            queue = [...queue, ...graph[current]]
+            console.log(queue)
+        }
+        
     }
-    let middle = Math.floor(arr.length / 2)
-    let low = []
-    let high = []
-    let pivot = arr[middle]
-    for(let el in arr) {
-        if(middle === el) {
-            continue
-        }
-        if(arr[el] < pivot) {
-            low.push(arr[el])
-        }
-        if(arr[el] > pivot) {
-            high.push(arr[el])
-        }
-    }
-    return [qSort(low), pivot, qSort(high)].flat()
+    return false
 }
-console.log(qSort([34, 54, 67, 4, 42, 7, 79, 654, 55, 9, 3]))
+console.log(breadthSearch(graph, "a", "g"))
