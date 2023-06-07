@@ -92,7 +92,8 @@
 // }
 // console.log(qSort([34, 54, 67, 4, 42, 7, 79, 654, 55, 9, 3]))
 
-//graph --поиск в ширину
+//graph --поиск в ширину -- speed: O(V + E); space:O(V); 
+//V - кол-во вершин, E - кол-во рёбер 
 const graph = {}
 graph.a = ["b", "c"]
 graph.b = ["f"]

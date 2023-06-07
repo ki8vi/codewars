@@ -2895,6 +2895,7 @@
 //     cur += arr[el]
 //     if(cur > max) {
 //       max = cur
+//       console.log(max)
 //     }
 //     if (cur < 0) {
 //       cur = 0
@@ -2945,13 +2946,13 @@
 
 //Multiplication table
 multiplicationTable = function(size) {
-  
   let out = []
   for(let i = 1; i <= size; i++) {
+    let temp = []
     for(let j = 1; j <= size; j++) {
-      console.log(i*j)
+      temp.push(i*j)
     }
-    
+    out.push(temp)
   }
   return out
 }
