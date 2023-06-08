@@ -2,7 +2,7 @@
 // const binary = (arr, target) => {
 //       let start = 0;
 //       let end = arr.length - 1;
-      
+
 //       for(let el in arr) {
 //         let mid = (start+end);
 //         let guess = arr[mid]
@@ -46,25 +46,25 @@
 //                 min = j
 //             }
 //         }
-        
+
 //         let first = array[i];
 //         array[i] = array[min]
 //         array[min] = first
 //     }
-    
+
 //     return array
 // }
 
 // console.log(sortArr([33, 55, 3, 2, 293, 900, -2, -23, -333]))
-//разделяй и властвуй 
+//разделяй и властвуй
 // function sum(arr) {
 //     let out = 0
 //     if (!arr.length) {
-//       return 0; 
+//       return 0;
 //     } else {
 //       out = arr.shift() + sum(arr);
 //     }
-    
+
 //     return out
 //   }
 // console.log(sum([1, 2, 3, 4, 5]))
@@ -92,34 +92,85 @@
 // }
 // console.log(qSort([34, 54, 67, 4, 42, 7, 79, 654, 55, 9, 3]))
 
-//graph --поиск в ширину -- speed: O(V + E); space:O(V); 
-//V - кол-во вершин, E - кол-во рёбер 
-const graph = {}
-graph.a = ["b", "c"]
-graph.b = ["f"]
-graph.c = ["d", "e"]
-graph.d = ["f"]
-graph.e = ["f"]
-graph.f = ["g"]
+//graph --поиск в ширину -- speed: O(V + E); space:O(V);
+//V - кол-во вершин, E - кол-во рёбер
+// const graph = {}
+// graph.a = ["b", "c"]
+// graph.b = ["f"]
+// graph.c = ["d", "e"]
+// graph.d = ["f"]
+// graph.e = ["f"]
+// graph.f = ["g"]
 
-const breadthSearch = (graph, from, to) => {
-    let out = {}
-    let queue = []
-    queue.push(from)
-    let count = 0
-    while(queue.length > 0) {
-        let current = queue.shift()
-        if(!graph[current]) {
-            graph[current] = []
-        }
-        if(graph[current].includes(to)) {
-            return true
-        } else {
-            queue = [...queue, ...graph[current]]
-            console.log(queue)
-        }
-        
+// const breadthSearch = (graph, from, to) => {
+//
+//     let queue = []
+//     queue.push(from)
+//     let count = 0
+//     while(queue.length > 0) {
+//         let current = queue.shift()
+//         if(!graph[current]) {
+//             graph[current] = []
+//         }
+//         if(graph[current].includes(to)) {
+//             return true
+//         } else {
+//             queue = [...queue, ...graph[current]]
+//             console.log(queue)
+//         }
+
+//     }
+//     return false
+// }
+// console.log(breadthSearch(graph, "a", "g"))
+
+//algorithm Dijkstra
+const graph = {};
+graph.a = { b: 2, c: 1 };
+graph.b = { f: 7 };
+graph.c = { d: 5, e: 2 };
+graph.d = { f: 2 };
+graph.e = { f: 1 };
+graph.f = { g: 1 };
+graph.g = {};
+
+function findShort(graph, from, to) {
+  const costs = {};
+  const processed = [];
+  let neighbors = {};
+  for (let el in graph) {
+    if (el !== from) {
+      let value = graph[from][el];
+      costs[el] = value || Infinity
     }
-    return false
+  }
+  let node = findNodeLowestCost(costs, processed)
+  while(node) {
+    const cost = costs[node]
+    neighbors = graph[node]
+    for(let el in neighbors) {
+        let newCost = cost + neighbors[el]
+        if(newCost < costs[el]) {
+            costs[el] = newCost
+        }
+    }
+    processed.push(node)
+    node = findNodeLowestCost(costs, processed)
+  }
+  
+  return costs
 }
-console.log(breadthSearch(graph, "a", "g"))
+console.log(findShort(graph, "a"));
+
+function findNodeLowestCost(costs, processed) {
+    let lowestCost = Infinity;
+    let lowestNode;
+    for(let el in costs) {
+        let cost = costs[el]
+        if(cost < lowestCost && !processed.includes(el)) {
+            lowestCost = cost
+            lowestNode = el
+        }
+    }
+    return lowestNode
+}

@@ -2970,15 +2970,21 @@
 // console.log(roundToNext5(13))
 
 //Even numbers in an array
-function evenNumbers(array, number) {
-  const out = []
-  array = array.reverse()
-  for(let el in array) {
+// function evenNumbers(array, number) {
+//   const out = []
+//   array = array.reverse()
+//   for(let el in array) {
     
-    if(out.length !== number && array[el] % 2 === 0) {
-      out.push(array[el])
-    }
-  }
-  return out.reverse()
+//     if(out.length !== number && array[el] % 2 === 0) {
+//       out.push(array[el])
+//     }
+//   }
+//   return out.reverse()
+// }
+// console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))
+
+//The 'if' function
+function _if(bool, func1, func2) {
+  
 }
-console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))
+console.log()
