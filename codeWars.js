@@ -2983,8 +2983,22 @@
 // }
 // console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))
 
-//The 'if' function
-function _if(bool, func1, func2) {
-  
+//Directions Reduction
+function dirReduc(arr){
+  const side = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    WEST: "EAST",
+    EAST: "WEST"
+  }
+  for(let el in arr) {
+    if(arr[el] === side[arr[+el+1]]) {
+      arr.splice(el, 2)
+      arr = dirReduc(arr)
+    }
+  }
+  return arr
 }
-console.log()
+console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
+console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
