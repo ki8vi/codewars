@@ -2984,21 +2984,34 @@
 // console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))
 
 //Directions Reduction
-function dirReduc(arr){
-  const side = {
-    NORTH: "SOUTH",
-    SOUTH: "NORTH",
-    WEST: "EAST",
-    EAST: "WEST"
+// function dirReduc(arr){
+//   const side = {
+//     NORTH: "SOUTH",
+//     SOUTH: "NORTH",
+//     WEST: "EAST",
+//     EAST: "WEST"
+//   }
+//   for(let el in arr) {
+//     if(arr[el] === side[arr[+el+1]]) {
+//       arr.splice(el, 2)
+//       arr = dirReduc(arr)
+//     }
+//   }
+//   return arr
+// }
+// console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+// console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
+// console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
+
+//Replace letters
+function replaceLetters(word) {
+  const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  const consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+  const vowels = ['a','e','i','o','u'];
+  for(let el in word) {
+    console.log(word[el])
   }
-  for(let el in arr) {
-    if(arr[el] === side[arr[+el+1]]) {
-      arr.splice(el, 2)
-      arr = dirReduc(arr)
-    }
-  }
-  return arr
+
 }
-console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
-console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
-console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
+console.log(replaceLetters('codewars'))
+//'enedazuu'

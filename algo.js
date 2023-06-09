@@ -125,52 +125,88 @@
 // console.log(breadthSearch(graph, "a", "g"))
 
 //algorithm Dijkstra
-const graph = {};
-graph.a = { b: 2, c: 1 };
-graph.b = { f: 7 };
-graph.c = { d: 5, e: 2 };
-graph.d = { f: 2 };
-graph.e = { f: 1 };
-graph.f = { g: 1 };
-graph.g = {};
+// const graph = {};
+// graph.a = { b: 2, c: 1 };
+// graph.b = { f: 7 };
+// graph.c = { d: 5, e: 2 };
+// graph.d = { f: 2 };
+// graph.e = { f: 1 };
+// graph.f = { g: 1 };
+// graph.g = {};
 
-function findShort(graph, from, to) {
-  const costs = {};
-  const processed = [];
-  let neighbors = {};
-  for (let el in graph) {
-    if (el !== from) {
-      let value = graph[from][el];
-      costs[el] = value || Infinity
-    }
-  }
-  let node = findNodeLowestCost(costs, processed)
-  while(node) {
-    const cost = costs[node]
-    neighbors = graph[node]
-    for(let el in neighbors) {
-        let newCost = cost + neighbors[el]
-        if(newCost < costs[el]) {
-            costs[el] = newCost
-        }
-    }
-    processed.push(node)
-    node = findNodeLowestCost(costs, processed)
-  }
+// function findShort(graph, from, to) {
+//   const costs = {};
+//   const processed = [];
+//   let neighbors = {};
+//   for (let el in graph) {
+//     if (el !== from) {
+//       let value = graph[from][el];
+//       costs[el] = value || Infinity
+//     }
+//   }
+//   let node = findNodeLowestCost(costs, processed)
+//   while(node) {
+//     const cost = costs[node]
+//     neighbors = graph[node]
+//     for(let el in neighbors) {
+//         let newCost = cost + neighbors[el]
+//         if(newCost < costs[el]) {
+//             costs[el] = newCost
+//         }
+//     }
+//     processed.push(node)
+//     node = findNodeLowestCost(costs, processed)
+//   }
   
-  return costs
-}
-console.log(findShort(graph, "a"));
+//   return costs
+// }
+// console.log(findShort(graph, "a"));
 
-function findNodeLowestCost(costs, processed) {
-    let lowestCost = Infinity;
-    let lowestNode;
-    for(let el in costs) {
-        let cost = costs[el]
-        if(cost < lowestCost && !processed.includes(el)) {
-            lowestCost = cost
-            lowestNode = el
-        }
+// function findNodeLowestCost(costs, processed) {
+//     let lowestCost = Infinity;
+//     let lowestNode;
+//     for(let el in costs) {
+//         let cost = costs[el]
+//         if(cost < lowestCost && !processed.includes(el)) {
+//             lowestCost = cost
+//             lowestNode = el
+//         }
+//     }
+//     return lowestNode
+// }
+
+//Greedy Algorithm
+const items = [
+  { name: 'item1', value: 6, weight: 3 },
+  { name: 'item2', value: 10, weight: 4 },
+  { name: 'item3', value: 12, weight: 5 },
+  { name: 'item4', value: 8, weight: 2 },
+  { name: 'item5', value: 11, weight: 6 }
+];
+function knapsackProblem(items, capacity) {
+  // Сортируем предметы по их стоимости/весу в убывающем порядке
+  items.sort((a, b) => b.value / b.weight - a.value / a.weight);
+  
+  let totalValue = 0;
+  let totalWeight = 0;
+  const selectedItems = [];
+
+  for (const item of items) {
+    if (totalWeight + item.weight <= capacity) {
+      // Если предмет помещается в рюкзаке, добавляем его
+      selectedItems.push(item);
+      totalValue += item.value;
+      totalWeight += item.weight;
     }
-    return lowestNode
+  }
+
+  return {
+    selectedItems,
+    totalValue,
+    totalWeight
+  };
 }
+console.log(knapsackProblem(items, 5));
+
+
+
