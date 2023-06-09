@@ -3003,15 +3003,29 @@
 // console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
 // console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
 
-//Replace letters
-function replaceLetters(word) {
-  const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  const consonants = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
-  const vowels = ['a','e','i','o','u'];
-  for(let el in word) {
-    console.log(word[el])
-  }
 
+//Encrypt this!
+const encryptThis = function(text) {
+  let out = []
+  const splitted = text.split(" ")
+  let firstLetter, secondLetter
+  for(let el in splitted) {
+    firstLetter = splitted[el].slice(0, 1).charCodeAt().toString();
+    secondLetter = splitted[el].slice(1);
+    if(secondLetter) {
+      let tempLetFirst = secondLetter[0]
+      let tempLetLast = secondLetter[secondLetter.length-1]
+      secondLetter = secondLetter.replace(tempLetFirst, tempLetLast)
+      secondLetter = secondLetter.slice(0, secondLetter.length-1)
+      secondLetter = secondLetter.concat(tempLetFirst)
+      out.push(firstLetter + secondLetter)
+    } else {
+      out.push(firstLetter)
+    }
+  }
+  return out.join(" ")
 }
-console.log(replaceLetters('codewars'))
-//'enedazuu'
+console.log(encryptThis("hello world"))
+console.log(encryptThis("A"))
+console.log(encryptThis("Hello"))
+console.log(encryptThis("good"))
