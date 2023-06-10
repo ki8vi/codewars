@@ -3005,27 +3005,54 @@
 
 
 //Encrypt this!
-const encryptThis = function(text) {
+// const encryptThis = function(text) {
+//   let out = []
+//   const splitted = text.split(" ")
+//   let firstLetter, secondLetter
+//   for(let el in splitted) {
+//     firstLetter = splitted[el].slice(0, 1).charCodeAt().toString();
+//     secondLetter = splitted[el].slice(1);
+//     if(secondLetter) {
+//       let tempLetFirst = secondLetter[0]
+//       let tempLetLast = secondLetter[secondLetter.length-1]
+//       secondLetter = secondLetter.replace(tempLetFirst, tempLetLast)
+//       secondLetter = secondLetter.slice(0, -1)
+//       secondLetter = secondLetter.concat(tempLetFirst)
+//       out.push(firstLetter + secondLetter)
+//     } else {
+//       out.push(firstLetter)
+//     }
+//   }
+//   return out.join(" ")
+// }
+// console.log(encryptThis("hello world"))
+// console.log(encryptThis("A"))
+// console.log(encryptThis("Hello"))
+// console.log(encryptThis("good"))
+
+//Title Case
+function titleCase(title, minorWords) {
+  if(minorWords) {
+    minorWords = minorWords.toLowerCase().split(" ")
+  } else {
+    minorWords = []
+  }
   let out = []
-  const splitted = text.split(" ")
-  let firstLetter, secondLetter
-  for(let el in splitted) {
-    firstLetter = splitted[el].slice(0, 1).charCodeAt().toString();
-    secondLetter = splitted[el].slice(1);
-    if(secondLetter) {
-      let tempLetFirst = secondLetter[0]
-      let tempLetLast = secondLetter[secondLetter.length-1]
-      secondLetter = secondLetter.replace(tempLetFirst, tempLetLast)
-      secondLetter = secondLetter.slice(0, secondLetter.length-1)
-      secondLetter = secondLetter.concat(tempLetFirst)
-      out.push(firstLetter + secondLetter)
+  
+ if(title) {
+  title = title.toLowerCase().split(" ")
+  for(let el in title ) {
+    if(minorWords && minorWords.includes(title[el]) && el > 0) {
+      out.push(title[el])
     } else {
-      out.push(firstLetter)
+      out.push(String(title[el][0]).toUpperCase() + title[el].slice(1))
+      
     }
   }
+ }
   return out.join(" ")
 }
-console.log(encryptThis("hello world"))
-console.log(encryptThis("A"))
-console.log(encryptThis("Hello"))
-console.log(encryptThis("good"))
+console.log(titleCase('a clash of KINGS', 'a an the of'))
+console.log(titleCase('the quick brown fox'))
+console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
+console.log(titleCase("erer"))
