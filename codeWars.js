@@ -3058,15 +3058,54 @@
 // console.log(titleCase("erer"))
 
 //Find the vowels
-function vowelIndices(word){
-  const out = []
-  const vowels = /[aeiouy]/i
-  for(let el in word) {
-    if(vowels.test(word[el])) {
-      console.log(word[el])
-      out.push(+el+1)
-    }
+// function vowelIndices(word){
+//   const out = []
+//   const vowels = /[aeiouy]/i
+//   for(let el in word) {
+//     if(vowels.test(word[el])) {
+//       console.log(word[el])
+//       out.push(+el+1)
+//     }
+//   }
+//   return out
+// }
+// console.log(vowelIndices("supercalifragilisticexpialidocious"))
+
+//The Supermarket Queue
+// function queueTime(customers, n) {
+//   let shop = new Array(n).fill(0)
+//   for(let el in customers) {
+//     let min = shop.indexOf(Math.min(...shop))
+//     shop[min] += customers[el]
+//     console.log(shop)
+//   }
+//   return Math.max(...shop)
+// }
+function queueTime(customers, n) {
+  if (customers.length === 0) {
+    return 0; // Базовый случай: если нет покупателей, возвращаем 0
   }
-  return out
+
+  const tills = new Array(n).fill(0); // Создаем массив касс и инициализируем его нулями
+
+  // Функция-помощник для распределения покупателей по кассам
+  function distributeCustomers(index) {
+    if (index === customers.length) {
+      return; // Базовый случай: все покупатели распределены
+    }
+
+    const minIndex = tills.indexOf(Math.min(...tills)); // Находим индекс кассы с минимальным временем
+    tills[minIndex] += customers[index]; // Добавляем время обслуживания текущего покупателя к времени кассы
+
+    distributeCustomers(index + 1); // Рекурсивно вызываем функцию для следующего покупателя
+  }
+
+  distributeCustomers(0); // Начинаем распределение покупателей с первого покупателя
+
+  return Math.max(...tills); // Возвращаем максимальное время из всех касс
 }
-console.log(vowelIndices("supercalifragilisticexpialidocious"))
+
+//console.log(queueTime([5,3,4], 1))
+console.log(queueTime([10,2,3,3], 2))
+//console.log(queueTime([2,3,10], 2))
+//console.log(queueTime([], 1))
