@@ -3031,28 +3031,42 @@
 // console.log(encryptThis("good"))
 
 //Title Case
-function titleCase(title, minorWords) {
-  if(minorWords) {
-    minorWords = minorWords.toLowerCase().split(" ")
-  } else {
-    minorWords = []
-  }
-  let out = []
+// function titleCase(title, minorWords) {
+//   if(minorWords) {
+//     minorWords = minorWords.toLowerCase().split(" ")
+//   } else {
+//     minorWords = []
+//   }
+//   let out = []
   
- if(title) {
-  title = title.toLowerCase().split(" ")
-  for(let el in title ) {
-    if(minorWords && minorWords.includes(title[el]) && el > 0) {
-      out.push(title[el])
-    } else {
-      out.push(String(title[el][0]).toUpperCase() + title[el].slice(1))
+//  if(title) {
+//   title = title.toLowerCase().split(" ")
+//   for(let el in title ) {
+//     if(minorWords && minorWords.includes(title[el]) && el > 0) {
+//       out.push(title[el])
+//     } else {
+//       out.push(String(title[el][0]).toUpperCase() + title[el].slice(1))
       
+//     }
+//   }
+//  }
+//   return out.join(" ")
+// }
+// console.log(titleCase('a clash of KINGS', 'a an the of'))
+// console.log(titleCase('the quick brown fox'))
+// console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
+// console.log(titleCase("erer"))
+
+//Find the vowels
+function vowelIndices(word){
+  const out = []
+  const vowels = /[aeiouy]/i
+  for(let el in word) {
+    if(vowels.test(word[el])) {
+      console.log(word[el])
+      out.push(+el+1)
     }
   }
- }
-  return out.join(" ")
+  return out
 }
-console.log(titleCase('a clash of KINGS', 'a an the of'))
-console.log(titleCase('the quick brown fox'))
-console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
-console.log(titleCase("erer"))
+console.log(vowelIndices("supercalifragilisticexpialidocious"))
