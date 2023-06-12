@@ -176,37 +176,44 @@
 // }
 
 //Greedy Algorithm
-const items = [
-  { name: 'item1', value: 6, weight: 3 },
-  { name: 'item2', value: 10, weight: 4 },
-  { name: 'item3', value: 12, weight: 5 },
-  { name: 'item4', value: 8, weight: 2 },
-  { name: 'item5', value: 11, weight: 6 }
-];
-function knapsackProblem(items, capacity) {
-  // Сортируем предметы по их стоимости/весу в убывающем порядке
-  items.sort((a, b) => b.value / b.weight - a.value / a.weight);
+// const items = [
+//   { name: 'item1', value: 6, weight: 3 },
+//   { name: 'item2', value: 10, weight: 4 },
+//   { name: 'item3', value: 12, weight: 5 },
+//   { name: 'item4', value: 8, weight: 2 },
+//   { name: 'item5', value: 11, weight: 6 }
+// ];
+// function knapsackProblem(items, capacity) {
+//   // Сортируем предметы по их стоимости/весу в убывающем порядке
+//   items.sort((a, b) => b.value / b.weight - a.value / a.weight);
   
-  let totalValue = 0;
-  let totalWeight = 0;
-  const selectedItems = [];
+//   let totalValue = 0;
+//   let totalWeight = 0;
+//   const selectedItems = [];
 
-  for (const item of items) {
-    if (totalWeight + item.weight <= capacity) {
-      // Если предмет помещается в рюкзаке, добавляем его
-      selectedItems.push(item);
-      totalValue += item.value;
-      totalWeight += item.weight;
-    }
-  }
+//   for (const item of items) {
+//     if (totalWeight + item.weight <= capacity) {
+//       // Если предмет помещается в рюкзаке, добавляем его
+//       selectedItems.push(item);
+//       totalValue += item.value;
+//       totalWeight += item.weight;
+//     }
+//   }
 
-  return {
-    selectedItems,
-    totalValue,
-    totalWeight
-  };
-}
-console.log(knapsackProblem(items, 5));
+//   return {
+//     selectedItems,
+//     totalValue,
+//     totalWeight
+//   };
+// }
+// console.log(knapsackProblem(items, 5));
 
-
-
+const sights = [
+  {name: "abbat", time: 0.5, rank: 7},
+  {name: "globus", time: 0.5, rank: 6},
+  {name: "galereya", time: 1, rank: 9},
+  {name: "museum", time: 2, rank: 9},
+  {name: "sobor", time: 0.5, rank: 8}
+]
+const sorted = sights.sort((a, b) => b.time/b.rank - a.time/a.rank)
+console.log(sorted)

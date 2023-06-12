@@ -3081,31 +3081,79 @@
 //   }
 //   return Math.max(...shop)
 // }
-function queueTime(customers, n) {
-  if (customers.length === 0) {
-    return 0; // Базовый случай: если нет покупателей, возвращаем 0
-  }
+// function queueTime(customers, n) {
+//   if (customers.length === 0) {
+//     return 0; // Базовый случай: если нет покупателей, возвращаем 0
+//   }
 
-  const tills = new Array(n).fill(0); // Создаем массив касс и инициализируем его нулями
+//   const tills = new Array(n).fill(0); // Создаем массив касс и инициализируем его нулями
 
-  // Функция-помощник для распределения покупателей по кассам
-  function distributeCustomers(index) {
-    if (index === customers.length) {
-      return; // Базовый случай: все покупатели распределены
-    }
+//   // Функция-помощник для распределения покупателей по кассам
+//   function distributeCustomers(index) {
+//     if (index === customers.length) {
+//       return; // Базовый случай: все покупатели распределены
+//     }
 
-    const minIndex = tills.indexOf(Math.min(...tills)); // Находим индекс кассы с минимальным временем
-    tills[minIndex] += customers[index]; // Добавляем время обслуживания текущего покупателя к времени кассы
+//     const minIndex = tills.indexOf(Math.min(...tills)); // Находим индекс кассы с минимальным временем
+//     tills[minIndex] += customers[index]; // Добавляем время обслуживания текущего покупателя к времени кассы
 
-    distributeCustomers(index + 1); // Рекурсивно вызываем функцию для следующего покупателя
-  }
+//     distributeCustomers(index + 1); // Рекурсивно вызываем функцию для следующего покупателя
+//   }
 
-  distributeCustomers(0); // Начинаем распределение покупателей с первого покупателя
+//   distributeCustomers(0); // Начинаем распределение покупателей с первого покупателя
 
-  return Math.max(...tills); // Возвращаем максимальное время из всех касс
-}
+//   return Math.max(...tills); // Возвращаем максимальное время из всех касс
+// }
 
 //console.log(queueTime([5,3,4], 1))
-console.log(queueTime([10,2,3,3], 2))
+//console.log(queueTime([10,2,3,3], 2))
 //console.log(queueTime([2,3,10], 2))
 //console.log(queueTime([], 1))
+
+// function factorial(n){
+//   let out = 1
+//   for(let i = n; i > 0; i--) {
+//     out *= i
+//   }
+//   return out
+// }
+// console.log(factorial(4))
+
+//Mad Max: Recursion Road
+function max(array) {
+  if(!array.length) {
+    return -Infinity
+  }
+  if(array.length === 1) {
+    return array[0]
+  }
+  if(array.length >= 2) {
+    if(array[0] <= array[1]) {
+      array.splice(0, 1)
+      return max(array)
+    } else {
+      array.splice(1, 1)
+      return max(array)
+    }
+  }
+}
+
+// function max(array) {
+//   if(!array.length) {
+//     return -Infinity
+//   }
+//   function scope(){
+//     this.maxNum = array.shift()
+//     return function(){
+//       this.nextNum = max(array)
+//       if(maxNum < nextNum) {
+//         maxNum = this.nextNum
+//       }
+//       return maxNum
+//     }
+//   }
+//   const out = scope()
+//   return out()
+// }
+console.log(max([1,2,3,4,5,34,153, 2456]))
+console.log(max([]))
