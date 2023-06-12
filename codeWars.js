@@ -3120,23 +3120,23 @@
 // console.log(factorial(4))
 
 //Mad Max: Recursion Road
-function max(array) {
-  if(!array.length) {
-    return -Infinity
-  }
-  if(array.length === 1) {
-    return array[0]
-  }
-  if(array.length >= 2) {
-    if(array[0] <= array[1]) {
-      array.splice(0, 1)
-      return max(array)
-    } else {
-      array.splice(1, 1)
-      return max(array)
-    }
-  }
-}
+// function max(array) {
+//   if(!array.length) {
+//     return -Infinity
+//   }
+//   if(array.length === 1) {
+//     return array[0]
+//   }
+//   if(array.length >= 2) {
+//     if(array[0] <= array[1]) {
+//       array.splice(0, 1)
+//       return max(array)
+//     } else {
+//       array.splice(1, 1)
+//       return max(array)
+//     }
+//   }
+// }
 
 // function max(array) {
 //   if(!array.length) {
@@ -3155,5 +3155,28 @@ function max(array) {
 //   const out = scope()
 //   return out()
 // }
-console.log(max([1,2,3,4,5,34,153, 2456]))
-console.log(max([]))
+// console.log(max([1,2,3,4,5,34,153, 2456]))
+// console.log(max([]))
+
+//Alphabet war
+function alphabetWar(fight) {
+  
+    const left = {w: 4, p: 3, b: 2, s: 1}
+    const right = {m: 4, q: 3, d: 2, z: 1}
+  
+  let teamL = 0, 
+      teamR = 0;
+  
+  for(let el in fight) {
+    if(left.hasOwnProperty(fight[el])) {
+      teamL += left[fight[el]]
+    }
+    if(right.hasOwnProperty(fight[el])) {
+      teamR += right[fight[el]]
+    }
+  }
+  console.log(teamL, teamR)
+  return teamL > teamR ? "Left side wins!": teamL < teamR ? "Right side wins!" : "Let's fight again!";
+}
+console.log(alphabetWar("zdqmwpbs"))
+console.log(alphabetWar("z"))
