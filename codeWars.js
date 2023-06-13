@@ -3206,19 +3206,34 @@
 // console.log(isSortedAndHow([4, 2, 30]))
 // console.log(isSortedAndHow([1, 2, 30]))
 
-function calculator(a,b,sign){
-  if(typeof a !== "number" || typeof b !== "number") return "unknown value";
+// function calculator(a,b,sign){
+//   if(typeof a !== "number" || typeof b !== "number") return "unknown value";
   
-  if(sign === "+") return a+b;
-  if(sign === "-") return a-b;
-  if(sign === "*") return a*b;
-  if(sign === "/") return a/b;
+//   if(sign === "+") return a+b;
+//   if(sign === "-") return a-b;
+//   if(sign === "*") return a*b;
+//   if(sign === "/") return a/b;
     
-  const mr = /\+\-\*\//g
-  if(!mr.test(sign)) return "unknown value";
+//   const mr = /\+\-\*\//g
+//   if(!mr.test(sign)) return "unknown value";
     
-  return "unknown value"
+//   return "unknown value"
   
+//   }
+// //console.log(calculator(1, 2, "+"))
+// console.log(calculator(1,2,"*"))
+
+//Most digits
+function findLongest(array){
+  const strArr = array.map(el => String(el).length)
+  let max = -Infinity
+  let ind
+  for(let el in strArr) {
+    if(max < strArr[el]) {
+      max = strArr[el]
+      ind = el
+    }
   }
-//console.log(calculator(1, 2, "+"))
-console.log(calculator(1,2,"*"))
+  return array[ind]
+}
+console.log(findLongest([8, 900, 500]))
