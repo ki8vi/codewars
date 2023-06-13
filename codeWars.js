@@ -3159,24 +3159,66 @@
 // console.log(max([]))
 
 //Alphabet war
-function alphabetWar(fight) {
+// function alphabetWar(fight) {
   
-    const left = {w: 4, p: 3, b: 2, s: 1}
-    const right = {m: 4, q: 3, d: 2, z: 1}
+//     const left = {w: 4, p: 3, b: 2, s: 1}
+//     const right = {m: 4, q: 3, d: 2, z: 1}
   
-  let teamL = 0, 
-      teamR = 0;
+//   let teamL = 0, 
+//       teamR = 0;
   
-  for(let el in fight) {
-    if(left.hasOwnProperty(fight[el])) {
-      teamL += left[fight[el]]
-    }
-    if(right.hasOwnProperty(fight[el])) {
-      teamR += right[fight[el]]
-    }
+//   for(let el in fight) {
+//     if(left.hasOwnProperty(fight[el])) {
+//       teamL += left[fight[el]]
+//     }
+//     if(right.hasOwnProperty(fight[el])) {
+//       teamR += right[fight[el]]
+//     }
+//   }
+//   console.log(teamL, teamR)
+//   return teamL > teamR ? "Left side wins!": teamL < teamR ? "Right side wins!" : "Let's fight again!";
+// }
+// console.log(alphabetWar("zdqmwpbs"))
+// console.log(alphabetWar("z"))
+
+// function lowercaseCount(str){
+//   const lc = /[a-z]/
+//   let count = 0
+//   for(let el in str) {
+//     if(lc.test(str[el]))
+//       count++
+//   }
+//   return count
+// }
+// console.log(lowercaseCount("abcABC123"))
+
+//
+//Sorted? yes? no? how?
+// function isSortedAndHow(array) {
+//   const ascend = [...array].sort((a, b) => a-b).toString()
+//   const descend = [...array].sort((a, b) => b-a).toString()
+  
+//   if(ascend === array.toString()) return "yes, ascending"
+//   if(descend === array.toString()) return "yes, descending"
+
+//   return "no"
+// }
+// console.log(isSortedAndHow([4, 2, 30]))
+// console.log(isSortedAndHow([1, 2, 30]))
+
+function calculator(a,b,sign){
+  if(typeof a !== "number" || typeof b !== "number") return "unknown value";
+  
+  if(sign === "+") return a+b;
+  if(sign === "-") return a-b;
+  if(sign === "*") return a*b;
+  if(sign === "/") return a/b;
+    
+  const mr = /\+\-\*\//g
+  if(!mr.test(sign)) return "unknown value";
+    
+  return "unknown value"
+  
   }
-  console.log(teamL, teamR)
-  return teamL > teamR ? "Left side wins!": teamL < teamR ? "Right side wins!" : "Let's fight again!";
-}
-console.log(alphabetWar("zdqmwpbs"))
-console.log(alphabetWar("z"))
+//console.log(calculator(1, 2, "+"))
+console.log(calculator(1,2,"*"))
