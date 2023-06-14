@@ -3224,16 +3224,52 @@
 // console.log(calculator(1,2,"*"))
 
 //Most digits
-function findLongest(array){
-  const strArr = array.map(el => String(el).length)
-  let max = -Infinity
-  let ind
-  for(let el in strArr) {
-    if(max < strArr[el]) {
-      max = strArr[el]
-      ind = el
-    }
+// function findLongest(array){
+//   const strArr = array.map(el => String(el).length)
+//   let max = -Infinity
+//   let ind
+//   for(let el in strArr) {
+//     if(max < strArr[el]) {
+//       max = strArr[el]
+//       ind = el
+//     }
+//   }
+//   return array[ind]
+// }
+// console.log(findLongest([8, 900, 500]))
+
+// function countConseq(count) {
+//   let sum = 0;
+//   let out = []
+//   for(let i = 0; i <= count; i++) {
+//     sum += i 
+//     out.push(i)
+//   }
+//   return out.join("+") + " = " + sum
+// };
+// console.log(countConseq(6))
+
+//Moves in squared strings (I)
+function vertMirror(strng) {
+  const splited = strng.split("\n")
+  let out = []
+  for(let el in splited) {
+    out.push(splited[el].split("").reverse("").join(""))
   }
-  return array[ind]
+  return out.join("\n")
 }
-console.log(findLongest([8, 900, 500]))
+function horMirror(strng) {
+  const out = []
+  const splited = strng.split("\n").reverse()
+  for(let el in splited) {
+    out.push(splited[el])
+  }
+  return out.join("\n")
+}
+function oper(fct, s) {
+  return fct(s)
+}
+
+console.log(oper(vertMirror, "abcd\nefgh\nijkl\nmnop"))
+console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"))
+
