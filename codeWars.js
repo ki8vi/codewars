@@ -3250,26 +3250,62 @@
 // console.log(countConseq(6))
 
 //Moves in squared strings (I)
-function vertMirror(strng) {
-  const splited = strng.split("\n")
-  let out = []
-  for(let el in splited) {
-    out.push(splited[el].split("").reverse("").join(""))
-  }
-  return out.join("\n")
-}
-function horMirror(strng) {
-  const out = []
-  const splited = strng.split("\n").reverse()
-  for(let el in splited) {
-    out.push(splited[el])
-  }
-  return out.join("\n")
-}
-function oper(fct, s) {
-  return fct(s)
-}
+// function vertMirror(strng) {
+//   const splited = strng.split("\n")
+//   let out = []
+//   for(let el in splited) {
+//     out.push(splited[el].split("").reverse("").join(""))
+//   }
+//   return out.join("\n")
+// }
+// function horMirror(strng) {
+//   const out = []
+//   const splited = strng.split("\n").reverse()
+//   for(let el in splited) {
+//     out.push(splited[el])
+//   }
+//   return out.join("\n")
+// }
+// function oper(fct, s) {
+//   return fct(s)
+// }
 
-console.log(oper(vertMirror, "abcd\nefgh\nijkl\nmnop"))
-console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"))
+// console.log(oper(vertMirror, "abcd\nefgh\nijkl\nmnop"))
+// console.log(oper(horMirror, "abcd\nefgh\nijkl\nmnop"))
 
+//
+// function array(string) {
+//   const arr = string.split(",")
+//   const len = string.split(",").length
+//   arr.splice(0, 1)
+//   arr.splice(arr.length -1, 1)
+
+//   return len < 3 ? null : arr.join(" ")
+// }
+// console.log(array("1,2,3,4,5" ))
+
+// function adjacentElementsProduct(array) {
+//   const pairs = []
+//   for(let i = 0; i < array.length; i++) {
+//     if(array[i+1]) {
+//       pairs.push(array[i] * array[i+1])
+//     }
+//   }
+  
+//   return Math.max(...pairs)
+// }
+// console.log(adjacentElementsProduct([1, 2, 3, 0]))
+
+//Row Weights
+function rowWeights(array){
+  let team1 = 0
+  let team2 = 0
+  for(let i = 0; i <= array.length; i++) {
+    team1 += array.shift()
+    array.push(0)
+    team2 += array.shift()
+    array.push(0)
+  }
+  return [team1, team2]
+}
+console.log(rowWeights([13, 27, 49]))
