@@ -3297,15 +3297,39 @@
 // console.log(adjacentElementsProduct([1, 2, 3, 0]))
 
 //Row Weights
-function rowWeights(array){
-  let team1 = 0
-  let team2 = 0
-  for(let i = 0; i <= array.length; i++) {
-    team1 += array.shift()
-    array.push(0)
-    team2 += array.shift()
-    array.push(0)
+// function rowWeights(array){
+//   let team1 = 0
+//   let team2 = 0
+//   for(let i = 0; i <= array.length; i++) {
+//     team1 += array.shift()
+//     array.push(0)
+//     team2 += array.shift()
+//     array.push(0)
+//   }
+//   return [team1, team2]
+// }
+// console.log(rowWeights([13, 27, 49]))
+
+//Consonant value
+function solve(s) {
+  let out = []
+  const alpha = " abcdefghijklmnopqrstuvwxyz"
+  const consonant = /[aeiou]/
+  const splited = s.split(consonant)
+  console.log(splited)
+  for(let i = 0; i < splited.length; i++) {
+    let temp = 0
+    if(splited[i].length > 1) {
+      for(let j = 0; j < splited[i].length; j++) {
+        temp += alpha.indexOf(splited[i][j])
+        out.push(temp)
+      } 
+    } else {
+      out.push(alpha.indexOf(splited[i]))
+      
+    }
   }
-  return [team1, team2]
-}
-console.log(rowWeights([13, 27, 49]))
+  return Math.max(...out);
+};
+console.log(solve("zodiacs"))
+console.log(solve("strength"))
