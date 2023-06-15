@@ -3336,25 +3336,42 @@
 
 //Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!
 
-console.log(sumDigPow(1, 100))
-function sumDigPow(a, b) {
-  var result = [];
+// console.log(sumDigPow(1, 100))
+// function sumDigPow(a, b) {
+//   var result = [];
 
-  for (var num = a; num <= b; num++) {
-    if (isEurekaNumber(num)) {
-      result.push(num);
+//   for (var num = a; num <= b; num++) {
+//     if (isEurekaNumber(num)) {
+//       result.push(num);
+//     }
+//   }
+
+//   return result;
+// }
+
+// function isEurekaNumber(num) {
+//   var digits = String(num).split('');
+//   var sum = 0;
+//   for (var i = 0; i < digits.length; i++) {
+//     sum += Math.pow(digits[i], i + 1);
+//   }
+  
+//   return sum === num;
+// }
+
+//Prime Factors
+function primeFactors(n) {
+  let out = []
+  let div = 2
+  while(n >= 2) {
+    if(n % div === 0) {
+      out.push(div)
+      n = n / div
+    } else {
+      div++
     }
   }
-
-  return result;
-}
-
-function isEurekaNumber(num) {
-  var digits = String(num).split('');
-  var sum = 0;
-  for (var i = 0; i < digits.length; i++) {
-    sum += Math.pow(digits[i], i + 1);
-  }
   
-  return sum === num;
+	return out;
 }
+console.log(primeFactors(12))
