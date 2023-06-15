@@ -3360,18 +3360,31 @@
 // }
 
 //Prime Factors
-function primeFactors(n) {
-  let out = []
-  let div = 2
-  while(n >= 2) {
-    if(n % div === 0) {
-      out.push(div)
-      n = n / div
-    } else {
-      div++
-    }
-  }
+// function primeFactors(n) {
+//   let out = []
+//   let div = 2
+//   while(n >= 2) {
+//     if(n % div === 0) {
+//       out.push(div)
+//       n = n / div
+//     } else {
+//       div++
+//     }
+//   }
   
-	return out;
+// 	return out;
+// }
+// console.log(primeFactors(12))
+
+//Build a square
+function generateShape(integer){
+  let out = ""
+  for(let i = 0; i < integer; i++) {
+    for(let j = 0; j < integer; j++) {
+      out += "+"
+    }
+    out += "\n"
+  }
+  return out.slice(0, out.length-1)
 }
-console.log(primeFactors(12))
+console.log(generateShape(8))
