@@ -3311,25 +3311,50 @@
 // console.log(rowWeights([13, 27, 49]))
 
 //Consonant value
-function solve(s) {
-  let out = []
-  const alpha = " abcdefghijklmnopqrstuvwxyz"
-  const consonant = /[aeiou]/
-  const splited = s.split(consonant)
-  console.log(splited)
-  for(let i = 0; i < splited.length; i++) {
-    let temp = 0
-    if(splited[i].length > 1) {
-      for(let j = 0; j < splited[i].length; j++) {
-        temp += alpha.indexOf(splited[i][j])
-        out.push(temp)
-      } 
-    } else {
-      out.push(alpha.indexOf(splited[i]))
+// function solve(s) {
+//   let out = []
+//   const alpha = " abcdefghijklmnopqrstuvwxyz"
+//   const consonant = /[aeiou]/
+//   const splited = s.split(consonant)
+//   console.log(splited)
+//   for(let i = 0; i < splited.length; i++) {
+//     let temp = 0
+//     if(splited[i].length > 1) {
+//       for(let j = 0; j < splited[i].length; j++) {
+//         temp += alpha.indexOf(splited[i][j])
+//         out.push(temp)
+//       } 
+//     } else {
+//       out.push(alpha.indexOf(splited[i]))
       
+//     }
+//   }
+//   return Math.max(...out);
+// };
+// console.log(solve("zodiacs"))
+// console.log(solve("strength"))
+
+//Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!
+
+console.log(sumDigPow(1, 100))
+function sumDigPow(a, b) {
+  var result = [];
+
+  for (var num = a; num <= b; num++) {
+    if (isEurekaNumber(num)) {
+      result.push(num);
     }
   }
-  return Math.max(...out);
-};
-console.log(solve("zodiacs"))
-console.log(solve("strength"))
+
+  return result;
+}
+
+function isEurekaNumber(num) {
+  var digits = String(num).split('');
+  var sum = 0;
+  for (var i = 0; i < digits.length; i++) {
+    sum += Math.pow(digits[i], i + 1);
+  }
+  
+  return sum === num;
+}
