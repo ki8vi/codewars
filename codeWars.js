@@ -3377,14 +3377,49 @@
 // console.log(primeFactors(12))
 
 //Build a square
-function generateShape(integer){
-  let out = ""
-  for(let i = 0; i < integer; i++) {
-    for(let j = 0; j < integer; j++) {
-      out += "+"
-    }
-    out += "\n"
+// function generateShape(integer){
+//   let out = ""
+//   for(let i = 0; i < integer; i++) {
+//     for(let j = 0; j < integer; j++) {
+//       out += "+"
+//     }
+//     out += "\n"
+//   }
+//   return out.slice(0, out.length-1)
+// }
+// console.log(generateShape(8))
+
+//Number , number ... wait LETTER !
+// function doMath(s){
+//   let letters = []
+//   let letterArr = []
+//   let splited = s.split(" ")
+//   for(let i = 0; i < splited.length; i++) {
+//     let letter = splited[i].match(/[a-z]/g).toString()
+//     let number = splited[i].replace(/[a-z]/, "")
+    
+//     letters.push([letter, +number])
+//     letterArr.push(letter)
+//   }
+//   letterArr.sort()
+//   console.log(letterArr)
+//   let numbers = []
+//   for(let el in letterArr) {
+//       console.log(letters[el])
+//   }
+//   console.log(letters[0])
+//   return 
+// } 
+// //console.log(doMath("24z6 1x23 y369 89a 900b"))
+// console.log(doMath("24z6 1z23 y369 89z 900b"))
+
+//Find array
+function findArray(arr1, arr2){
+  let out = []
+  for(let i = 0; i < arr2.length; i++) {
+    out.push(arr1[arr2[i]])
   }
-  return out.slice(0, out.length-1)
+  return !arr1.length ? [] : out
 }
-console.log(generateShape(8))
+console.log(findArray([], [1, 2, 3]))
+console.log(findArray(['a', 'a', 'a', 'a', 'a'], [2, 4]))
