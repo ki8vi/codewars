@@ -3414,12 +3414,42 @@
 // console.log(doMath("24z6 1z23 y369 89z 900b"))
 
 //Find array
-function findArray(arr1, arr2){
-  let out = []
-  for(let i = 0; i < arr2.length; i++) {
-    out.push(arr1[arr2[i]])
+// function findArray(arr1, arr2){
+//   let out = []
+//   for(let i = 0; i < arr2.length; i++) {
+//     out.push(arr1[arr2[i]])
+//   }
+//   return !arr1.length ? [] : out
+// }
+// console.log(findArray([], [1, 2, 3]))
+// console.log(findArray(['a', 'a', 'a', 'a', 'a'], [2, 4]))
+
+//Alternate capitalization
+// function capitalize(s){
+//   let out = []
+//   let strNew1 = "", strNew2 = ""
+//   for(let i = 0; i < s.length; i++) {
+//     if(i % 2 === 0) {
+//       strNew1 += s[i].toUpperCase()
+//       strNew2 += s[i].toLowerCase()
+//     } else {
+//       strNew1 += s[i]
+//       strNew2 += s[i].toUpperCase()
+//     }
+//   }
+//   return [strNew1, strNew2]
+// };
+// console.log(capitalize("abcdef"))
+
+//Take a Ten Minutes Walk
+function isValidWalk(walk) {
+  let count = 0
+  for(let i = 0; i < walk.length; i++) {
+    if(walk[i] !== walk[i+1]) {
+      count++
+    } 
   }
-  return !arr1.length ? [] : out
+  console.log(walk)
+  return count === 10
 }
-console.log(findArray([], [1, 2, 3]))
-console.log(findArray(['a', 'a', 'a', 'a', 'a'], [2, 4]))
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
