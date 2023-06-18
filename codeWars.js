@@ -3441,37 +3441,46 @@
 // console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
 
 //The Vowel Code
-function encode(string) {
-  const vowels = "&aeiou"
-  let out = ""
-  for(let i = 0; i < string.length; i++) {
-    if(vowels.includes(string[i])) {
-      out += vowels.indexOf(string[i])
-      console.log(out)
-    } else {
-      out += string[i]
-    }
-  } 
-  return out
-}
+// function encode(string) {
+//   const vowels = "&aeiou"
+//   let out = ""
+//   for(let i = 0; i < string.length; i++) {
+//     if(vowels.includes(string[i])) {
+//       out += vowels.indexOf(string[i])
+//       console.log(out)
+//     } else {
+//       out += string[i]
+//     }
+//   } 
+//   return out
+// }
 
-function decode(string) {
+// function decode(string) {
+//   let out = ""
+//   const vow = {
+//     "1" : "a",
+//     "2": "e",
+//     "3": "i",
+//     "4": "o",
+//     "5": "u"
+//   }
+//   for(let i = 0; i < string.length; i++) {
+//     if(string[i] in vow) {
+//       out += vow[string[i]]
+//     } else {
+//       out += string[i]
+//     }
+//   }
+//   return out
+// }
+// console.log(encode('How are you today?'))
+// console.log(decode("h3 th2r2"))
+
+//Build Tower
+function towerBuilder(nFloors) {
   let out = ""
-  const vow = {
-    "1" : "a",
-    "2": "e",
-    "3": "i",
-    "4": "o",
-    "5": "u"
+  for(let i = 0; i <= nFloors; i++) {
+    console.log(" ".repeat(i) + "*".repeat(i) + )
   }
-  for(let i = 0; i < string.length; i++) {
-    if(string[i] in vow) {
-      out += vow[string[i]]
-    } else {
-      out += string[i]
-    }
-  }
-  return out
 }
-console.log(encode('How are you today?'))
-console.log(decode("h3 th2r2"))
+console.log(towerBuilder(3))
