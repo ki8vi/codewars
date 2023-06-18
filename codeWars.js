@@ -3389,29 +3389,11 @@
 // }
 // console.log(generateShape(8))
 
-//Number , number ... wait LETTER !
-// function doMath(s){
-//   let letters = []
-//   let letterArr = []
-//   let splited = s.split(" ")
-//   for(let i = 0; i < splited.length; i++) {
-//     let letter = splited[i].match(/[a-z]/g).toString()
-//     let number = splited[i].replace(/[a-z]/, "")
-    
-//     letters.push([letter, +number])
-//     letterArr.push(letter)
-//   }
-//   letterArr.sort()
-//   console.log(letterArr)
-//   let numbers = []
-//   for(let el in letterArr) {
-//       console.log(letters[el])
-//   }
-//   console.log(letters[0])
-//   return 
-// } 
-// //console.log(doMath("24z6 1x23 y369 89a 900b"))
-// console.log(doMath("24z6 1z23 y369 89z 900b"))
+//Convert an array of strings to array of numbers
+// function toNumberArray(stringarray){
+//   return stringarray.map(el => +el)
+// }
+// console.log(toNumberArray(["1", "2.2", "3"]))
 
 //Find array
 // function findArray(arr1, arr2){
@@ -3442,18 +3424,54 @@
 // console.log(capitalize("abcdef"))
 
 //Take a Ten Minutes Walk
-function isValidWalk(walk) {
-  let ns = 0, ew = 0; 
-  if(walk.length === 10){
-    for (let i of walk) { 
-      if (i == 'n') ns += 1; 
-      if (i == 's') ns -= 1; 
-      if (i == 'e') ew += 1; 
-      if (i == 'w') ew -= 1; 
-    } 
-  }
-  else
-    return false
-    return ns === 0 && ew === 0; 
+// function isValidWalk(walk) {
+//   let ns = 0, ew = 0; 
+//   if(walk.length === 10){
+//     for (let i of walk) { 
+//       if (i == 'n') ns += 1; 
+//       if (i == 's') ns -= 1; 
+//       if (i == 'e') ew += 1; 
+//       if (i == 'w') ew -= 1; 
+//     } 
+//   }
+//   else
+//     return false
+//     return ns === 0 && ew === 0; 
+// }
+// console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+
+//The Vowel Code
+function encode(string) {
+  const vowels = "&aeiou"
+  let out = ""
+  for(let i = 0; i < string.length; i++) {
+    if(vowels.includes(string[i])) {
+      out += vowels.indexOf(string[i])
+      console.log(out)
+    } else {
+      out += string[i]
+    }
+  } 
+  return out
 }
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+
+function decode(string) {
+  let out = ""
+  const vow = {
+    "1" : "a",
+    "2": "e",
+    "3": "i",
+    "4": "o",
+    "5": "u"
+  }
+  for(let i = 0; i < string.length; i++) {
+    if(string[i] in vow) {
+      out += vow[string[i]]
+    } else {
+      out += string[i]
+    }
+  }
+  return out
+}
+console.log(encode('How are you today?'))
+console.log(decode("h3 th2r2"))
