@@ -3443,13 +3443,17 @@
 
 //Take a Ten Minutes Walk
 function isValidWalk(walk) {
-  let count = 0
-  for(let i = 0; i < walk.length; i++) {
-    if(walk[i] !== walk[i+1]) {
-      count++
+  let ns = 0, ew = 0; 
+  if(walk.length === 10){
+    for (let i of walk) { 
+      if (i == 'n') ns += 1; 
+      if (i == 's') ns -= 1; 
+      if (i == 'e') ew += 1; 
+      if (i == 'w') ew -= 1; 
     } 
   }
-  console.log(walk)
-  return count === 10
+  else
+    return false
+    return ns === 0 && ew === 0; 
 }
 console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
