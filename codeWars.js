@@ -3477,10 +3477,59 @@
 // console.log(decode("h3 th2r2"))
 
 //Build Tower
-function towerBuilder(nFloors) {
-  let out = ""
-  for(let i = 0; i <= nFloors; i++) {
-    console.log(" ".repeat(i) + "*".repeat(i) + )
-  }
-}
-console.log(towerBuilder(3))
+// function towerBuilder(nFloors) {
+//   let out = []
+//   for(let i = 0; i < nFloors; i++) {
+//     out.push(" ".repeat(nFloors-i -1) + "*".repeat((i *2) + 1) + " ".repeat(nFloors-i - 1))
+//   }
+//   return out
+// }
+// console.log(towerBuilder(4))
+
+//Best travel
+// function chooseBestSum(t, k, ls) {
+//   let maxSum = -1;
+//   const combinations = getCombinations(ls, k);
+
+//   for (let combo of combinations) {
+//     const comboSum = combo.reduce((acc, cur) => acc + cur, 0);
+//     if (comboSum <= t && comboSum > maxSum) {
+//       maxSum = comboSum;
+//     }
+//   }
+
+//   return maxSum !== -1 ? maxSum : null;
+// }
+
+// function getCombinations(arr, k) {
+//   const combinations = [];
+//   backtrack([], 0);
+//   return combinations;
+
+//   function backtrack(currentCombo, start) {
+//     if (currentCombo.length === k) {
+//       combinations.push([...currentCombo]);
+//       return;
+//     }
+
+//     for (let i = start; i < arr.length; i++) {
+//       currentCombo.push(arr[i]);
+//       backtrack(currentCombo, i + 1);
+//       currentCombo.pop();
+//     }
+//   }
+// }
+
+// console.log(chooseBestSum(163, 3, [50, 55, 56, 57, 58]))
+
+//Sum of Cubes
+// function sumCubes(n){
+//   let out = 0;
+//   for(let i = 1; i <= n; i++) {
+//     out += Math.pow(i, 3)
+//   }
+//   return out
+// }
+// console.log(sumCubes(2))
+
+//
