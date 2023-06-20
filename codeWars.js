@@ -3548,16 +3548,26 @@
 // console.log(tapCodeTranslation("example"))
 
 //Get the Middle Character
-function getMiddle(s) {
-  let out = ""
-  if(s.length % 2 === 0) {
-    out += s[s.length/2 - 1] + s[s.length / 2]
+// function getMiddle(s) {
+//   let out = ""
+//   if(s.length % 2 === 0) {
+//     out += s[s.length/2 - 1] + s[s.length / 2]
     
-  } else {
-    out += s[Math.floor(s.length/2)]
-  }
-  return s.length > 1 ? out : s
+//   } else {
+//     out += s[Math.floor(s.length/2)]
+//   }
+//   return s.length > 1 ? out : s
+// }
+// console.log(getMiddle("test"))
+// console.log(getMiddle("testing"))
+// console.log(getMiddle("AWk"))
+
+function numberToPower(number, power){
+  let res = number
+ for(let i = 1; i < power; i++) {
+   res *= number 
+   
+ }
+ return power <= 0 ? number/number : res
 }
-console.log(getMiddle("test"))
-console.log(getMiddle("testing"))
-console.log(getMiddle("AWk"))
+console.log(numberToPower(10, 0))
