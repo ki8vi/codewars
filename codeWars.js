@@ -3615,17 +3615,24 @@
 // }
 //console.log(orderedCount("abracadabra"))
 //console.log(orderedCount("Code Wars"))
-console.log(orderedCount("233312"))
-function orderedCount(text) {
-  const counts = new Map();
-  console.log(counts)
-  for (let char of text) {
-    if (counts.has(char)) {
-      counts.set(char, counts.get(char) + 1);
-    } else {
-      counts.set(char, 1);
-    }
-  }
+// console.log(orderedCount("233312"))
+// function orderedCount(text) {
+//   const counts = new Map();
+//   console.log(counts)
+//   for (let char of text) {
+//     if (counts.has(char)) {
+//       counts.set(char, counts.get(char) + 1);
+//     } else {
+//       counts.set(char, 1);
+//     }
+//   }
   
-  return Array.from(counts.entries());
+//   return Array.from(counts.entries());
+// }
+
+//Sum of Triangular Numbers
+function sumTriangularNumbers(n) {
+  let out = n * (n+1) / 2
+  return n < 1 ? 0 : out += sumTriangularNumbers(n-1)
 }
+console.log(sumTriangularNumbers(943))
