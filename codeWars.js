@@ -3562,12 +3562,70 @@
 // console.log(getMiddle("testing"))
 // console.log(getMiddle("AWk"))
 
-function numberToPower(number, power){
-  let res = number
- for(let i = 1; i < power; i++) {
-   res *= number 
+// function numberToPower(number, power){
+//   let res = number
+//  for(let i = 1; i < power; i++) {
+//    res *= number 
    
- }
- return power <= 0 ? number/number : res
+//  }
+//  return power <= 0 ? number/number : res
+// }
+// console.log(numberToPower(10, 0))
+
+//Switcheroo
+// function switcheroo(x){
+//   let out = ""
+//   for(let i = 0; i < x.length; i++) {
+//     if(x[i] === "a") {
+//       out += "b"
+//     }else if(x[i] === "b") {
+//       out += "a"
+//     } else {
+//       out += x[i]
+//     }
+//   }
+//   return out
+// }
+// console.log(switcheroo('aabacbaa' ))
+
+//Ones and Zeros
+// const binaryArrayToNumber = arr => {
+//   let str = arr.join("")
+//   return parseInt(str, 2)
+// };
+// console.log(binaryArrayToNumber([0,1,1,0]))
+
+//Ordered Count of Characters
+// const orderedCount = function (text) {
+//   let fin = {}
+//   let count = 1
+//   for(let i = 0; i < text.length; i++) {
+//     if(!fin[text[i]]) {
+//       fin[text[i]] = 1
+//     } else {
+//       fin[text[i]] += 1
+//     }
+//   }
+//   console.log(text)
+//   for(let el in fin) {
+//     console.log(fin[el])
+//   }
+  
+//   return Object.entries(fin)
+// }
+//console.log(orderedCount("abracadabra"))
+//console.log(orderedCount("Code Wars"))
+console.log(orderedCount("233312"))
+function orderedCount(text) {
+  const counts = new Map();
+  console.log(counts)
+  for (let char of text) {
+    if (counts.has(char)) {
+      counts.set(char, counts.get(char) + 1);
+    } else {
+      counts.set(char, 1);
+    }
+  }
+  
+  return Array.from(counts.entries());
 }
-console.log(numberToPower(10, 0))
