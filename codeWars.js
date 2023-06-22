@@ -3652,18 +3652,76 @@
 // console.log(God.create())
 
 //Equal Sides Of An Array
-function findEvenIndex(arr) {
-  for(let i = 0; i < arr.length; i++) {
-    let left = arr.slice(0,i+1)
-    let right = arr.slice(i)
-    let sumOfLeft = left.reduce((acc, el) => acc+el, 0)
-    let sumOfRigth = right.reduce((acc, el) => acc+el, 0)
-    if(sumOfLeft === sumOfRigth) {
-      return i
+// function findEvenIndex(arr) {
+//   for(let i = 0; i < arr.length; i++) {
+//     let left = arr.slice(0,i+1)
+//     let right = arr.slice(i)
+//     let sumOfLeft = left.reduce((acc, el) => acc+el, 0)
+//     let sumOfRigth = right.reduce((acc, el) => acc+el, 0)
+//     if(sumOfLeft === sumOfRigth) {
+//       return i
+//     }
+//   }
+//   return -1
+// }
+// console.log(findEvenIndex([1,2,3,4,3,2,1]))
+// console.log(findEvenIndex([1,100,50,-51,1,1]))
+// console.log(findEvenIndex([1,2,3,4,5,6]))
+
+// function sortByLength (array) {
+//   return array.sort((a, b) => a.length - b.length)
+// };
+// console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]))
+
+//Street Fighter 2 - Character Selection
+function streetFighterSelection(fighters, position, moves){
+  let hoveredCharacters = [];
+  let currentPosition = position;
+  for (let move of moves){
+
+    if (move == 'up'){
+      if(currentPosition[0] == 0){
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      } else{
+        currentPosition[0]--;
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      }
     }
+    
+    if (move == 'down'){
+      if(currentPosition[0] == 1){
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      } else{
+        currentPosition[0]++;
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      }
+    }
+    
+    if (move == 'left'){
+      if(currentPosition[1] == 0){
+        currentPosition[1] = 5;
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      } else{
+        currentPosition[1]--;
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      }
+    }
+    
+    if (move == 'right'){
+      if(currentPosition[1] == 5){
+        currentPosition[1] = 0;
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      } else{
+        currentPosition[1]++;
+        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+      }
+    }
+    
   }
-  return -1
+  
+  return hoveredCharacters;
 }
-console.log(findEvenIndex([1,2,3,4,3,2,1]))
-console.log(findEvenIndex([1,100,50,-51,1,1]))
-console.log(findEvenIndex([1,2,3,4,5,6]))
+console.log(streetFighterSelection([
+  ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+  ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+], [0,0], ['up', 'left', 'right', 'left', 'left']))
