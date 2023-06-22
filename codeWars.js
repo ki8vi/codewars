@@ -3631,8 +3631,22 @@
 // }
 
 //Sum of Triangular Numbers
-function sumTriangularNumbers(n) {
-  let out = n * (n+1) / 2
-  return n < 1 ? 0 : out += sumTriangularNumbers(n-1)
+// function sumTriangularNumbers(n) {
+//   let out = n * (n+1) / 2
+//   return n < 1 ? 0 : out += sumTriangularNumbers(n-1)
+// }
+// console.log(sumTriangularNumbers(943))
+
+//Basic subclasses - Adam and Eve
+class God{
+
+  static create(){
+    return [new Man, new Woman]
+  }
 }
-console.log(sumTriangularNumbers(943))
+class Human extends God {}
+class Man extends Human {}
+class Woman extends Human{}
+const adam = new Man()
+const eva = new Woman()
+console.log(God.create())
