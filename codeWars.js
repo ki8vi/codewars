@@ -3638,15 +3638,32 @@
 // console.log(sumTriangularNumbers(943))
 
 //Basic subclasses - Adam and Eve
-class God{
+// class God{
 
-  static create(){
-    return [new Man, new Woman]
+//   static create(){
+//     return [new Man, new Woman]
+//   }
+// }
+// class Human extends God {}
+// class Man extends Human {}
+// class Woman extends Human{}
+// const adam = new Man()
+// const eva = new Woman()
+// console.log(God.create())
+
+//Equal Sides Of An Array
+function findEvenIndex(arr) {
+  for(let i = 0; i < arr.length; i++) {
+    let left = arr.slice(0,i+1)
+    let right = arr.slice(i)
+    let sumOfLeft = left.reduce((acc, el) => acc+el, 0)
+    let sumOfRigth = right.reduce((acc, el) => acc+el, 0)
+    if(sumOfLeft === sumOfRigth) {
+      return i
+    }
   }
+  return -1
 }
-class Human extends God {}
-class Man extends Human {}
-class Woman extends Human{}
-const adam = new Man()
-const eva = new Woman()
-console.log(God.create())
+console.log(findEvenIndex([1,2,3,4,3,2,1]))
+console.log(findEvenIndex([1,100,50,-51,1,1]))
+console.log(findEvenIndex([1,2,3,4,5,6]))
