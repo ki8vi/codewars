@@ -3747,16 +3747,43 @@
 
 //
 //Alternating between three values
-function f(x, cc) { 
-  const values = Object.values(cc)
-  for(let i = 0; i < values.length; i++) {
-    if(values[i] === x) {
-      if(x === values[values.length - 1]) {
-        return values[0]
-      }
-      return values[i+1]
+// function f(x, cc) { 
+//   const values = Object.values(cc)
+//   for(let i = 0; i < values.length; i++) {
+//     if(values[i] === x) {
+//       if(x === values[values.length - 1]) {
+//         return values[0]
+//       }
+//       return values[i+1]
+//     }
+//   }
+// }
+// console.log(f(3, { a:3, b:4, c:5 }))
+// console.log(f(5, { a:3, b:4, c:5 }))
+
+//SMS Lottery Bet Validator
+function validateBet(game, text){
+  let arrNum = []
+  if(/[;]/.test(text)) {
+    return null
+  } else if(/[,]/.test(text)) {
+    text = text.replace(/[,]/g, " ").split(" ")
+  } else {
+    text = text.split(" ")
+  }
+  for(let i = 0; i < text.length; i++) {
+    if(+text[i]) {
+      arrNum.push(+text[i])
     }
   }
+  arrNum = arrNum.sort((a, b) => a-b)
+  console.log(arrNum[arrNum.length-1])
+  if(arrNum.length === game[0] && arrNum[arrNum.length -1] <= game[1] && arrNum[0] !== arrNum[1]) {
+    return arrNum
+  } else {
+    return null
+  }
 }
-console.log(f(3, { a:3, b:4, c:5 }))
-console.log(f(5, { a:3, b:4, c:5 }))
+console.log(validateBet([5, 90], "1 2 3 4 5"))
+console.log(validateBet([5, 90], "1, 2; 3, 4, 5"))
+console.log(validateBet([5, 90], "5 , 3, 1  4,2"))
