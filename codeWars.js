@@ -3804,25 +3804,44 @@
 // console.log(divCon([9, 3, '7', '3']))
 
 //Balanced Braces (with non-brace characters)
-function isBalanced(string) {
-  let valid = 0
-  let stack = []
-  const expamples = ["()", "[]", "{}"]
-  const bracesOnly = string.replace(/[^\[\]{}()]/g, "")
+// function isBalanced(string) {
+//   let valid = 0
+//   let stack = []
+//   const expamples = ["()", "[]", "{}"]
+//   const bracesOnly = string.replace(/[^\[\]{}()]/g, "")
   
-  for(let i = 0; i < bracesOnly.length; i++) {
-   if(expamples.includes(stack[stack.length-1] + bracesOnly[i])) {
-    stack.pop()
-    valid++
-   } else {
-    stack.push(bracesOnly[i])
-   }
+//   for(let i = 0; i < bracesOnly.length; i++) {
+//    if(expamples.includes(stack[stack.length-1] + bracesOnly[i])) {
+//     stack.pop()
+//     valid++
+//    } else {
+//     stack.push(bracesOnly[i])
+//    }
+//   }
+//   return [!stack.length, valid, stack.length]
+// }
+// // console.log(isBalanced("(string[5])"))
+// // console.log(isBalanced("(string[)5]"))
+// // console.log(isBalanced("([{}])()(){}[{}])"))
+// // console.log(isBalanced("([{}])((){}[{}])"))
+// console.log(isBalanced("sgc2q!c]10-1}[}$[]o{]@3y[^3ypk([!sk1#s]8}43]i]{[)d}{$dss]8+[p]2h^0{7){w=(&[4u{#u]h}5=+jo]a(ju)m@c9ew7f3[={#]))}%[]}*rz3wk[g}]mn){u][8by}@}}(z_y}(]edn*)*(+{iuy&)!qdn_}}$8f]9kzlul^a3{]ly}9l@]ai[b=wel@]dgl^{v]{_7)_]s)ay_9!w{[p})}{m"))
+// console.log(isBalanced(""))
+
+//Alphabet symmetry
+function solve(arr){  
+  let out = []
+  const alph = "_abcdefghijklmnopqrstuvwxyz"
+  const lowerCased = arr.map(el => el.toLowerCase())
+  
+  for(let i = 0; i < lowerCased.length; i++) {
+    let count = 0
+    for(let j = 0; j < lowerCased[i].length; j++) {
+      if(alph.indexOf(lowerCased[i][j]) === j+1) {
+        count++
+      }
+    }
+    out.push(count)
   }
-  return [!stack.length, valid, stack.length]
-}
-// console.log(isBalanced("(string[5])"))
-// console.log(isBalanced("(string[)5]"))
-// console.log(isBalanced("([{}])()(){}[{}])"))
-// console.log(isBalanced("([{}])((){}[{}])"))
-console.log(isBalanced("sgc2q!c]10-1}[}$[]o{]@3y[^3ypk([!sk1#s]8}43]i]{[)d}{$dss]8+[p]2h^0{7){w=(&[4u{#u]h}5=+jo]a(ju)m@c9ew7f3[={#]))}%[]}*rz3wk[g}]mn){u][8by}@}}(z_y}(]edn*)*(+{iuy&)!qdn_}}$8f]9kzlul^a3{]ly}9l@]ai[b=wel@]dgl^{v]{_7)_]s)ay_9!w{[p})}{m"))
-console.log(isBalanced(""))
+  return out
+};
+console.log(solve(["abode","ABc","xyzD"]))
