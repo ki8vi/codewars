@@ -3674,54 +3674,89 @@
 // console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]))
 
 //Street Fighter 2 - Character Selection
-function streetFighterSelection(fighters, position, moves){
-  let hoveredCharacters = [];
-  let currentPosition = position;
-  for (let move of moves){
+// function streetFighterSelection(fighters, position, moves){
+//   let hoveredCharacters = [];
+//   let currentPosition = position;
+//   for (let move of moves){
 
-    if (move == 'up'){
-      if(currentPosition[0] == 0){
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      } else{
-        currentPosition[0]--;
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      }
-    }
+//     if (move == 'up'){
+//       if(currentPosition[0] == 0){
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       } else{
+//         currentPosition[0]--;
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       }
+//     }
     
-    if (move == 'down'){
-      if(currentPosition[0] == 1){
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      } else{
-        currentPosition[0]++;
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      }
-    }
+//     if (move == 'down'){
+//       if(currentPosition[0] == 1){
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       } else{
+//         currentPosition[0]++;
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       }
+//     }
     
-    if (move == 'left'){
-      if(currentPosition[1] == 0){
-        currentPosition[1] = 5;
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      } else{
-        currentPosition[1]--;
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      }
-    }
+//     if (move == 'left'){
+//       if(currentPosition[1] == 0){
+//         currentPosition[1] = 5;
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       } else{
+//         currentPosition[1]--;
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       }
+//     }
     
-    if (move == 'right'){
-      if(currentPosition[1] == 5){
-        currentPosition[1] = 0;
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      } else{
-        currentPosition[1]++;
-        hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
-      }
-    }
+//     if (move == 'right'){
+//       if(currentPosition[1] == 5){
+//         currentPosition[1] = 0;
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       } else{
+//         currentPosition[1]++;
+//         hoveredCharacters.push(fighters[currentPosition[0]][currentPosition[1]]);
+//       }
+//     }
     
-  }
+//   }
   
-  return hoveredCharacters;
+//   return hoveredCharacters;
+// }
+// console.log(streetFighterSelection([
+//   ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+//   ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+// ], [0,0], ['up', 'left', 'right', 'left', 'left']))
+
+//Over The Road
+// function overTheRoad(address, n){
+//   let houses1 = []
+//   let houses2 = []
+//   for(let i = 1; i <= n; i++) {
+//     houses1.push(i*2)
+//     houses2.push((i-1)+i)
+//   }
+//   houses2 = houses2.reverse()
+//   if(houses2.includes(address)) {
+//     return houses1[houses2.indexOf(address)]
+//   }
+//   if(houses1.includes(address)) {
+//     return houses2[houses1.indexOf(address)]
+//   }
+// //n * 2 + 1 - address
+// }
+// console.log(overTheRoad(7, 11))
+
+//
+//Alternating between three values
+function f(x, cc) { 
+  const values = Object.values(cc)
+  for(let i = 0; i < values.length; i++) {
+    if(values[i] === x) {
+      if(x === values[values.length - 1]) {
+        return values[0]
+      }
+      return values[i+1]
+    }
+  }
 }
-console.log(streetFighterSelection([
-  ["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
-  ["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
-], [0,0], ['up', 'left', 'right', 'left', 'left']))
+console.log(f(3, { a:3, b:4, c:5 }))
+console.log(f(5, { a:3, b:4, c:5 }))
