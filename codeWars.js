@@ -3828,20 +3828,44 @@
 // console.log(isBalanced(""))
 
 //Alphabet symmetry
-function solve(arr){  
-  let out = []
-  const alph = "_abcdefghijklmnopqrstuvwxyz"
-  const lowerCased = arr.map(el => el.toLowerCase())
+// function solve(arr){  
+//   let out = []
+//   const alph = "_abcdefghijklmnopqrstuvwxyz"
+//   const lowerCased = arr.map(el => el.toLowerCase())
   
-  for(let i = 0; i < lowerCased.length; i++) {
-    let count = 0
-    for(let j = 0; j < lowerCased[i].length; j++) {
-      if(alph.indexOf(lowerCased[i][j]) === j+1) {
-        count++
-      }
+//   for(let i = 0; i < lowerCased.length; i++) {
+//     let count = 0
+//     for(let j = 0; j < lowerCased[i].length; j++) {
+//       if(alph.indexOf(lowerCased[i][j]) === j+1) {
+//         count++
+//       }
+//     }
+//     out.push(count)
+//   }
+//   return out
+// };
+// console.log(solve(["abode","ABc","xyzD"]))
+
+//Highest Rank Number in an Array
+function highestRank(arr){
+  let out = []
+  let hsh = {}
+  for(let i = 0; i < arr.length; i++) {
+    if(!hsh[arr[i]]) {
+      hsh[arr[i]] = 1
+    } else {
+      hsh[arr[i]]++
     }
-    out.push(count)
   }
-  return out
-};
-console.log(solve(["abode","ABc","xyzD"]))
+  arr = Object.entries(hsh)
+  const maxVal = Object.values(hsh).sort((a, b) => b-a)[0]
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i][1] === maxVal) {
+      out.push(+arr[i][0])
+    }
+  }
+  return Math.max(...out)
+}
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]))
+console.log(highestRank([12,10,8,8,3,3,3,3,2,4,10,12,10]))
+console.log(highestRank( [12,10,8,12,7,6,4,10,12,10]))
