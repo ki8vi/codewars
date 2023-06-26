@@ -3847,25 +3847,105 @@
 // console.log(solve(["abode","ABc","xyzD"]))
 
 //Highest Rank Number in an Array
-function highestRank(arr){
-  let out = []
-  let hsh = {}
-  for(let i = 0; i < arr.length; i++) {
-    if(!hsh[arr[i]]) {
-      hsh[arr[i]] = 1
-    } else {
-      hsh[arr[i]]++
-    }
-  }
-  arr = Object.entries(hsh)
-  const maxVal = Object.values(hsh).sort((a, b) => b-a)[0]
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i][1] === maxVal) {
-      out.push(+arr[i][0])
-    }
-  }
-  return Math.max(...out)
+// function highestRank(arr){
+//   let out = []
+//   let hsh = {}
+//   for(let i = 0; i < arr.length; i++) {
+//     if(!hsh[arr[i]]) {
+//       hsh[arr[i]] = 1
+//     } else {
+//       hsh[arr[i]]++
+//     }
+//   }
+//   arr = Object.entries(hsh)
+//   const maxVal = Object.values(hsh).sort((a, b) => b-a)[0]
+//   for(let i = 0; i < arr.length; i++) {
+//     if(arr[i][1] === maxVal) {
+//       out.push(+arr[i][0])
+//     }
+//   }
+  
+//   return Math.max(...out)
+// }
+// console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]))
+// console.log(highestRank([12,10,8,8,3,3,3,3,2,4,10,12,10]))
+// console.log(highestRank( [12,10,8,12,7,6,4,10,12,10]))
+
+//Integers: Recreation One
+// function listSquared(m, n) {
+//   const result = [];
+
+//   for (let num = m; num <= n; num++) {
+//     let sum = 0;
+    
+//     // Находим делители числа num и считаем сумму квадратов делителей
+//     for (let i = 1; i <= Math.sqrt(num); i++) {
+//       if (num % i === 0) {
+//         sum += i * i;
+        
+//         // Если делитель не является квадратом корня из num, добавляем также квадратное отражение делителя
+//         if (num / i !== i) {
+//             sum += (num / i) * (num / i);
+//         }
+//       }
+//     }
+
+//     // Проверяем, является ли сумма квадратов делителей квадратом целого числа
+//     if (Number.isInteger(Math.sqrt(sum))) {
+//       result.push([num, sum]);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(listSquared(1, 250))
+
+//Speed Control
+function gps(s, x) {
+  let arr = []
+  for(let i = 0; i < x.length; i++) {
+    console.log(x[i+1] - x[i])
+    arr.push(Math.floor(3600 * (x[i+1] - x[i]) / s))
+  } 
+  return x.length <= 1 ? 0 : arr.sort((a, b) => b-a)[0]
 }
-console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]))
-console.log(highestRank([12,10,8,8,3,3,3,3,2,4,10,12,10]))
-console.log(highestRank( [12,10,8,12,7,6,4,10,12,10]))
+console.log(gps(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]))
+
+
+
+// //Strings Mix
+// function mix(s1, s2) {
+//   s1 = s1.replace(/[^a-z]/g, "")
+//   s2 = s2.replace(/[^a-z]/g, "")
+//   console.log(s2)
+//   let str1 = {}
+//   let str2 = {}
+//   for(let i = 0; i < s1.length; i++) {
+//     if(!str1[s1[i]]) {
+//       str1[s1[i]] = 1
+//     } else {
+//       str1[s1[i]]++
+//     }
+//   }
+//   for(let i = 0; i < s2.length; i++) {
+//     if(!str2[s2[i]]) {
+//       str2[s2[i]] = 1
+//     } else {
+//       str2[s2[i]]++
+//     }
+//   }
+//   const s1Arr = Object.entries(str1)
+//   const s2Arr = Object.entries(str2)
+//   const maxLength = Math.max(s1Arr.length, s2Arr.length)
+//   console.log(s1Arr.sort())
+//   console.log(s2Arr.sort())
+  
+//   console.log(Object.entries(str1).length)
+//   console.log(Object.entries(str2).length)
+
+
+// }
+// console.log(mix("Are they here", "yes, they are here"))
+
+
