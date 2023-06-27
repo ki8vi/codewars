@@ -3902,17 +3902,15 @@
 // console.log(listSquared(1, 250))
 
 //Speed Control
-function gps(s, x) {
-  let arr = []
-  for(let i = 0; i < x.length; i++) {
-    console.log(x[i+1] - x[i])
-    arr.push(Math.floor(3600 * (x[i+1] - x[i]) / s))
-  } 
-  return x.length <= 1 ? 0 : arr.sort((a, b) => b-a)[0]
-}
-console.log(gps(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]))
-
-
+// function gps(s, x) {
+//   let arr = []
+//   for(let i = 0; i < x.length; i++) {
+//     console.log(x[i+1] - x[i])
+//     arr.push(Math.floor(3600 * (x[i+1] - x[i]) / s))
+//   } 
+//   return x.length <= 1 ? 0 : arr.sort((a, b) => b-a)[0]
+// }
+// console.log(gps(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]))
 
 // //Strings Mix
 // function mix(s1, s2) {
@@ -3948,4 +3946,18 @@ console.log(gps(15, [0.0, 0.19, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25]))
 // }
 // console.log(mix("Are they here", "yes, they are here"))
 
-
+//Largest Value of a Power Less Than a Number
+function largestPower(n){
+  let number = 0
+  if(n <= 4) return [1, -1];
+  for(let i = 1; i < n; i++) {
+    if(Number.isInteger(Math.sqrt(i))) {
+      number = i
+      console.log(i)
+    }
+   
+  }
+  console.log(Math.cbrt(number))
+  
+}
+console.log(largestPower(29))
