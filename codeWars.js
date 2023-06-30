@@ -3946,18 +3946,14 @@
 // }
 // console.log(mix("Are they here", "yes, they are here"))
 
-//Largest Value of a Power Less Than a Number
-function largestPower(n){
-  let number = 0
-  if(n <= 4) return [1, -1];
-  for(let i = 1; i < n; i++) {
-    if(Number.isInteger(Math.sqrt(i))) {
-      number = i
-      console.log(i)
-    }
-   
+//Sum of Multiples
+function sumMul(n,m){
+  if(n >= m) return "INVALID"
+  let sum = 0
+  for(let i = n; i < m; i+=n) {
+    sum += i
   }
-  console.log(Math.cbrt(number))
-  
+  return sum
 }
-console.log(largestPower(29))
+console.log(sumMul(2, 9))
+console.log(sumMul(4, 123))
