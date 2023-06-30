@@ -3964,18 +3964,34 @@
 // console.log(findDifference([2, 2, 3], [5, 4, 1]))
 
 //Color to Grayscale
-function rgbToGrayscale(color) {
-  const r = parseInt(color.substring(1, 3), 16);
-  const g = parseInt(color.substring(3, 5), 16);
-  const b = parseInt(color.substring(5, 7), 16);
+// function rgbToGrayscale(color) {
+//   const r = parseInt(color.substring(1, 3), 16);
+//   const g = parseInt(color.substring(3, 5), 16);
+//   const b = parseInt(color.substring(5, 7), 16);
   
-  const y = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+//   const y = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
   
-  const grayscale = y.toString(16).padStart(2, '0');
+//   const grayscale = y.toString(16).padStart(2, '0');
   
-  return '#' + grayscale.repeat(3).toUpperCase();
-}
+//   return '#' + grayscale.repeat(3).toUpperCase();
+// }
 
-console.log(rgbToGrayscale("#0000FF"))
-console.log(rgbToGrayscale("#FF0000"))
-console.log(rgbToGrayscale("#000000"))
+// console.log(rgbToGrayscale("#0000FF"))
+// console.log(rgbToGrayscale("#FF0000"))
+// console.log(rgbToGrayscale("#000000"))
+
+function isLeapYear(year) {
+  if (year % 4 === 0) {
+    if (year % 100 === 0) {
+      if (year % 400 === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return true;
+    }
+  } else {
+    return false;
+  }
+}
