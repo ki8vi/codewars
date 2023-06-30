@@ -3947,13 +3947,35 @@
 // console.log(mix("Are they here", "yes, they are here"))
 
 //Sum of Multiples
-function sumMul(n,m){
-  if(n >= m) return "INVALID"
-  let sum = 0
-  for(let i = n; i < m; i+=n) {
-    sum += i
-  }
-  return sum
+// function sumMul(n,m){
+//   if(n >= m) return "INVALID"
+//   let sum = 0
+//   for(let i = n; i < m; i+=n) {
+//     sum += i
+//   }
+//   return sum
+// }
+// console.log(sumMul(2, 9))
+// console.log(sumMul(4, 123))
+
+// function findDifference(a, b) {
+//   return Math.abs(a.reduce((acc, el) => acc*el, 1) - b.reduce((acc, el) => acc*el, 1))
+// }
+// console.log(findDifference([2, 2, 3], [5, 4, 1]))
+
+//Color to Grayscale
+function rgbToGrayscale(color) {
+  const r = parseInt(color.substring(1, 3), 16);
+  const g = parseInt(color.substring(3, 5), 16);
+  const b = parseInt(color.substring(5, 7), 16);
+  
+  const y = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+  
+  const grayscale = y.toString(16).padStart(2, '0');
+  
+  return '#' + grayscale.repeat(3).toUpperCase();
 }
-console.log(sumMul(2, 9))
-console.log(sumMul(4, 123))
+
+console.log(rgbToGrayscale("#0000FF"))
+console.log(rgbToGrayscale("#FF0000"))
+console.log(rgbToGrayscale("#000000"))
