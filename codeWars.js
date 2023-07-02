@@ -3997,13 +3997,23 @@
 // }
 
 //Bumps in the Road
-function bump(x){
-let bumps = 0
-for(let i = 0; i < x.length; i++) {
-  if(x[i] === "n") {
-    bumps++
+// function bump(x){
+// let bumps = 0
+// for(let i = 0; i < x.length; i++) {
+//   if(x[i] === "n") {
+//     bumps++
+//   }
+// }
+// return bumps > 15 ? "Car Dead" : "Woohoo!"
+// }
+// console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"))
+
+//Simple beads count
+function countRedBeads(n) {
+  let out = 0
+  for(let i = 0; i < n; i++) {
+    out = i * 2
   }
+  return out
 }
-return bumps > 15 ? "Car Dead" : "Woohoo!"
-}
-console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"))
+console.log(countRedBeads(3))
