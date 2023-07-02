@@ -3980,18 +3980,30 @@
 // console.log(rgbToGrayscale("#FF0000"))
 // console.log(rgbToGrayscale("#000000"))
 
-function isLeapYear(year) {
-  if (year % 4 === 0) {
-    if (year % 100 === 0) {
-      if (year % 400 === 0) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      return true;
-    }
-  } else {
-    return false;
+// function isLeapYear(year) {
+//   if (year % 4 === 0) {
+//     if (year % 100 === 0) {
+//       if (year % 400 === 0) {
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     } else {
+//       return true;
+//     }
+//   } else {
+//     return false;
+//   }
+// }
+
+//Bumps in the Road
+function bump(x){
+let bumps = 0
+for(let i = 0; i < x.length; i++) {
+  if(x[i] === "n") {
+    bumps++
   }
 }
+return bumps > 15 ? "Car Dead" : "Woohoo!"
+}
+console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"))
