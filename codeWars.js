@@ -4009,11 +4009,18 @@
 // console.log(bump("_nnnnnnn_n__n______nn__nn_nnn"))
 
 //Simple beads count
-function countRedBeads(n) {
-  let out = 0
-  for(let i = 0; i < n; i++) {
-    out = i * 2
-  }
-  return out
-}
-console.log(countRedBeads(3))
+// function countRedBeads(n) {
+//   let out = 0
+//   for(let i = 0; i < n; i++) {
+//     out = i * 2
+//   }
+//   return out
+// }
+// console.log(countRedBeads(3))
+
+//max diff - easy
+function maxDiff(list) {
+  return list.sort((a, b) => b-a)[0] - list.sort((a, b) => a-b)[0];
+};
+console.log(maxDiff([0, 1, 2, 3, 4, 5, 6]))
+console.log(maxDiff([1, 2, 3, -4]))
