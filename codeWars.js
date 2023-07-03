@@ -4019,8 +4019,28 @@
 // console.log(countRedBeads(3))
 
 //max diff - easy
-function maxDiff(list) {
-  return list.sort((a, b) => b-a)[0] - list.sort((a, b) => a-b)[0];
-};
-console.log(maxDiff([0, 1, 2, 3, 4, 5, 6]))
-console.log(maxDiff([1, 2, 3, -4]))
+// function maxDiff(list) {
+//   return list.sort((a, b) => b-a)[0] - list.sort((a, b) => a-b)[0];
+// };
+// console.log(maxDiff([0, 1, 2, 3, 4, 5, 6]))
+// console.log(maxDiff([1, 2, 3, -4]))
+
+//Simple Fun #74: Growing Plant
+function growingPlant(upSpeed, downSpeed, desiredHeight) {
+    let current = 0
+    let days = 0
+
+    while(current < desiredHeight) {
+      current+= upSpeed
+      days++
+      if(current < desiredHeight) {
+        current-= downSpeed
+      }
+    }
+    return days
+}
+console.log(growingPlant(10,9,4))
+ console.log(growingPlant(100,10,910))
+console.log(growingPlant(98, 88, 75))
+console.log(growingPlant(30, 25, 910))
+//177
