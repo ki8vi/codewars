@@ -4026,21 +4026,44 @@
 // console.log(maxDiff([1, 2, 3, -4]))
 
 //Simple Fun #74: Growing Plant
-function growingPlant(upSpeed, downSpeed, desiredHeight) {
-    let current = 0
-    let days = 0
+// function growingPlant(upSpeed, downSpeed, desiredHeight) {
+//     let current = 0
+//     let days = 0
 
-    while(current < desiredHeight) {
-      current+= upSpeed
-      days++
-      if(current < desiredHeight) {
-        current-= downSpeed
-      }
-    }
-    return days
-}
-console.log(growingPlant(10,9,4))
- console.log(growingPlant(100,10,910))
-console.log(growingPlant(98, 88, 75))
-console.log(growingPlant(30, 25, 910))
+//     while(current < desiredHeight) {
+//       current+= upSpeed
+//       days++
+//       if(current < desiredHeight) {
+//         current-= downSpeed
+//       }
+//     }
+//     return days
+// }
+// console.log(growingPlant(10,9,4))
+//  console.log(growingPlant(100,10,910))
+// console.log(growingPlant(98, 88, 75))
+// console.log(growingPlant(30, 25, 910))
 //177
+
+//Dashatize it
+function dashatize(num) {
+  
+  let out = ""
+  let numStr = Math.abs(num).toString().split("")
+  console.log(numStr)
+  for(let i = 0; i < numStr.length; i++) {
+    if(numStr[i] % 2 === 1) {
+      out += "-" + numStr[i] + "-"
+    } else {
+      out += numStr[i]
+    }
+  }
+  
+  out = out.replace(/^-+|-+$/g, "").replace(/--+/g, "-")
+  return typeof num !== "number" ? "NaN" : out
+}
+console.log(dashatize(274))
+console.log(dashatize(6815))
+console.log(dashatize(-28369))
+console.log(dashatize(5311))
+//console.log(dashatize("NaN"))
