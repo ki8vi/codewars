@@ -4046,24 +4046,39 @@
 //177
 
 //Dashatize it
-function dashatize(num) {
+// function dashatize(num) {
   
-  let out = ""
-  let numStr = Math.abs(num).toString().split("")
-  console.log(numStr)
-  for(let i = 0; i < numStr.length; i++) {
-    if(numStr[i] % 2 === 1) {
-      out += "-" + numStr[i] + "-"
-    } else {
-      out += numStr[i]
-    }
-  }
+//   let out = ""
+//   let numStr = Math.abs(num).toString().split("")
+//   console.log(numStr)
+//   for(let i = 0; i < numStr.length; i++) {
+//     if(numStr[i] % 2 === 1) {
+//       out += "-" + numStr[i] + "-"
+//     } else {
+//       out += numStr[i]
+//     }
+//   }
   
-  out = out.replace(/^-+|-+$/g, "").replace(/--+/g, "-")
-  return typeof num !== "number" ? "NaN" : out
-}
-console.log(dashatize(274))
-console.log(dashatize(6815))
-console.log(dashatize(-28369))
-console.log(dashatize(5311))
+//   out = out.replace(/^-+|-+$/g, "").replace(/--+/g, "-")
+//   return typeof num !== "number" ? "NaN" : out
+// }
+// console.log(dashatize(274))
+// console.log(dashatize(6815))
+// console.log(dashatize(-28369))
+// console.log(dashatize(5311))
 //console.log(dashatize("NaN"))
+
+//Parts of a list
+function partlist(arr) {
+  let out = []
+  let first = ""
+  for(let i = 1; i <= arr.length-1; i++) {
+    first = arr.slice(0, i).join(" ")
+    let rest = arr.slice(i).join(" ")
+    console.log(first)
+    out.push([first, rest])
+    
+  }
+  return out
+}
+console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]))
