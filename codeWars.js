@@ -4069,16 +4069,37 @@
 //console.log(dashatize("NaN"))
 
 //Parts of a list
-function partlist(arr) {
-  let out = []
-  let first = ""
-  for(let i = 1; i <= arr.length-1; i++) {
-    first = arr.slice(0, i).join(" ")
-    let rest = arr.slice(i).join(" ")
-    console.log(first)
-    out.push([first, rest])
+// function partlist(arr) {
+//   let out = []
+//   for(let i = 1; i <= arr.length-1; i++) {
+//     let first = arr.slice(0, i).join(" ")
+//     let rest = arr.slice(i).join(" ")
+//     console.log(first)
+//     out.push([first, rest])
     
+//   }
+//   return out
+// }
+// console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]))
+
+//nother card game
+function solution(frank, sam, tom) {
+  let [f, s, t] = [0, 0, 0]
+  for(let i = 0; i <= 11; i++) {
+    if(frank.includes(i)) {
+      frank.splice(i, 1)
+      f++
+      }
+    if(sam.includes(i)) {
+      sam.splice(i, 1)
+      s++
+    }
+    if(tom.includes(i)) {
+      tom.splice(i, 1)
+      t++
+    }
   }
-  return out
+  console.log(frank, sam, tom)
 }
-console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]))
+console.log(solution([2, 5, 8, 11], [1, 4, 7, 10] , [0, 3, 6, 9]))
+//console.log(solution([3, 6, 7, 8], [0, 2, 4, 5] , [1, 9, 10, 11]))
