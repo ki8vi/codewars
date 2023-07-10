@@ -4083,23 +4083,20 @@
 // console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]))
 
 //nother card game
-function solution(frank, sam, tom) {
-  let [f, s, t] = [0, 0, 0]
-  for(let i = 0; i <= 11; i++) {
-    if(frank.includes(i)) {
-      frank.splice(i, 1)
-      f++
-      }
-    if(sam.includes(i)) {
-      sam.splice(i, 1)
-      s++
+function solution(frank, sam, tom){
+  let samBeatPoss = 0
+  let tomBeatPoss = 0
+  frank.forEach(x=>{
+    if(sam.some(y => y < x)){
+      sam.splice(sam.indexOf(Math.max(...sam.filter(y => y < x))), 1)
+      samBeatPoss++
     }
-    if(tom.includes(i)) {
-      tom.splice(i, 1)
-      t++
+    if(tom.some(z => z < x)){
+      tom.splice(tom.indexOf(Math.max(...tom.filter(z => z < x))),1)
+      tomBeatPoss++
     }
-  }
-  console.log(frank, sam, tom)
+  })
+  return samBeatPoss >= 2 && tomBeatPoss >= 2 ? true : false
 }
 console.log(solution([2, 5, 8, 11], [1, 4, 7, 10] , [0, 3, 6, 9]))
-//console.log(solution([3, 6, 7, 8], [0, 2, 4, 5] , [1, 9, 10, 11]))
+console.log(solution([3, 6, 7, 8], [0, 2, 4, 5] , [1, 9, 10, 11]))
