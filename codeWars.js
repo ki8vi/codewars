@@ -4083,20 +4083,44 @@
 // console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]))
 
 //nother card game
-function solution(frank, sam, tom){
-  let samBeatPoss = 0
-  let tomBeatPoss = 0
-  frank.forEach(x=>{
-    if(sam.some(y => y < x)){
-      sam.splice(sam.indexOf(Math.max(...sam.filter(y => y < x))), 1)
-      samBeatPoss++
+// function solution(frank, sam, tom){
+//   let samBeatPoss = 0
+//   let tomBeatPoss = 0
+//   frank.forEach(x=>{
+//     if(sam.some(y => y < x)){
+//       sam.splice(sam.indexOf(Math.max(...sam.filter(y => y < x))), 1)
+//       samBeatPoss++
+//     }
+//     if(tom.some(z => z < x)){
+//       tom.splice(tom.indexOf(Math.max(...tom.filter(z => z < x))),1)
+//       tomBeatPoss++
+//     }
+//   })
+//   return samBeatPoss >= 2 && tomBeatPoss >= 2 ? true : false
+// }
+// console.log(solution([2, 5, 8, 11], [1, 4, 7, 10] , [0, 3, 6, 9]))
+// console.log(solution([3, 6, 7, 8], [0, 2, 4, 5] , [1, 9, 10, 11]))
+
+//Encode data on CD (Compact Disc) surface
+function encodeCD(n) {
+  let binary = n.toString(2)
+  console.log(binary)
+  let out = [binary.split("")]
+  let finishStr = "P"
+  for(let i = 0; i < 8 - binary.length; i++) {
+    out.unshift(0)
+  }
+  out = out.flat().join("")
+  console.log(out)
+  for(let j = out.length-1; j >= 0; j--) {
+    if(out[j] === "1") {
+      finishStr += "L"
+    } 
+    if(out[j] === "0") {
+      finishStr += "P"
     }
-    if(tom.some(z => z < x)){
-      tom.splice(tom.indexOf(Math.max(...tom.filter(z => z < x))),1)
-      tomBeatPoss++
-    }
-  })
-  return samBeatPoss >= 2 && tomBeatPoss >= 2 ? true : false
+  }
+  console.log(out)
+  return finishStr
 }
-console.log(solution([2, 5, 8, 11], [1, 4, 7, 10] , [0, 3, 6, 9]))
-console.log(solution([3, 6, 7, 8], [0, 2, 4, 5] , [1, 9, 10, 11]))
+console.log(encodeCD(5))
